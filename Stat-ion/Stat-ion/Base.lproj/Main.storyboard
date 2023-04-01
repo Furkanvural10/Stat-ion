@@ -3,28 +3,114 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--OnboardingVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stat_ion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="OnboardingVC" customModule="Stat_ion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Onboarding" translatesAutoresizingMaskIntoConstraints="NO" id="N3N-SN-fOl">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pci-wg-E8M">
+                                <rect key="frame" x="20" y="79" width="353" height="739"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKf-z6-VF9">
+                                        <rect key="frame" x="0.0" y="60" width="353" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO9-54-q98">
+                                        <rect key="frame" x="0.0" y="151" width="353" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXq-F2-fiA">
+                                        <rect key="frame" x="0.0" y="242" width="353" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSy-Sr-tLR">
+                                        <rect key="frame" x="20" y="654" width="313" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                        <connections>
+                                            <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iMb-xw-W0t"/>
+                                        </connections>
+                                    </button>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dD-qL-Y3q">
+                                        <rect key="frame" x="20" y="383" width="313" height="176"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="176" id="jZg-Hf-3ui"/>
+                                        </constraints>
+                                        <standardMapConfiguration key="preferredConfiguration"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="KKf-z6-VF9" firstAttribute="top" secondItem="Pci-wg-E8M" secondAttribute="top" constant="60" id="1TZ-nY-yO1"/>
+                                    <constraint firstItem="aO9-54-q98" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" id="1gP-qW-KGQ"/>
+                                    <constraint firstItem="aO9-54-q98" firstAttribute="top" secondItem="KKf-z6-VF9" secondAttribute="bottom" constant="70" id="3ql-yW-JZh"/>
+                                    <constraint firstAttribute="trailing" secondItem="vSy-Sr-tLR" secondAttribute="trailing" constant="20" id="4Bi-U2-rkn"/>
+                                    <constraint firstAttribute="trailing" secondItem="5dD-qL-Y3q" secondAttribute="trailing" constant="20" id="CBX-Nw-hdc"/>
+                                    <constraint firstItem="CXq-F2-fiA" firstAttribute="centerX" secondItem="Pci-wg-E8M" secondAttribute="centerX" id="D9o-eI-Qxs"/>
+                                    <constraint firstAttribute="bottom" secondItem="vSy-Sr-tLR" secondAttribute="bottom" constant="50" id="Eh5-gm-unW"/>
+                                    <constraint firstItem="5dD-qL-Y3q" firstAttribute="centerX" secondItem="Pci-wg-E8M" secondAttribute="centerX" id="Msi-sY-of8"/>
+                                    <constraint firstAttribute="trailing" secondItem="CXq-F2-fiA" secondAttribute="trailing" id="O1M-b7-Cwa"/>
+                                    <constraint firstItem="vSy-Sr-tLR" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" constant="20" id="Rg2-LD-FLp"/>
+                                    <constraint firstItem="KKf-z6-VF9" firstAttribute="centerX" secondItem="Pci-wg-E8M" secondAttribute="centerX" id="Rhi-FW-5Iv"/>
+                                    <constraint firstItem="vSy-Sr-tLR" firstAttribute="centerX" secondItem="Pci-wg-E8M" secondAttribute="centerX" id="UMc-U7-DQ7"/>
+                                    <constraint firstAttribute="trailing" secondItem="KKf-z6-VF9" secondAttribute="trailing" id="dcs-bI-ome"/>
+                                    <constraint firstAttribute="trailing" secondItem="aO9-54-q98" secondAttribute="trailing" id="gpN-KP-tNZ"/>
+                                    <constraint firstItem="5dD-qL-Y3q" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" constant="20" id="hYa-yT-6yC"/>
+                                    <constraint firstItem="aO9-54-q98" firstAttribute="centerX" secondItem="Pci-wg-E8M" secondAttribute="centerX" id="j9X-Gz-6RW"/>
+                                    <constraint firstItem="KKf-z6-VF9" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" id="mLg-fg-2Ja"/>
+                                    <constraint firstItem="CXq-F2-fiA" firstAttribute="top" secondItem="aO9-54-q98" secondAttribute="bottom" constant="70" id="nEt-Cv-3Sf"/>
+                                    <constraint firstItem="5dD-qL-Y3q" firstAttribute="top" secondItem="CXq-F2-fiA" secondAttribute="bottom" constant="120" id="u33-XB-Nkp"/>
+                                    <constraint firstItem="CXq-F2-fiA" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" id="xUQ-GE-eVT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pci-wg-E8M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="2Ic-uv-v1x"/>
+                            <constraint firstItem="vSy-Sr-tLR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0410798" id="4gC-MJ-3ub"/>
+                            <constraint firstItem="Pci-wg-E8M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5B3-cL-HXI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pci-wg-E8M" secondAttribute="trailing" constant="20" id="PVI-YC-6WQ"/>
+                            <constraint firstItem="Pci-wg-E8M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VSk-YY-UhX"/>
+                            <constraint firstItem="Pci-wg-E8M" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cdK-iT-LO7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstLabel" destination="KKf-z6-VF9" id="NjV-pd-IX8"/>
+                        <outlet property="mainView" destination="Pci-wg-E8M" id="j7y-Lg-SVf"/>
+                        <outlet property="mapView" destination="5dD-qL-Y3q" id="NAJ-fp-zvJ"/>
+                        <outlet property="onboardingImageView" destination="N3N-SN-fOl" id="GLU-1N-QNw"/>
+                        <outlet property="secondLabel" destination="aO9-54-q98" id="5yb-cz-8mq"/>
+                        <outlet property="startButton" destination="vSy-Sr-tLR" id="Oxm-dq-gBi"/>
+                        <outlet property="thirdLabel" destination="CXq-F2-fiA" id="XIW-7s-scg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="4"/>
+            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Onboarding" width="1120" height="1680"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
