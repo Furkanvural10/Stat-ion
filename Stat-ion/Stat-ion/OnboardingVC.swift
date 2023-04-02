@@ -66,6 +66,11 @@ class OnboardingVC: UIViewController {
         self.startButton.tintColor = .black
         self.startButton.setTitle("Başla", for: .normal)
         
+        let overlay = UIView(frame: onboardingImageView.bounds)
+        overlay.backgroundColor = UIColor.black
+        overlay.alpha = 0.4
+        onboardingImageView.addSubview(overlay)
+        
         
     }
     
