@@ -2,6 +2,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
+
 class OnboardingVC: UIViewController {
 
     @IBOutlet weak var onboardingImageView: UIImageView!
@@ -16,8 +17,17 @@ class OnboardingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkOnboardingPageSeen()
         configureOnboardingView()
         configureMapView()
+    }
+    
+     func checkOnboardingPageSeen(){
+        
+         let result = UserDefaults.standard.object(forKey: "onboardingSeen")
+         if (result as? Bool) != nil {
+             self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
+         }
     }
     
     fileprivate func labelConfig(_ labelColor: UIColor, _ fontSize: CGFloat, _ temporaryText: String) {
@@ -65,6 +75,8 @@ class OnboardingVC: UIViewController {
         mapViewConfig(cornerRadius)
         labelConfig(labelColor, fontSize, temporaryText)
         startButtonConfig()
+        
+        
         //MARK: - View Config
         self.mainView.layer.cornerRadius = cornerRadius
     
@@ -100,7 +112,7 @@ class OnboardingVC: UIViewController {
         self.startButton.transform = CGAffineTransform(translationX: 10, y: 0)
     }
     
-    @IBAction func startButton(_ sender: Any) {
+    fileprivate func animation() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 3, options: .curveEaseOut) {
             self.leftMovedTransformLabel()
             self.leftMovedTransformMapAndLabel()
@@ -112,6 +124,16 @@ class OnboardingVC: UIViewController {
                 self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
             }
         }
+    }
+    fileprivate func createUser(){
+        
+        
+    }
+    
+    @IBAction func startButton(_ sender: Any) {
+        createUser()
+        animation()
+        UserDefaults.standard.set(true, forKey: "onboardingSeen")
     }
 }
 
