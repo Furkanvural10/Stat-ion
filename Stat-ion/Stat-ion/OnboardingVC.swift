@@ -27,34 +27,7 @@ class OnboardingVC: UIViewController {
         configureMapView()
     }
     
-    private func configureOnboardingView(){
-        
-        let cornerRadius: CGFloat = 20
-        let fontSize: CGFloat = 25
-        let labelColor: UIColor = .white
-        let temporaryText = "Lorem Ipsum Der Ao"
-        
-
-        //MARK: - ImageView Config
-        self.onboardingImageView.image = UIImage(named: "Onboarding")
-        self.onboardingImageView.contentMode = .scaleToFill
-        let overlay = UIView(frame: onboardingImageView.bounds)
-        overlay.backgroundColor = UIColor.black
-        overlay.alpha = 0.4
-        onboardingImageView.addSubview(overlay)
-        
-        
-        //MARK: - View Config
-        self.mainView.layer.cornerRadius = cornerRadius
-        
-        
-        //MARK: - MapView Config
-        self.mapView.layer.cornerRadius = cornerRadius
-        self.mapView.isRotateEnabled = false
-        self.mapView.isZoomEnabled = false
-        self.mapView.isScrollEnabled = false
-        self.mapView.showsUserLocation = true
-        
+    fileprivate func labelConfig(_ labelColor: UIColor, _ fontSize: CGFloat, _ temporaryText: String) {
         //MARK: - Labels Config
         self.firstLabel.textColor = labelColor
         self.firstLabel.font = .boldSystemFont(ofSize: fontSize)
@@ -65,11 +38,42 @@ class OnboardingVC: UIViewController {
         self.thirdLabel.textColor = labelColor
         self.thirdLabel.font = .boldSystemFont(ofSize: fontSize)
         self.thirdLabel.text = temporaryText
-        
+    }
+    fileprivate func mapViewConfig(_ cornerRadius: CGFloat) {
+        //MARK: - MapView Config
+        self.mapView.layer.cornerRadius = cornerRadius
+        self.mapView.isRotateEnabled = false
+        self.mapView.isZoomEnabled = false
+        self.mapView.isScrollEnabled = false
+        self.mapView.showsUserLocation = true
+    }
+    fileprivate func imageViewConfig() {
+        //MARK: - ImageView Config
+        self.onboardingImageView.image = UIImage(named: "Onboarding")
+        self.onboardingImageView.contentMode = .scaleToFill
+        let overlay = UIView(frame: onboardingImageView.bounds)
+        overlay.backgroundColor = UIColor.black
+        overlay.alpha = 0.4
+        onboardingImageView.addSubview(overlay)
+    }
+    fileprivate func startButtonConfig() {
         //MARK: - StartButton Config
         self.startButton.tintColor = .black
         self.startButton.setTitle("Başla", for: .normal)
+    }
+    
+    private func configureOnboardingView(){
+        let cornerRadius: CGFloat = 20
+        let fontSize: CGFloat = 25
+        let labelColor: UIColor = .white
+        let temporaryText = "Lorem Ipsum Der Ao"
         
+        imageViewConfig()
+        mapViewConfig(cornerRadius)
+        labelConfig(labelColor, fontSize, temporaryText)
+        startButtonConfig()
+        //MARK: - View Config
+        self.mainView.layer.cornerRadius = cornerRadius
     
     }
     private func configureMapView(){
@@ -79,15 +83,14 @@ class OnboardingVC: UIViewController {
         locationManager.startUpdatingLocation()
     }
     
-    
     @IBAction func startButton(_ sender: Any) {
+        
     }
     
 }
 
 extension OnboardingVC: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         let latitude = locations[0].coordinate.latitude
         let longitude = locations[0].coordinate.longitude
         let spanLatitudeDelta = 0.1
@@ -97,6 +100,5 @@ extension OnboardingVC: CLLocationManagerDelegate{
         let region = MKCoordinateRegion(center: location, span: span)
         self.mapView.setRegion(region, animated: true)
     }
-    
 }
 
