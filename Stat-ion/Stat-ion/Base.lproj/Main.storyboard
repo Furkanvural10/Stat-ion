@@ -114,14 +114,29 @@
                     <view key="view" contentMode="scaleToFill" id="R15-Lu-b4g">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3QD-xL-Vno">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nMR-5L-zez"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3QD-xL-Vno" firstAttribute="top" secondItem="R15-Lu-b4g" secondAttribute="top" id="ItG-Ce-gUH"/>
+                            <constraint firstAttribute="bottom" secondItem="3QD-xL-Vno" secondAttribute="bottom" id="KFT-Uc-a9M"/>
+                            <constraint firstItem="3QD-xL-Vno" firstAttribute="leading" secondItem="nMR-5L-zez" secondAttribute="leading" id="L2D-O8-6go"/>
+                            <constraint firstItem="3QD-xL-Vno" firstAttribute="trailing" secondItem="nMR-5L-zez" secondAttribute="trailing" id="Wfv-tO-zoX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xWw-a2-Y09"/>
+                    <connections>
+                        <outlet property="stationMapView" destination="3QD-xL-Vno" id="368-vo-U6E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XYA-3L-fbp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="4"/>
+            <point key="canvasLocation" x="904.58015267175574" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

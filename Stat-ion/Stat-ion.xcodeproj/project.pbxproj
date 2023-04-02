@@ -63,12 +63,12 @@
 				0425B92829D795140057E31C /* AppDelegate.swift */,
 				0425B92A29D795140057E31C /* SceneDelegate.swift */,
 				0425B92C29D795140057E31C /* OnboardingVC.swift */,
+				0425B93F29D9B7640057E31C /* MapVC.swift */,
 				0425B92E29D795140057E31C /* Main.storyboard */,
 				0425B93429D795150057E31C /* Assets.xcassets */,
 				0425B93629D795150057E31C /* LaunchScreen.storyboard */,
 				0425B93929D795150057E31C /* Info.plist */,
 				0425B93129D795140057E31C /* Stat_ion.xcdatamodeld */,
-				0425B93F29D9B7640057E31C /* MapVC.swift */,
 			);
 			path = "Stat-ion";
 			sourceTree = "<group>";
