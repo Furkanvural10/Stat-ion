@@ -14,10 +14,21 @@ class MapVC: UIViewController {
     @IBOutlet weak var stationMapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        stationMapView.delegate = self
+        configurationView()
+        animation()
         
+    }
+    
+    private func configurationView(){
+        navigationItem.hidesBackButton = true
+        stationMapView.delegate = self
+    }
+    
+    private func animation(){
+        stationMapView.alpha = 0
+        UIView.animate(withDuration: 2) {
+            self.stationMapView.alpha = 1
+        }
     }
 
 }

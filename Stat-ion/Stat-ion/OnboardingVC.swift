@@ -23,11 +23,11 @@ class OnboardingVC: UIViewController {
     }
     
      func checkOnboardingPageSeen(){
-        
-         let result = UserDefaults.standard.object(forKey: "onboardingSeen")
-         if (result as? Bool) != nil {
-             self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
-         }
+//        
+//         let result = UserDefaults.standard.object(forKey: "onboardingSeen")
+//         if (result as? Bool) != nil {
+//             self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
+//         }
     }
     
     fileprivate func labelConfig(_ labelColor: UIColor, _ fontSize: CGFloat, _ temporaryText: String) {
@@ -113,13 +113,14 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func animation() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 3, options: .curveEaseOut) {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: .curveEaseOut) {
             self.leftMovedTransformLabel()
             self.leftMovedTransformMapAndLabel()
         } completion: { _ in
-            UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 3, options: .curveEaseOut) {
+            UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: .curveEaseOut) {
                 self.upMovedLabelTransformLabel()
                 self.upMovedMapAndButton()
+                self.onboardingImageView.alpha = 0
             } completion: { _ in
                 self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
             }
