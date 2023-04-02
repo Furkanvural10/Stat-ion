@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Stat-ion
-//
-//  Created by furkan vural on 1.04.2023.
-//
-
 import UIKit
 import MapKit
 import CoreLocation
@@ -83,10 +76,43 @@ class OnboardingVC: UIViewController {
         locationManager.startUpdatingLocation()
     }
     
-    @IBAction func startButton(_ sender: Any) {
-        
+    fileprivate func upMovedLabelTransformLabel() {
+        self.firstLabel.alpha = 0
+        self.firstLabel.transform = CGAffineTransform(translationX: 0, y: -100)
+        self.secondLabel.alpha = 0
+        self.secondLabel.transform = CGAffineTransform(translationX: 0, y: -100)
+        self.thirdLabel.alpha = 0
+        self.thirdLabel.transform = CGAffineTransform(translationX: 0, y: -100)
+    }
+    fileprivate func leftMovedTransformLabel() {
+        self.firstLabel.transform = CGAffineTransform(translationX: -10, y: 0)
+        self.secondLabel.transform = CGAffineTransform(translationX: -10, y: 0)
+        self.thirdLabel.transform = CGAffineTransform(translationX: -10, y: 0)
+    }
+    fileprivate func upMovedMapAndButton() {
+        self.mapView.alpha = 0
+        self.startButton.alpha = 0
+        self.mapView.transform = CGAffineTransform(translationX: 0, y: 100)
+        self.startButton.transform = CGAffineTransform(translationX: 0, y: 100)
+    }
+    fileprivate func leftMovedTransformMapAndLabel() {
+        self.mapView.transform = CGAffineTransform(translationX: 10, y: 0)
+        self.startButton.transform = CGAffineTransform(translationX: 10, y: 0)
     }
     
+    @IBAction func startButton(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 3, options: .curveEaseOut) {
+            self.leftMovedTransformLabel()
+            self.leftMovedTransformMapAndLabel()
+        } completion: { _ in
+            UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 3, options: .curveEaseOut) {
+                self.upMovedLabelTransformLabel()
+                self.upMovedMapAndButton()
+            } completion: { _ in
+                self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
+            }
+        }
+    }
 }
 
 extension OnboardingVC: CLLocationManagerDelegate{

@@ -100,6 +100,7 @@
                         <outlet property="secondLabel" destination="aO9-54-q98" id="5yb-cz-8mq"/>
                         <outlet property="startButton" destination="vSy-Sr-tLR" id="Oxm-dq-gBi"/>
                         <outlet property="thirdLabel" destination="CXq-F2-fiA" id="XIW-7s-scg"/>
+                        <segue destination="qKW-uJ-WaF" kind="presentation" identifier="toChargeStationMapVC" modalPresentationStyle="fullScreen" id="fWC-jg-oX2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -116,6 +117,7 @@
                         <viewLayoutGuide key="safeArea" id="nMR-5L-zez"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xWw-a2-Y09"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XYA-3L-fbp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
