@@ -34,8 +34,7 @@ class OnboardingVC: UIViewController {
         let labelColor: UIColor = .white
         let temporaryText = "Lorem Ipsum Der Ao"
         
-        
-        
+
         //MARK: - ImageView Config
         self.onboardingImageView.image = UIImage(named: "Onboarding")
         self.onboardingImageView.contentMode = .scaleToFill
@@ -51,6 +50,10 @@ class OnboardingVC: UIViewController {
         
         //MARK: - MapView Config
         self.mapView.layer.cornerRadius = cornerRadius
+        self.mapView.isRotateEnabled = false
+        self.mapView.isZoomEnabled = false
+        self.mapView.isScrollEnabled = false
+        self.mapView.showsUserLocation = true
         
         //MARK: - Labels Config
         self.firstLabel.textColor = labelColor
