@@ -14,6 +14,7 @@
 		0425B93329D795140057E31C /* Stat_ion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0425B93129D795140057E31C /* Stat_ion.xcdatamodeld */; };
 		0425B93529D795150057E31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0425B93429D795150057E31C /* Assets.xcassets */; };
 		0425B93829D795150057E31C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0425B93629D795150057E31C /* LaunchScreen.storyboard */; };
+		0425B94029D9B7640057E31C /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B93F29D9B7640057E31C /* MapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0425B93429D795150057E31C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0425B93729D795150057E31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0425B93929D795150057E31C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0425B93F29D9B7640057E31C /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				0425B93629D795150057E31C /* LaunchScreen.storyboard */,
 				0425B93929D795150057E31C /* Info.plist */,
 				0425B93129D795140057E31C /* Stat_ion.xcdatamodeld */,
+				0425B93F29D9B7640057E31C /* MapVC.swift */,
 			);
 			path = "Stat-ion";
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0425B94029D9B7640057E31C /* MapVC.swift in Sources */,
 				0425B92D29D795140057E31C /* OnboardingVC.swift in Sources */,
 				0425B92929D795140057E31C /* AppDelegate.swift in Sources */,
 				0425B93329D795140057E31C /* Stat_ion.xcdatamodeld in Sources */,
