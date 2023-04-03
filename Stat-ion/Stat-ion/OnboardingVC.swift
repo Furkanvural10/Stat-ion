@@ -113,11 +113,11 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func animation() {
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: .curveEaseOut) {
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 6, initialSpringVelocity: 6, options: .curveEaseOut) {
             self.leftMovedTransformLabel()
             self.leftMovedTransformMapAndLabel()
         } completion: { _ in
-            UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: .curveEaseOut) {
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 6, initialSpringVelocity: 6, options: .curveEaseOut) {
                 self.upMovedLabelTransformLabel()
                 self.upMovedMapAndButton()
                 self.onboardingImageView.alpha = 0
@@ -126,13 +126,9 @@ class OnboardingVC: UIViewController {
             }
         }
     }
-    fileprivate func createUser(){
-        
-        
-    }
     
     @IBAction func startButton(_ sender: Any) {
-        createUser()
+        
         animation()
         UserDefaults.standard.set(true, forKey: "onboardingSeen")
     }
