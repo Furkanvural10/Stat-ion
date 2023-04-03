@@ -9,12 +9,17 @@ import UIKit
 import CoreLocation
 import MapKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class MapVC: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var stationMapView: MKMapView!
     let locationManager = CLLocationManager()
     let vc = UIViewController()
+    var latitude: Double?
+    var longitude: Double?
+    var annotations = [MKPointAnnotation]()
+    @IBOutlet weak var stationFabIcon: UIButton!
     
     
     @IBOutlet weak var showCurrentLocationButton: UIButton!
@@ -22,9 +27,12 @@ class MapVC: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configurationView()
         animation()
+        
         createUser()
+        getStation()
         
     }
     
@@ -39,11 +47,39 @@ class MapVC: UIViewController, MKMapViewDelegate {
         }
     }
     
+    func getStation(){
+        
+        let database = Firestore.firestore()
+        let collection = database.collection("stationDetail").getDocuments{ querySnapshot, error in
+            if error == nil {
+                
+                for document in querySnapshot!.documents{
+                    let geopoint = document.get("coordinate") as! GeoPoint
+                    let title = document.get("stationName") as! String
+                    let coordinate = CLLocationCoordinate2D(latitude: geopoint.latitude, longitude: geopoint.longitude)
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = coordinate
+                    self.annotations.append(annotation)
+                    annotation.title = title
+                    self.stationMapView.addAnnotation(annotation)
+                }
+                
+            }
+        }
+    }
+    
     private func configurationView(){
         navigationItem.hidesBackButton = true
         self.showCurrentLocationButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
-        self.showCurrentLocationButton.layer.cornerRadius = 23
-        self.showCurrentLocationButton.backgroundColor = .white
+        self.showCurrentLocationButton.layer.cornerRadius = self.showCurrentLocationButton.frame.width / 2
+        self.showCurrentLocationButton.backgroundColor = .black
+        self.showCurrentLocationButton.tintColor = .white
+        
+        self.stationFabIcon.setImage(UIImage(systemName: "battery.100.bolt"), for: .normal)
+        self.stationFabIcon.layer.cornerRadius = self.stationFabIcon.frame.width / 2
+        self.stationFabIcon.backgroundColor = .black
+        self.stationFabIcon.tintColor = .white
+        
         
         //MARK: Map
         self.stationMapView.delegate = self
@@ -76,6 +112,11 @@ class MapVC: UIViewController, MKMapViewDelegate {
         
     }
     
+    @IBAction func showStations(_ sender: Any) {
+        self.stationMapView.showAnnotations(self.annotations, animated: true)
+    }
+    
+   
     
     
 }
@@ -85,12 +126,17 @@ extension MapVC: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let latitude = locations[0].coordinate.latitude
             let longitude = locations[0].coordinate.longitude
-            let latitudeDelta = 0.1
-            let longitudeDelta = 0.1
+            let latitudeDelta = 0.01
+            let longitudeDelta = 0.01
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             let span = MKCoordinateSpan(latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta)
             let region = MKCoordinateRegion(center: coordinate, span: span)
             self.stationMapView.setRegion(region, animated: true)
             locationManager.stopUpdatingLocation()
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print(view.annotation?.title)
+    }
 }
+
