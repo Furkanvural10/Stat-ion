@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -120,18 +121,34 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTp-jQ-ZBl">
+                                <rect key="frame" x="325" y="728" width="48" height="40"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" name="AccentColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCurrentLocation:" destination="qKW-uJ-WaF" eventType="touchUpInside" id="2Ag-v8-H7I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nMR-5L-zez"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="nMR-5L-zez" firstAttribute="trailing" secondItem="KTp-jQ-ZBl" secondAttribute="trailing" constant="20" id="9CZ-kT-JTZ"/>
                             <constraint firstItem="3QD-xL-Vno" firstAttribute="top" secondItem="R15-Lu-b4g" secondAttribute="top" id="ItG-Ce-gUH"/>
                             <constraint firstAttribute="bottom" secondItem="3QD-xL-Vno" secondAttribute="bottom" id="KFT-Uc-a9M"/>
                             <constraint firstItem="3QD-xL-Vno" firstAttribute="leading" secondItem="nMR-5L-zez" secondAttribute="leading" id="L2D-O8-6go"/>
+                            <constraint firstItem="KTp-jQ-ZBl" firstAttribute="top" secondItem="nMR-5L-zez" secondAttribute="top" constant="625" id="WBT-Eq-zJ1"/>
+                            <constraint firstItem="KTp-jQ-ZBl" firstAttribute="leading" secondItem="nMR-5L-zez" secondAttribute="leading" constant="325" id="WcR-Jy-qze"/>
                             <constraint firstItem="3QD-xL-Vno" firstAttribute="trailing" secondItem="nMR-5L-zez" secondAttribute="trailing" id="Wfv-tO-zoX"/>
+                            <constraint firstItem="nMR-5L-zez" firstAttribute="bottom" secondItem="KTp-jQ-ZBl" secondAttribute="bottom" constant="50" id="od2-8i-8Z1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xWw-a2-Y09"/>
                     <connections>
+                        <outlet property="showCurrentLocationButton" destination="KTp-jQ-ZBl" id="Zq6-ka-asF"/>
                         <outlet property="stationMapView" destination="3QD-xL-Vno" id="368-vo-U6E"/>
                     </connections>
                 </viewController>
@@ -160,6 +177,9 @@
     </scenes>
     <resources>
         <image name="Onboarding" width="1120" height="1680"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
