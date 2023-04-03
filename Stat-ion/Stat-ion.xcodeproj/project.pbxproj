@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0415768029DA368700CBA586 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0415767F29DA368700CBA586 /* GoogleService-Info.plist */; };
+		0415768229DB1B0600CBA586 /* StationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415768129DB1B0600CBA586 /* StationDetailVC.swift */; };
 		0425B92929D795140057E31C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92829D795140057E31C /* AppDelegate.swift */; };
 		0425B92B29D795140057E31C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92A29D795140057E31C /* SceneDelegate.swift */; };
 		0425B92D29D795140057E31C /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92C29D795140057E31C /* OnboardingVC.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		0415767F29DA368700CBA586 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0415768129DB1B0600CBA586 /* StationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailVC.swift; sourceTree = "<group>"; };
 		0425B92529D795140057E31C /* Stat-ion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stat-ion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0425B92829D795140057E31C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0425B92A29D795140057E31C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				0425B93929D795150057E31C /* Info.plist */,
 				0415767F29DA368700CBA586 /* GoogleService-Info.plist */,
 				0425B93129D795140057E31C /* Stat_ion.xcdatamodeld */,
+				0415768129DB1B0600CBA586 /* StationDetailVC.swift */,
 			);
 			path = "Stat-ion";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0415768229DB1B0600CBA586 /* StationDetailVC.swift in Sources */,
 				0425B94029D9B7640057E31C /* MapVC.swift in Sources */,
 				0425B92D29D795140057E31C /* OnboardingVC.swift in Sources */,
 				0425B92929D795140057E31C /* AppDelegate.swift in Sources */,

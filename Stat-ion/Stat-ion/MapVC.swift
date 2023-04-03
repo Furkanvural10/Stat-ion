@@ -14,6 +14,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var stationMapView: MKMapView!
     let locationManager = CLLocationManager()
+    let vc = UIViewController()
     
     
     @IBOutlet weak var showCurrentLocationButton: UIButton!
@@ -61,6 +62,18 @@ class MapVC: UIViewController, MKMapViewDelegate {
     }
     @IBAction func showCurrentLocation(_ sender: Any) {
         locationManager.startUpdatingLocation()
+      
+    }
+    
+    private func showStationDetail(){
+        if let stationDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "stationDetailVC") as? StationDetailVC{
+            if let sheet = stationDetailVC.sheetPresentationController{
+                sheet.detents = [.medium(), .large()]
+                sheet.preferredCornerRadius = 15
+            }
+            self.navigationController?.present(stationDetailVC, animated: true)
+        }
+        
     }
     
     
