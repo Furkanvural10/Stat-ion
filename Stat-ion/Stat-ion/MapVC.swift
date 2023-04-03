@@ -8,8 +8,9 @@
 import UIKit
 import CoreLocation
 import MapKit
+import FirebaseAuth
 
-class MapVC: UIViewController {
+class MapVC: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var stationMapView: MKMapView!
     let locationManager = CLLocationManager()
@@ -19,13 +20,26 @@ class MapVC: UIViewController {
         super.viewDidLoad()
         configurationView()
         animation()
+        createUser()
         
+    }
+    
+    private func createUser(){
+        let currentUser = Auth.auth().currentUser
+        if currentUser == nil {
+            Auth.auth().signInAnonymously { data, error in
+                if error != nil{
+                    print("SHOW Error")
+                }
+            }
+        }
     }
     
     private func configurationView(){
         navigationItem.hidesBackButton = true
         
         //MARK: Map
+        self.stationMapView.delegate = self
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.startUpdatingLocation()

@@ -23,11 +23,11 @@ class OnboardingVC: UIViewController {
     }
     
      func checkOnboardingPageSeen(){
-//        
-//         let result = UserDefaults.standard.object(forKey: "onboardingSeen")
-//         if (result as? Bool) != nil {
-//             self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
-//         }
+        
+         let result = UserDefaults.standard.object(forKey: "onboardingSeen")
+         if (result as? Bool) != nil {
+             self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
+         }
     }
     
     fileprivate func labelConfig(_ labelColor: UIColor, _ fontSize: CGFloat, _ temporaryText: String) {
