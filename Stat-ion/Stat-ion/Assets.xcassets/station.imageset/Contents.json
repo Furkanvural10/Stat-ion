@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "charge.jpg",
+      "filename" : "stationElipse.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "charge 1.jpg",
+      "filename" : "stationElipse 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "charge 2.jpg",
+      "filename" : "stationElipse 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

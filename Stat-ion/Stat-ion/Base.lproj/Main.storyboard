@@ -122,8 +122,7 @@
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTp-jQ-ZBl">
-                                <rect key="frame" x="298" y="713" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.33333334329999997" green="0.19859551240000001" blue="0.32767737479999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="308" y="713" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="7AE-m5-veP"/>
                                     <constraint firstAttribute="width" constant="60" id="TtB-hS-zxO"/>
@@ -137,8 +136,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soe-d0-anu">
-                                <rect key="frame" x="298" y="645" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.33333334329999997" green="0.19859551240000001" blue="0.32767737479999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="308" y="645" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="0z0-2p-S4C"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Pp6-in-Ukg"/>
@@ -163,9 +161,9 @@
                             <constraint firstItem="3QD-xL-Vno" firstAttribute="top" secondItem="R15-Lu-b4g" secondAttribute="top" id="ItG-Ce-gUH"/>
                             <constraint firstAttribute="bottom" secondItem="3QD-xL-Vno" secondAttribute="bottom" id="KFT-Uc-a9M"/>
                             <constraint firstItem="3QD-xL-Vno" firstAttribute="leading" secondItem="nMR-5L-zez" secondAttribute="leading" id="L2D-O8-6go"/>
-                            <constraint firstItem="nMR-5L-zez" firstAttribute="trailing" secondItem="soe-d0-anu" secondAttribute="trailing" constant="35" id="SMQ-Gk-CUm"/>
+                            <constraint firstItem="nMR-5L-zez" firstAttribute="trailing" secondItem="soe-d0-anu" secondAttribute="trailing" constant="25" id="SMQ-Gk-CUm"/>
                             <constraint firstItem="3QD-xL-Vno" firstAttribute="trailing" secondItem="nMR-5L-zez" secondAttribute="trailing" id="Wfv-tO-zoX"/>
-                            <constraint firstItem="nMR-5L-zez" firstAttribute="trailing" secondItem="KTp-jQ-ZBl" secondAttribute="trailing" constant="35" id="ehr-ex-9PW"/>
+                            <constraint firstItem="nMR-5L-zez" firstAttribute="trailing" secondItem="KTp-jQ-ZBl" secondAttribute="trailing" constant="25" id="ehr-ex-9PW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xWw-a2-Y09"/>
