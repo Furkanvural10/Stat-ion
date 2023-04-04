@@ -72,6 +72,10 @@ class MapVC: UIViewController, MKMapViewDelegate {
                     annotation.coordinate = coordinate
                     self.annotations.append(annotation)
                     annotation.title = stationName
+                    if let image = UIImage(named: "Station") {
+                        let annotationView = self.stationMapView.view(for: annotation)
+                        annotationView?.image = image
+                    }
                     self.stationMapView.addAnnotation(annotation)
                 }
                 
@@ -144,7 +148,24 @@ class MapVC: UIViewController, MKMapViewDelegate {
 }
 
 extension MapVC: CLLocationManagerDelegate{
-    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else {
+            return nil
+        }
+        
+        var anotationView = self.stationMapView.dequeueReusableAnnotationView(withIdentifier: "custom")
+        if anotationView == nil {
+            anotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+            anotationView?.canShowCallout = true
+        }else{
+            anotationView?.annotation = annotation
+        }
+        
+        anotationView?.image = UIImage(named: "StationAnotation")
+        anotationView?.contentMode = .scaleAspectFit
+        
+        return anotationView
+    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let latitude = locations[0].coordinate.latitude
             let longitude = locations[0].coordinate.longitude
