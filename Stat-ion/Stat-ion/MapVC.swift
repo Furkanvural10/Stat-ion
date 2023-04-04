@@ -134,9 +134,12 @@ class MapVC: UIViewController, MKMapViewDelegate {
             let distance = annotationLocation.distance(from: userLocation!)
             return distance <= maxDistance
         }
-//        self.stationMapView.showAnnotations(filteredAnnotations, animated: true)
         for anotation in filteredAnnotations{
-            print(anotation.coordinate.latitude)
+            for i in stationList{
+                if anotation.coordinate.latitude == i.geopoint.latitude{
+                    print(i.stationName)
+                }
+            }
             
         }
         openNearestStationCustomSheet()
