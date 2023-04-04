@@ -199,13 +199,39 @@
                     <view key="view" contentMode="scaleToFill" id="QK5-2a-ZQq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RaZ-nz-p3l">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZc-KW-Ps5">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="59"/>
+                                <items>
+                                    <navigationItem title="Sana En Yakın İstasyonlar" id="Mp9-Lr-Wip"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Hhw-qc-IIQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RaZ-nz-p3l" firstAttribute="top" secondItem="rZc-KW-Ps5" secondAttribute="bottom" id="9u1-s9-yNJ"/>
+                            <constraint firstItem="RaZ-nz-p3l" firstAttribute="leading" secondItem="Hhw-qc-IIQ" secondAttribute="leading" id="BZH-Sb-WvR"/>
+                            <constraint firstItem="rZc-KW-Ps5" firstAttribute="top" secondItem="QK5-2a-ZQq" secondAttribute="top" id="Eih-Za-dd9"/>
+                            <constraint firstItem="RaZ-nz-p3l" firstAttribute="trailing" secondItem="Hhw-qc-IIQ" secondAttribute="trailing" id="M8N-vk-DLu"/>
+                            <constraint firstAttribute="trailing" secondItem="rZc-KW-Ps5" secondAttribute="trailing" id="O7c-83-yOJ"/>
+                            <constraint firstItem="rZc-KW-Ps5" firstAttribute="leading" secondItem="QK5-2a-ZQq" secondAttribute="leading" id="V2Q-lc-eGd"/>
+                            <constraint firstItem="RaZ-nz-p3l" firstAttribute="bottom" secondItem="Hhw-qc-IIQ" secondAttribute="bottom" id="fxc-6F-YLx"/>
+                            <constraint firstItem="RaZ-nz-p3l" firstAttribute="top" secondItem="Hhw-qc-IIQ" secondAttribute="top" id="uyP-eU-uvw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nearestStationPageTitle" destination="rZc-KW-Ps5" id="Ptw-Qe-eMs"/>
+                        <outlet property="nearestStationTableView" destination="RaZ-nz-p3l" id="tJ9-nf-Zy7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSE-dR-sIx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2636" y="667"/>
+            <point key="canvasLocation" x="2635.8778625954196" y="666.90140845070425"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EO1-it-5GR">

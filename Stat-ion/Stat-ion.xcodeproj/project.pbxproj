@@ -78,13 +78,13 @@
 				0425B92C29D795140057E31C /* OnboardingVC.swift */,
 				0425B93F29D9B7640057E31C /* MapVC.swift */,
 				0415768129DB1B0600CBA586 /* StationDetailVC.swift */,
+				0415768329DCDDE300CBA586 /* NearestStationVC.swift */,
 				0425B92E29D795140057E31C /* Main.storyboard */,
 				0425B93429D795150057E31C /* Assets.xcassets */,
 				0425B93629D795150057E31C /* LaunchScreen.storyboard */,
 				0425B93929D795150057E31C /* Info.plist */,
 				0415767F29DA368700CBA586 /* GoogleService-Info.plist */,
 				0425B93129D795140057E31C /* Stat_ion.xcdatamodeld */,
-				0415768329DCDDE300CBA586 /* NearestStationVC.swift */,
 			);
 			path = "Stat-ion";
 			sourceTree = "<group>";
