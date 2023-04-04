@@ -92,7 +92,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
         
         self.stationFabIcon.setImage(UIImage(named: "Station"), for: .normal)
         self.stationFabIcon.layer.cornerRadius = self.stationFabIcon.frame.width / 2
-        self.stationFabIcon.backgroundColor = .white
+        self.stationFabIcon.backgroundColor = .black
         
         
         
@@ -116,7 +116,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
       
     }
     
-    private func showStationDetail(){
+    @objc private func showStationDetail(){
         if let stationDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "stationDetailVC") as? StationDetailVC{
             if let sheet = stationDetailVC.sheetPresentationController{
                 sheet.detents = [.medium(), .large()]
@@ -139,6 +139,18 @@ class MapVC: UIViewController, MKMapViewDelegate {
             print(anotation.coordinate.latitude)
             
         }
+        openNearestStationCustomSheet()
+        
+    }
+    
+    func openNearestStationCustomSheet(){
+        if let nearestStationVC = self.storyboard?.instantiateViewController(withIdentifier: "nearestStationVC") as? NearestStationVC{
+            if let sheet = nearestStationVC.sheetPresentationController{
+                sheet.detents = [.medium(),]
+                sheet.preferredCornerRadius = 15
+            }
+            self.navigationController?.present(nearestStationVC, animated: true)
+        }
         
     }
     
@@ -153,18 +165,22 @@ extension MapVC: CLLocationManagerDelegate{
             return nil
         }
         
-        var anotationView = self.stationMapView.dequeueReusableAnnotationView(withIdentifier: "custom")
-        if anotationView == nil {
-            anotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
-            anotationView?.canShowCallout = true
+        var annotationView = self.stationMapView.dequeueReusableAnnotationView(withIdentifier: "custom")
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+            annotationView?.canShowCallout = true
+            let detailDisclosurebutton = UIButton(type: .detailDisclosure)
+            detailDisclosurebutton.addTarget(self, action: #selector(showStationDetail), for: .touchUpInside)
+            annotationView?.rightCalloutAccessoryView = detailDisclosurebutton
+                        
         }else{
-            anotationView?.annotation = annotation
+            annotationView?.annotation = annotation
         }
         
-        anotationView?.image = UIImage(named: "StationAnotation")
-        anotationView?.contentMode = .scaleAspectFit
+        annotationView?.image = UIImage(named: "StationAnotation")
+        annotationView?.contentMode = .scaleAspectFit
         
-        return anotationView
+        return annotationView
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let latitude = locations[0].coordinate.latitude
@@ -179,9 +195,7 @@ extension MapVC: CLLocationManagerDelegate{
             locationManager.stopUpdatingLocation()
     }
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print(view.annotation?.title)
-    }
+    
 }
 
 struct Station {

@@ -190,7 +190,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLs-oV-lcu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2648" y="4"/>
+            <point key="canvasLocation" x="2637" y="-723"/>
+        </scene>
+        <!--Nearest StationVC-->
+        <scene sceneID="HbC-HF-v7e">
+            <objects>
+                <viewController storyboardIdentifier="nearestStationVC" id="IwG-7Q-Hj0" customClass="NearestStationVC" customModule="Stat_ion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QK5-2a-ZQq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Hhw-qc-IIQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSE-dR-sIx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2636" y="667"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EO1-it-5GR">
