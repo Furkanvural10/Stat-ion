@@ -128,30 +128,51 @@ class MapVC: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func showStations(_ sender: Any) {
-        let maxDistance: CLLocationDistance = 5000 // in meters
+        // MARK: Filter stations around userLocation 5km
+        let maxDistance: CLLocationDistance = 50000 // in meters
         let filteredAnnotations = annotations.filter { annotation in
             let annotationLocation = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
             let distance = annotationLocation.distance(from: userLocation!)
+            
             return distance <= maxDistance
         }
+        
+        
+        
+        //MARK: - Finding Near Station from filteredAnnotationsList and Add nearStation
+        var nearStation = [Station]()
         for anotation in filteredAnnotations{
             for i in stationList{
-                if anotation.coordinate.latitude == i.geopoint.latitude{
-                    print(i.stationName)
+                if anotation.coordinate.longitude == i.geopoint.longitude{
+                    nearStation.append(i)
+                    
                 }
             }
             
+            
         }
-        openNearestStationCustomSheet()
         
+        // MARK: - Find nearestDistance
+        var distanceKM = [Double]() // km
+        for chargeStation in nearStation{
+            let annotationLocation = CLLocation(latitude: chargeStation.geopoint.latitude, longitude: chargeStation.geopoint.longitude)
+            let distance = annotationLocation.distance(from: userLocation!) / 1000.0
+            distanceKM.append((distance * 10).rounded() / 10)
+            
+        }
+        
+        openNearestStationCustomSheet(choosedStations: nearStation, distanceKM: distanceKM)
     }
     
-    func openNearestStationCustomSheet(){
+    func openNearestStationCustomSheet(choosedStations: [Station], distanceKM: [Double]){
         if let nearestStationVC = self.storyboard?.instantiateViewController(withIdentifier: "nearestStationVC") as? NearestStationVC{
             if let sheet = nearestStationVC.sheetPresentationController{
                 sheet.detents = [.medium(),]
                 sheet.preferredCornerRadius = 15
             }
+            nearestStationVC.station = choosedStations
+            nearestStationVC.distanceKM = distanceKM
+            
             self.navigationController?.present(nearestStationVC, animated: true)
         }
         

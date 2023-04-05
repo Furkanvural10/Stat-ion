@@ -201,7 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RaZ-nz-p3l">
-                                <rect key="frame" x="0.0" y="74" width="393" height="744"/>
+                                <rect key="frame" x="0.0" y="44" width="393" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZc-KW-Ps5">
@@ -214,15 +214,20 @@
                         <viewLayoutGuide key="safeArea" id="Hhw-qc-IIQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="RaZ-nz-p3l" firstAttribute="bottom" secondItem="Hhw-qc-IIQ" secondAttribute="bottom" id="Avy-aW-XB8"/>
                             <constraint firstItem="RaZ-nz-p3l" firstAttribute="leading" secondItem="Hhw-qc-IIQ" secondAttribute="leading" id="BZH-Sb-WvR"/>
                             <constraint firstItem="RaZ-nz-p3l" firstAttribute="trailing" secondItem="Hhw-qc-IIQ" secondAttribute="trailing" id="Bzz-68-AYG"/>
-                            <constraint firstItem="rZc-KW-Ps5" firstAttribute="top" secondItem="QK5-2a-ZQq" secondAttribute="top" id="Eih-Za-dd9"/>
+                            <constraint firstItem="RaZ-nz-p3l" firstAttribute="top" secondItem="rZc-KW-Ps5" secondAttribute="bottom" id="G66-Ar-GvN"/>
                             <constraint firstItem="RaZ-nz-p3l" firstAttribute="trailing" secondItem="Hhw-qc-IIQ" secondAttribute="trailing" id="M8N-vk-DLu"/>
-                            <constraint firstAttribute="trailing" secondItem="rZc-KW-Ps5" secondAttribute="trailing" id="O7c-83-yOJ"/>
-                            <constraint firstItem="RaZ-nz-p3l" firstAttribute="top" secondItem="Hhw-qc-IIQ" secondAttribute="top" constant="15" id="PN3-ge-oD9"/>
-                            <constraint firstItem="rZc-KW-Ps5" firstAttribute="leading" secondItem="QK5-2a-ZQq" secondAttribute="leading" id="V2Q-lc-eGd"/>
+                            <constraint firstItem="RaZ-nz-p3l" firstAttribute="top" secondItem="rZc-KW-Ps5" secondAttribute="bottom" id="Yiw-0l-Vsg"/>
+                            <constraint firstItem="rZc-KW-Ps5" firstAttribute="trailing" secondItem="Hhw-qc-IIQ" secondAttribute="trailing" id="c40-Kf-pWU"/>
+                            <constraint firstItem="rZc-KW-Ps5" firstAttribute="leading" secondItem="Hhw-qc-IIQ" secondAttribute="leading" id="flq-Gb-Ii1"/>
                             <constraint firstItem="RaZ-nz-p3l" firstAttribute="bottom" secondItem="Hhw-qc-IIQ" secondAttribute="bottom" id="fxc-6F-YLx"/>
+                            <constraint firstItem="RaZ-nz-p3l" firstAttribute="leading" secondItem="Hhw-qc-IIQ" secondAttribute="leading" id="h4T-eP-tro"/>
+                            <constraint firstItem="RaZ-nz-p3l" firstAttribute="trailing" secondItem="Hhw-qc-IIQ" secondAttribute="trailing" id="jcF-SQ-zgJ"/>
+                            <constraint firstItem="rZc-KW-Ps5" firstAttribute="centerX" secondItem="QK5-2a-ZQq" secondAttribute="centerX" id="oBu-oR-kHF"/>
                             <constraint firstItem="RaZ-nz-p3l" firstAttribute="bottom" secondItem="Hhw-qc-IIQ" secondAttribute="bottom" id="vON-4B-9ru"/>
+                            <constraint firstItem="rZc-KW-Ps5" firstAttribute="top" secondItem="QK5-2a-ZQq" secondAttribute="top" symbolic="YES" id="zhe-q7-Qj0"/>
                         </constraints>
                     </view>
                     <connections>

@@ -11,8 +11,10 @@ class NearestStationVC: UIViewController {
     
     
     @IBOutlet weak var nearestStationPageTitle: UINavigationBar!
-    
     @IBOutlet weak var nearestStationTableView: UITableView!
+    var station: [Station]?
+    var distanceKM: [Double]?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,9 @@ class NearestStationVC: UIViewController {
     private func configurationView(){
         nearestStationTableView.delegate = self
         nearestStationTableView.dataSource = self
+        nearestStationPageTitle.topItem?.title = "En Yakın İstasyonlar"
+        
+        
     }
     
 
@@ -34,13 +39,17 @@ extension NearestStationVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         var content = cell.defaultContentConfiguration()
-        content.text = "Deneme"
+        content.text = "\(station![indexPath.row].stationName) (\(distanceKM![indexPath.row]) Km)"
         cell.contentConfiguration = content
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return station!.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(station![indexPath.row].stationName)
     }
     
     
