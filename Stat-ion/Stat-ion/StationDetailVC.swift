@@ -8,7 +8,23 @@
 import UIKit
 
 class StationDetailVC: UIViewController {
-
+    
+    
+    
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    
+    @IBOutlet weak var carItem: UIBarButtonItem!
+    @IBOutlet weak var stationTypeLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var firstSoketLabel: UILabel!
+    @IBOutlet weak var secondSoketLabel: UILabel!
+    @IBOutlet weak var firstView: UIView!
+    @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var firstImage: UIImageView!
+    @IBOutlet weak var secondImage: UIImageView!
+    @IBOutlet weak var firstSoketType: UILabel!
+    @IBOutlet weak var secondSoketType: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

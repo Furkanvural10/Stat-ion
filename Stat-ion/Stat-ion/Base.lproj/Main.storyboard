@@ -184,13 +184,137 @@
                     <view key="view" contentMode="scaleToFill" id="6U2-La-cLq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCs-N2-Ays">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="rK3-gZ-WrT">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="C4w-5B-JNH"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="380 VC AC FZ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h78-Rs-a1c">
+                                <rect key="frame" x="57" y="355" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pL8-bg-Pxw">
+                                <rect key="frame" x="57" y="123" width="109" height="172"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargeStation" translatesAutoresizingMaskIntoConstraints="NO" id="Pav-qw-N8S">
+                                        <rect key="frame" x="22" y="0.0" width="65" height="225"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="225" id="OPu-DO-z7H"/>
+                                            <constraint firstAttribute="width" constant="65" id="zkN-n1-tdd"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soket-1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9c-BK-LM0">
+                                        <rect key="frame" x="25" y="3" width="59" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.094804145676439688" green="1" blue="0.038829365944072158" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Pav-qw-N8S" secondAttribute="trailing" constant="22" id="1Ba-K3-NGk"/>
+                                    <constraint firstAttribute="height" constant="172" id="1ce-9g-dDW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y9c-BK-LM0" secondAttribute="trailing" constant="25" id="BRB-Lh-jbj"/>
+                                    <constraint firstItem="Y9c-BK-LM0" firstAttribute="leading" secondItem="pL8-bg-Pxw" secondAttribute="leading" constant="25" id="Dvj-dM-GJA"/>
+                                    <constraint firstItem="Y9c-BK-LM0" firstAttribute="top" secondItem="pL8-bg-Pxw" secondAttribute="top" constant="3" id="JrH-s4-YT4"/>
+                                    <constraint firstAttribute="width" constant="109" id="U5h-Wt-MlL"/>
+                                    <constraint firstItem="Pav-qw-N8S" firstAttribute="top" secondItem="pL8-bg-Pxw" secondAttribute="top" id="cDb-JI-h78"/>
+                                    <constraint firstItem="Pav-qw-N8S" firstAttribute="leading" secondItem="pL8-bg-Pxw" secondAttribute="leading" constant="22" id="lMg-RT-9cH"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wi-wd-Jzv">
+                                <rect key="frame" x="226" y="123" width="109" height="172"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargeStation" translatesAutoresizingMaskIntoConstraints="NO" id="n7n-WS-kaL">
+                                        <rect key="frame" x="22" y="0.0" width="65" height="225"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="225" id="Q1c-Vz-dKa"/>
+                                            <constraint firstAttribute="width" constant="65" id="s9d-Rw-1bz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soket-2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3L-Ut-Ezg">
+                                        <rect key="frame" x="25" y="3" width="59" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.094804145676439688" green="1" blue="0.038829365944072158" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="q3L-Ut-Ezg" firstAttribute="leading" secondItem="7wi-wd-Jzv" secondAttribute="leading" constant="25" id="22r-7P-v8r"/>
+                                    <constraint firstItem="n7n-WS-kaL" firstAttribute="leading" secondItem="7wi-wd-Jzv" secondAttribute="leading" constant="22" id="40j-H7-EIg"/>
+                                    <constraint firstAttribute="width" constant="109" id="6xJ-nL-0eB"/>
+                                    <constraint firstAttribute="trailing" secondItem="n7n-WS-kaL" secondAttribute="trailing" constant="22" id="Vr5-GT-FDr"/>
+                                    <constraint firstItem="q3L-Ut-Ezg" firstAttribute="top" secondItem="7wi-wd-Jzv" secondAttribute="top" constant="3" id="WIW-V7-FYc"/>
+                                    <constraint firstAttribute="height" constant="172" id="ii4-DP-E2K"/>
+                                    <constraint firstAttribute="trailing" secondItem="q3L-Ut-Ezg" secondAttribute="trailing" constant="25" id="sZt-h7-ABR"/>
+                                    <constraint firstItem="n7n-WS-kaL" firstAttribute="top" secondItem="7wi-wd-Jzv" secondAttribute="top" id="soZ-uM-Z9V"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.5 Km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVe-dX-2uG">
+                                <rect key="frame" x="324" y="54" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İstasyon Tipi:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxZ-TG-stl">
+                                <rect key="frame" x="15.000000000000007" y="54" width="99.666666666666686" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="380 VC AC FZ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y64-Yi-Wrt">
+                                <rect key="frame" x="227" y="355" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dg7-nt-bau"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FCs-N2-Ays" firstAttribute="leading" secondItem="6U2-La-cLq" secondAttribute="leading" id="3Yw-4M-CDM"/>
+                            <constraint firstItem="7wi-wd-Jzv" firstAttribute="top" secondItem="xVe-dX-2uG" secondAttribute="bottom" constant="48" id="6FG-6s-Hu1"/>
+                            <constraint firstItem="dg7-nt-bau" firstAttribute="trailing" secondItem="xVe-dX-2uG" secondAttribute="trailing" constant="15" id="C3s-9J-b22"/>
+                            <constraint firstItem="pL8-bg-Pxw" firstAttribute="leading" secondItem="dg7-nt-bau" secondAttribute="leading" constant="57" id="GY7-Lk-4Ah"/>
+                            <constraint firstItem="pL8-bg-Pxw" firstAttribute="top" secondItem="zxZ-TG-stl" secondAttribute="bottom" constant="48" id="Pes-el-nuk"/>
+                            <constraint firstItem="7wi-wd-Jzv" firstAttribute="leading" secondItem="pL8-bg-Pxw" secondAttribute="trailing" constant="60" id="VSj-YZ-OGK"/>
+                            <constraint firstItem="h78-Rs-a1c" firstAttribute="top" secondItem="pL8-bg-Pxw" secondAttribute="bottom" constant="60" id="afc-pj-phR"/>
+                            <constraint firstItem="dg7-nt-bau" firstAttribute="trailing" secondItem="7wi-wd-Jzv" secondAttribute="trailing" constant="58" id="bhZ-Uq-sGM"/>
+                            <constraint firstItem="FCs-N2-Ays" firstAttribute="top" secondItem="6U2-La-cLq" secondAttribute="top" id="dmN-G5-6kp"/>
+                            <constraint firstItem="h78-Rs-a1c" firstAttribute="leading" secondItem="dg7-nt-bau" secondAttribute="leading" constant="57" id="gv1-ns-qEK"/>
+                            <constraint firstItem="dg7-nt-bau" firstAttribute="trailing" secondItem="y64-Yi-Wrt" secondAttribute="trailing" constant="57" id="hcJ-lW-2Xd"/>
+                            <constraint firstItem="y64-Yi-Wrt" firstAttribute="top" secondItem="7wi-wd-Jzv" secondAttribute="bottom" constant="60" id="jLr-6u-9F7"/>
+                            <constraint firstItem="zxZ-TG-stl" firstAttribute="leading" secondItem="dg7-nt-bau" secondAttribute="leading" constant="15" id="qVb-KO-pSw"/>
+                            <constraint firstAttribute="trailing" secondItem="FCs-N2-Ays" secondAttribute="trailing" id="quj-0u-JLb"/>
+                            <constraint firstItem="zxZ-TG-stl" firstAttribute="top" secondItem="FCs-N2-Ays" secondAttribute="bottom" constant="10" id="ruV-Ln-TGh"/>
+                            <constraint firstItem="xVe-dX-2uG" firstAttribute="top" secondItem="FCs-N2-Ays" secondAttribute="bottom" constant="10" id="sEU-Cd-986"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="carItem" destination="C4w-5B-JNH" id="fdU-JG-cj2"/>
+                        <outlet property="distanceLabel" destination="xVe-dX-2uG" id="b33-ZL-wJj"/>
+                        <outlet property="firstImage" destination="Pav-qw-N8S" id="221-Ql-FGP"/>
+                        <outlet property="firstSoketLabel" destination="Y9c-BK-LM0" id="Ovs-N1-bYD"/>
+                        <outlet property="firstSoketType" destination="h78-Rs-a1c" id="3v0-zS-2QT"/>
+                        <outlet property="firstView" destination="pL8-bg-Pxw" id="uIg-uY-idF"/>
+                        <outlet property="navigationBar" destination="FCs-N2-Ays" id="uRC-Jq-YAj"/>
+                        <outlet property="secondImage" destination="n7n-WS-kaL" id="Kcj-hp-nfd"/>
+                        <outlet property="secondSoketLabel" destination="q3L-Ut-Ezg" id="Vm9-9n-FGB"/>
+                        <outlet property="secondSoketType" destination="y64-Yi-Wrt" id="xtI-jw-gzk"/>
+                        <outlet property="secondView" destination="7wi-wd-Jzv" id="UXq-dD-7QA"/>
+                        <outlet property="stationTypeLabel" destination="zxZ-TG-stl" id="PS2-mb-PTC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLs-oV-lcu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2637" y="-723"/>
+            <point key="canvasLocation" x="2635.8778625954196" y="-723.23943661971839"/>
         </scene>
         <!--Nearest StationVC-->
         <scene sceneID="HbC-HF-v7e">
@@ -259,6 +383,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ChargeStation" width="426.66665649414062" height="240"/>
         <image name="Onboarding" width="1120" height="1680"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
