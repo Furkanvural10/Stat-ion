@@ -189,7 +189,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="392" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="rK3-gZ-WrT">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="C4w-5B-JNH"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="C4w-5B-JNH">
+                                            <connections>
+                                                <action selector="openMaps:" destination="Gwq-Cm-iFA" id="FhY-g7-yr0"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

@@ -81,6 +81,15 @@ class StationDetailVC: UIViewController {
     }
     
 
-
+    @IBAction func openMaps(_ sender: Any) {
+        let latitude = stationDetail?.geopoint.latitude
+        let longitude = stationDetail?.geopoint.longitude
+        
+        let urlString = "http://maps.apple.com/?daddr=\(latitude!),\(longitude!)&dirflg=d"
+        if let url = URL(string: urlString){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
 
 }

@@ -17,9 +17,17 @@ class OnboardingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startAnimation()
         checkOnboardingPageSeen()
         configureOnboardingView()
         configureMapView()
+    }
+    
+    func startAnimation(){
+        UIView.animate(withDuration: 1.5, delay: 0) {
+            self.onboardingImageView.alpha = 0
+            self.mainView.alpha = 0
+        }
     }
     
      func checkOnboardingPageSeen(){
