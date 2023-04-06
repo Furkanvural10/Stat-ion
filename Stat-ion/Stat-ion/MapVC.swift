@@ -1,10 +1,3 @@
-//
-//  MapVC.swift
-//  Stat-ion
-//
-//  Created by furkan vural on 2.04.2023.
-//
-
 import UIKit
 import CoreLocation
 import MapKit
@@ -23,6 +16,11 @@ class MapVC: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var stationFabIcon: UIButton!
     var station: Station?
     var stationList = [Station]()
+    var nearStation = [Station]()
+    var selectedStation: Station?
+    var distanceKM = [Double]() // km
+    var oneDistanceKM: Double?
+    
     
     
     @IBOutlet weak var showCurrentLocationButton: UIButton!
@@ -119,9 +117,11 @@ class MapVC: UIViewController, MKMapViewDelegate {
     @objc private func showStationDetail(){
         if let stationDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "stationDetailVC") as? StationDetailVC{
             if let sheet = stationDetailVC.sheetPresentationController{
-                sheet.detents = [.medium(), .large()]
+                sheet.detents = [.medium()]
                 sheet.preferredCornerRadius = 15
             }
+            stationDetailVC.stationDetail = selectedStation
+            stationDetailVC.distance = oneDistanceKM
             self.navigationController?.present(stationDetailVC, animated: true)
         }
         
@@ -140,7 +140,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
         
         
         //MARK: - Finding Near Station from filteredAnnotationsList and Add nearStation
-        var nearStation = [Station]()
+        
         for anotation in filteredAnnotations{
             for i in stationList{
                 if anotation.coordinate.longitude == i.geopoint.longitude{
@@ -153,7 +153,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
         }
         
         // MARK: - Find nearestDistance
-        var distanceKM = [Double]() // km
+        
         for chargeStation in nearStation{
             let annotationLocation = CLLocation(latitude: chargeStation.geopoint.latitude, longitude: chargeStation.geopoint.longitude)
             let distance = annotationLocation.distance(from: userLocation!) / 1000.0
@@ -177,9 +177,6 @@ class MapVC: UIViewController, MKMapViewDelegate {
         }
         
     }
-    
-   
-    
     
 }
 
@@ -217,6 +214,23 @@ extension MapVC: CLLocationManagerDelegate{
             self.stationMapView.setRegion(region, animated: true)
             self.userLocation = locations.last
             locationManager.stopUpdatingLocation()
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let annotation = view.annotation {
+               let latitude = annotation.coordinate.latitude
+               let longitude = annotation.coordinate.longitude
+               
+            for station in stationList{
+                if station.geopoint.latitude == latitude && station.geopoint.longitude == longitude{
+                    self.selectedStation = station
+                    break
+                }
+            }
+           }
+        
+        
+        
     }
     
     

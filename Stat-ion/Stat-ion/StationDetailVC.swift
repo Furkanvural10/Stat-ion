@@ -13,6 +13,7 @@ class StationDetailVC: UIViewController {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     
+    @IBOutlet weak var distanceView: UIView!
     @IBOutlet weak var carItem: UIBarButtonItem!
     @IBOutlet weak var stationTypeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -25,6 +26,9 @@ class StationDetailVC: UIViewController {
     @IBOutlet weak var firstSoketType: UILabel!
     @IBOutlet weak var secondSoketType: UILabel!
     
+    var stationDetail: Station?
+    var distance : Double?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,14 +37,16 @@ class StationDetailVC: UIViewController {
     }
     
     private func configurationView(){
-        self.navigationBar.topItem?.title = "İstasyonun İsmi"
+        self.navigationBar.topItem?.title = stationDetail?.stationName
         self.carItem.image = UIImage(systemName: "car.fill")
-        self.stationTypeLabel.text = "Station Type: N22"
+        self.stationTypeLabel.text = "Station Type: \(stationDetail!.stationType)"
         self.stationTypeLabel.font = .systemFont(ofSize: 14)
         self.stationTypeLabel.alpha = 0.8
         
+        self.distanceView.layer.cornerRadius = 5
+        self.distanceView.backgroundColor = .systemBlue
         self.distanceLabel.text = "12.4 KM"
-        self.distanceLabel.alpha = 0.8
+        self.distanceLabel.textColor = .white
         self.distanceLabel.font = .systemFont(ofSize: 14)
         
         self.firstView.layer.cornerRadius = 10
@@ -51,10 +57,12 @@ class StationDetailVC: UIViewController {
         self.secondSoketLabel.text = "Soket-2"
         self.secondSoketLabel.textColor = .black
         
-        let text = "380 V, 32 A, 3 Faz AC"
-        let replaceText = text.replacingOccurrences(of: ", ", with: "\n•")
-        self.firstSoketType.text = "•\(replaceText)"
-        self.secondSoketType.text = "•\(replaceText)"
+        let soket1 = stationDetail?.soket1
+        let soket2 = stationDetail?.soket2
+        let replaceTextSoket1 = soket1!.replacingOccurrences(of: ", ", with: "\n•")
+        let replaceTextSoket2 = soket2!.replacingOccurrences(of: ", ", with: "\n•")
+        self.firstSoketType.text = "•\(replaceTextSoket1)"
+        self.secondSoketType.text = "•\(replaceTextSoket2)"
         self.firstSoketType.numberOfLines = 0
         self.secondSoketType.numberOfLines = 0
         
