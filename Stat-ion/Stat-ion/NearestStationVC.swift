@@ -1,9 +1,3 @@
-//
-//  NearestStationVC.swift
-//  Stat-ion
-//
-//  Created by furkan vural on 5.04.2023.
-//
 
 import UIKit
 import FirebaseFirestore
@@ -20,7 +14,6 @@ class NearestStationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configurationView()
         zipTwoArray()
     }
@@ -29,8 +22,6 @@ class NearestStationVC: UIViewController {
         nearestStationTableView.delegate = self
         nearestStationTableView.dataSource = self
         nearestStationPageTitle.topItem?.title = "En Yakın İstasyonlar"
-        
-        
     }
     
     private func zipTwoArray(){
@@ -49,8 +40,6 @@ class NearestStationVC: UIViewController {
         }
         
     }
-    
-
 
 }
 
@@ -77,11 +66,7 @@ extension NearestStationVC: UITableViewDelegate, UITableViewDataSource{
         if let url = URL(string: urlString){
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
-      
     }
-    
-    
-    
 }
 
 struct NearestStation {

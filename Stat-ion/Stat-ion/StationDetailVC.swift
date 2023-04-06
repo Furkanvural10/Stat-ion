@@ -31,8 +31,6 @@ class StationDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         configurationView()
     }
     
@@ -40,7 +38,6 @@ class StationDetailVC: UIViewController {
         
         let isSocket1Exist = stationDetail?.soket1 == "-" ? false : true
         let isSocket2Exist = stationDetail?.soket2 == "-" ? false : true
-        
         
         self.navigationBar.topItem?.title = stationDetail?.stationName
         self.carItem.image = UIImage(systemName: "car.fill")
@@ -63,9 +60,7 @@ class StationDetailVC: UIViewController {
         self.secondSoketLabel.text = "Soket-2"
         self.secondSoketLabel.font = .systemFont(ofSize: 15)
         self.secondSoketLabel.textColor = isSocket2Exist ? .black : .white
-        
-        
-        
+ 
         self.firstView.backgroundColor = isSocket1Exist  ? .systemGreen : .systemGray5
         self.secondView.backgroundColor = isSocket2Exist ? .systemGreen : .systemGray5
         let soket1 = isSocket1Exist ? stationDetail?.soket1 : "Mevcut Değil"
@@ -76,13 +71,11 @@ class StationDetailVC: UIViewController {
         self.secondSoketType.text = "•\(replaceTextSoket2)"
         self.firstSoketType.numberOfLines = 0
         self.secondSoketType.numberOfLines = 0
-        
-        
+ 
         self.firstSoketType.alpha = 0.9
         self.secondSoketType.alpha = 0.9
     }
     
-
     @IBAction func openMaps(_ sender: Any) {
         let latitude = stationDetail?.geopoint.latitude
         let longitude = stationDetail?.geopoint.longitude
@@ -92,6 +85,4 @@ class StationDetailVC: UIViewController {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-    
-
 }

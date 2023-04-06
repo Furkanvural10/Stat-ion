@@ -20,21 +20,15 @@ class MapVC: UIViewController, MKMapViewDelegate {
     var selectedStation: Station?
     var distanceKM = [Double]() // km
     var oneDistanceKM: Double?
-    
-    
-    
     @IBOutlet weak var showCurrentLocationButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configurationView()
         animation()
-        
         createUser()
         getStation()
-        
     }
     
     private func createUser(){
@@ -42,7 +36,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
         if currentUser == nil {
             Auth.auth().signInAnonymously { data, error in
                 if error != nil{
-                    print("SHOW Error")
+                    #warning("Show error message")
                 }
             }
         }
@@ -51,11 +45,9 @@ class MapVC: UIViewController, MKMapViewDelegate {
     func getStation(){
         
         let database = Firestore.firestore()
-        let collection = database.collection("stationDetail").getDocuments{ querySnapshot, error in
+        let _ = database.collection("stationDetail").getDocuments{ querySnapshot, error in
             if error == nil {
-                
                 for document in querySnapshot!.documents{
-                    
                     let geopoint = document.get("coordinate") as! GeoPoint
                     let stationName = document.get("stationName") as! String
                     let stationType = document.get("stationType") as! String
@@ -145,11 +137,8 @@ class MapVC: UIViewController, MKMapViewDelegate {
             for i in stationList{
                 if anotation.coordinate.longitude == i.geopoint.longitude{
                     nearStation.append(i)
-                    
                 }
             }
-            
-            
         }
         
         // MARK: - Find nearestDistance
@@ -158,9 +147,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
             let annotationLocation = CLLocation(latitude: chargeStation.geopoint.latitude, longitude: chargeStation.geopoint.longitude)
             let distance = annotationLocation.distance(from: userLocation!) / 1000.0
             distanceKM.append((distance * 10).rounded() / 10)
-            
         }
-        
         openNearestStationCustomSheet(choosedStations: nearStation, distanceKM: distanceKM)
     }
     
@@ -172,10 +159,8 @@ class MapVC: UIViewController, MKMapViewDelegate {
             }
             nearestStationVC.station = choosedStations
             nearestStationVC.distanceKM = distanceKM
-            
             self.navigationController?.present(nearestStationVC, animated: true)
         }
-        
     }
     
 }
@@ -229,20 +214,11 @@ extension MapVC: CLLocationManagerDelegate{
             }
         }
         
-        
         let annotationLocation = CLLocation(latitude: selectedStation!.geopoint.latitude, longitude: selectedStation!.geopoint.longitude)
         var distance = annotationLocation.distance(from: userLocation!) / 1000
         distance = (distance * 10).rounded() / 10
         self.oneDistanceKM = distance
-            
-        
-        
-        
-        
-        
     }
-    
-    
 }
 
 struct Station {
