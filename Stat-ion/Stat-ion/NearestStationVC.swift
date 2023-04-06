@@ -70,7 +70,13 @@ extension NearestStationVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.nearestStation![indexPath.row].stationName)
+        //MARK: - Open Navigation
+        let latitude = station![indexPath.row].geopoint.latitude
+        let longitude = station![indexPath.row].geopoint.longitude
+        let urlString = "http://maps.apple.com/?daddr=\(latitude),\(longitude)&dirflg=d"
+        if let url = URL(string: urlString){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     
     
