@@ -206,8 +206,8 @@ extension MapVC: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let latitude = locations[0].coordinate.latitude
             let longitude = locations[0].coordinate.longitude
-            let latitudeDelta = 0.01
-            let longitudeDelta = 0.01
+            let latitudeDelta = 0.1
+            let longitudeDelta = 0.1
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             let span = MKCoordinateSpan(latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta)
             let region = MKCoordinateRegion(center: coordinate, span: span)

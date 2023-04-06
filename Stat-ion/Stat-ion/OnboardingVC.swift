@@ -24,10 +24,14 @@ class OnboardingVC: UIViewController {
     }
     
     func startAnimation(){
-        UIView.animate(withDuration: 1.5, delay: 0) {
+        UIView.animate(withDuration: 1, delay: 0) {
             self.onboardingImageView.alpha = 0
             self.mainView.alpha = 0
+        } completion: { _ in
+                self.onboardingImageView.alpha = 1
+                self.mainView.alpha = 1
         }
+
     }
     
      func checkOnboardingPageSeen(){

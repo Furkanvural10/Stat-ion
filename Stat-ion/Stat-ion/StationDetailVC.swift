@@ -58,8 +58,10 @@ class StationDetailVC: UIViewController {
         self.secondView.layer.cornerRadius = 10
         
         self.firstSoketLabel.text = "Soket-1"
+        self.firstSoketLabel.font = .systemFont(ofSize: 15)
         self.firstSoketLabel.textColor = isSocket1Exist ? .black : .white
         self.secondSoketLabel.text = "Soket-2"
+        self.secondSoketLabel.font = .systemFont(ofSize: 15)
         self.secondSoketLabel.textColor = isSocket2Exist ? .black : .white
         
         
