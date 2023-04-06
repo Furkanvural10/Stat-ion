@@ -20,7 +20,7 @@ class NearestStationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        overrideUserInterfaceStyle = .light
+        
         configurationView()
         zipTwoArray()
     }

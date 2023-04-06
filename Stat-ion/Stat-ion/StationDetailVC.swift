@@ -37,6 +37,11 @@ class StationDetailVC: UIViewController {
     }
     
     private func configurationView(){
+        
+        let isSocket1Exist = stationDetail?.soket1 == "-" ? false : true
+        let isSocket2Exist = stationDetail?.soket2 == "-" ? false : true
+        
+        
         self.navigationBar.topItem?.title = stationDetail?.stationName
         self.carItem.image = UIImage(systemName: "car.fill")
         self.stationTypeLabel.text = "Station Type: \(stationDetail!.stationType)"
@@ -53,12 +58,16 @@ class StationDetailVC: UIViewController {
         self.secondView.layer.cornerRadius = 10
         
         self.firstSoketLabel.text = "Soket-1"
-        self.firstSoketLabel.textColor = .black
+        self.firstSoketLabel.textColor = isSocket1Exist ? .black : .white
         self.secondSoketLabel.text = "Soket-2"
-        self.secondSoketLabel.textColor = .black
+        self.secondSoketLabel.textColor = isSocket2Exist ? .black : .white
         
-        let soket1 = stationDetail?.soket1
-        let soket2 = stationDetail?.soket2
+        
+        
+        self.firstView.backgroundColor = isSocket1Exist  ? .systemGreen : .systemGray5
+        self.secondView.backgroundColor = isSocket2Exist ? .systemGreen : .systemGray5
+        let soket1 = isSocket1Exist ? stationDetail?.soket1 : "Mevcut Değil"
+        let soket2 = isSocket2Exist ? stationDetail?.soket2 : "Mevcut Değil"
         let replaceTextSoket1 = soket1!.replacingOccurrences(of: ", ", with: "\n•")
         let replaceTextSoket2 = soket2!.replacingOccurrences(of: ", ", with: "\n•")
         self.firstSoketType.text = "•\(replaceTextSoket1)"
