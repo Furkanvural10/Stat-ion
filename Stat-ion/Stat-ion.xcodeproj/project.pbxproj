@@ -55,6 +55,7 @@
 		0415768529DF882500CBA586 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				0415768829DF892F00CBA586 /* Home */,
 				0415768629DF88C000CBA586 /* Authentications */,
 			);
 			path = Features;
@@ -74,6 +75,14 @@
 				0425B92C29D795140057E31C /* OnboardingVC.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		0415768829DF892F00CBA586 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0425B93F29D9B7640057E31C /* MapVC.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		0425B91C29D795140057E31C = {
@@ -100,7 +109,6 @@
 				0415768529DF882500CBA586 /* Features */,
 				0425B92829D795140057E31C /* AppDelegate.swift */,
 				0425B92A29D795140057E31C /* SceneDelegate.swift */,
-				0425B93F29D9B7640057E31C /* MapVC.swift */,
 				0415768129DB1B0600CBA586 /* StationDetailVC.swift */,
 				0415768329DCDDE300CBA586 /* NearestStationVC.swift */,
 				0425B92E29D795140057E31C /* Main.storyboard */,
