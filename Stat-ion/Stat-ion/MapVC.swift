@@ -227,7 +227,16 @@ extension MapVC: CLLocationManagerDelegate{
                     break
                 }
             }
-           }
+        }
+        
+        
+        let annotationLocation = CLLocation(latitude: selectedStation!.geopoint.latitude, longitude: selectedStation!.geopoint.longitude)
+        var distance = annotationLocation.distance(from: userLocation!) / 1000
+        distance = (distance * 10).rounded() / 10
+        self.oneDistanceKM = distance
+            
+        
+        
         
         
         

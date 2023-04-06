@@ -45,7 +45,7 @@ class StationDetailVC: UIViewController {
         
         self.distanceView.layer.cornerRadius = 5
         self.distanceView.backgroundColor = .systemBlue
-        self.distanceLabel.text = "12.4 KM"
+        self.distanceLabel.text = "\(self.distance!) KM"
         self.distanceLabel.textColor = .white
         self.distanceLabel.font = .systemFont(ofSize: 14)
         
