@@ -52,6 +52,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0415768529DF882500CBA586 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0415768629DF88C000CBA586 /* Authentications */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		0415768629DF88C000CBA586 /* Authentications */ = {
+			isa = PBXGroup;
+			children = (
+				0415768729DF88D800CBA586 /* Onboarding */,
+			);
+			path = Authentications;
+			sourceTree = "<group>";
+		};
+		0415768729DF88D800CBA586 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0425B92C29D795140057E31C /* OnboardingVC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		0425B91C29D795140057E31C = {
 			isa = PBXGroup;
 			children = (
@@ -73,9 +97,9 @@
 		0425B92729D795140057E31C /* Stat-ion */ = {
 			isa = PBXGroup;
 			children = (
+				0415768529DF882500CBA586 /* Features */,
 				0425B92829D795140057E31C /* AppDelegate.swift */,
 				0425B92A29D795140057E31C /* SceneDelegate.swift */,
-				0425B92C29D795140057E31C /* OnboardingVC.swift */,
 				0425B93F29D9B7640057E31C /* MapVC.swift */,
 				0415768129DB1B0600CBA586 /* StationDetailVC.swift */,
 				0415768329DCDDE300CBA586 /* NearestStationVC.swift */,
