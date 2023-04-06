@@ -95,6 +95,42 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		0415768A29DF8A7700CBA586 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		0415768B29DF8A8C00CBA586 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0415768C29DF8AA400CBA586 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		0415768D29DF8ADB00CBA586 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0415768E29DF8AF500CBA586 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0425B93429D795150057E31C /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		0425B91C29D795140057E31C = {
 			isa = PBXGroup;
 			children = (
@@ -116,11 +152,15 @@
 		0425B92729D795140057E31C /* Stat-ion */ = {
 			isa = PBXGroup;
 			children = (
+				0415768E29DF8AF500CBA586 /* Images */,
+				0415768D29DF8ADB00CBA586 /* Models */,
+				0415768C29DF8AA400CBA586 /* CustomUI */,
+				0415768B29DF8A8C00CBA586 /* Extensions */,
+				0415768A29DF8A7700CBA586 /* Firebase */,
 				0415768529DF882500CBA586 /* Features */,
 				0425B92829D795140057E31C /* AppDelegate.swift */,
 				0425B92A29D795140057E31C /* SceneDelegate.swift */,
 				0425B92E29D795140057E31C /* Main.storyboard */,
-				0425B93429D795150057E31C /* Assets.xcassets */,
 				0425B93629D795150057E31C /* LaunchScreen.storyboard */,
 				0425B93929D795150057E31C /* Info.plist */,
 				0415767F29DA368700CBA586 /* GoogleService-Info.plist */,
