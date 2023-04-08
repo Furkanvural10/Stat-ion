@@ -19,6 +19,16 @@ struct Alert {
         }
     }
     
+    static func showFirebaseLoginError(on vc: UIViewController, with title: String, message: String){
+        showBasicAlert(on: vc, with: title, message: message)
+    }
     
+    static func showFirebaseGetDataError(on vc: UIViewController, with title: String, message: String){
+        showBasicAlert(on: vc, with: title, message: message)
+    }
+    
+    static func showAlert(on vc: UIViewController, with title: String, message: String){
+        showBasicAlert(on: vc, with: title, message: message)
+    }
     
 }
