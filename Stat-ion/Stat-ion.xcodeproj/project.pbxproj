@@ -13,6 +13,7 @@
 		0415769029E1ACD000CBA586 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415768F29E1ACD000CBA586 /* Station.swift */; };
 		0415769229E1ACE900CBA586 /* NearestStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415769129E1ACE900CBA586 /* NearestStation.swift */; };
 		0415769429E1B6CD00CBA586 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415769329E1B6CD00CBA586 /* Alert.swift */; };
+		0415769629E1C3D500CBA586 /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415769529E1C3D500CBA586 /* Maps.swift */; };
 		0425B92929D795140057E31C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92829D795140057E31C /* AppDelegate.swift */; };
 		0425B92B29D795140057E31C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92A29D795140057E31C /* SceneDelegate.swift */; };
 		0425B92D29D795140057E31C /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92C29D795140057E31C /* OnboardingVC.swift */; };
@@ -31,6 +32,7 @@
 		0415768F29E1ACD000CBA586 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		0415769129E1ACE900CBA586 /* NearestStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStation.swift; sourceTree = "<group>"; };
 		0415769329E1B6CD00CBA586 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		0415769529E1C3D500CBA586 /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		0425B92529D795140057E31C /* Stat-ion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stat-ion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0425B92829D795140057E31C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0425B92A29D795140057E31C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				0415769329E1B6CD00CBA586 /* Alert.swift */,
+				0415769529E1C3D500CBA586 /* Maps.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				0425B93329D795140057E31C /* Stat_ion.xcdatamodeld in Sources */,
 				0415768429DCDDE300CBA586 /* NearestStationVC.swift in Sources */,
 				0415769229E1ACE900CBA586 /* NearestStation.swift in Sources */,
+				0415769629E1C3D500CBA586 /* Maps.swift in Sources */,
 				0415769429E1B6CD00CBA586 /* Alert.swift in Sources */,
 				0425B92B29D795140057E31C /* SceneDelegate.swift in Sources */,
 			);
