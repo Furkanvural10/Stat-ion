@@ -77,6 +77,6 @@ class StationDetailVC: UIViewController {
     }
     
     @IBAction func openMaps(_ sender: Any) {
-        Maps.openMaps(station: stationDetail!)
+        Maps.openMapsFromStationDetailVC(station: stationDetail!)
     }
 }
