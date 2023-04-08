@@ -10,6 +10,8 @@
 		0415768029DA368700CBA586 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0415767F29DA368700CBA586 /* GoogleService-Info.plist */; };
 		0415768229DB1B0600CBA586 /* StationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415768129DB1B0600CBA586 /* StationDetailVC.swift */; };
 		0415768429DCDDE300CBA586 /* NearestStationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415768329DCDDE300CBA586 /* NearestStationVC.swift */; };
+		0415769029E1ACD000CBA586 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415768F29E1ACD000CBA586 /* Station.swift */; };
+		0415769229E1ACE900CBA586 /* NearestStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415769129E1ACE900CBA586 /* NearestStation.swift */; };
 		0425B92929D795140057E31C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92829D795140057E31C /* AppDelegate.swift */; };
 		0425B92B29D795140057E31C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92A29D795140057E31C /* SceneDelegate.swift */; };
 		0425B92D29D795140057E31C /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92C29D795140057E31C /* OnboardingVC.swift */; };
@@ -25,6 +27,8 @@
 		0415767F29DA368700CBA586 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0415768129DB1B0600CBA586 /* StationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailVC.swift; sourceTree = "<group>"; };
 		0415768329DCDDE300CBA586 /* NearestStationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStationVC.swift; sourceTree = "<group>"; };
+		0415768F29E1ACD000CBA586 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		0415769129E1ACE900CBA586 /* NearestStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStation.swift; sourceTree = "<group>"; };
 		0425B92529D795140057E31C /* Stat-ion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stat-ion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0425B92829D795140057E31C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0425B92A29D795140057E31C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 		0415768D29DF8ADB00CBA586 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0415768F29E1ACD000CBA586 /* Station.swift */,
+				0415769129E1ACE900CBA586 /* NearestStation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,10 +310,12 @@
 			files = (
 				0415768229DB1B0600CBA586 /* StationDetailVC.swift in Sources */,
 				0425B94029D9B7640057E31C /* MapVC.swift in Sources */,
+				0415769029E1ACD000CBA586 /* Station.swift in Sources */,
 				0425B92D29D795140057E31C /* OnboardingVC.swift in Sources */,
 				0425B92929D795140057E31C /* AppDelegate.swift in Sources */,
 				0425B93329D795140057E31C /* Stat_ion.xcdatamodeld in Sources */,
 				0415768429DCDDE300CBA586 /* NearestStationVC.swift in Sources */,
+				0415769229E1ACE900CBA586 /* NearestStation.swift in Sources */,
 				0425B92B29D795140057E31C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
