@@ -33,16 +33,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
         getStation()
     }
     
-    private func createUser(){
-        let currentUser = Auth.auth().currentUser
-        if currentUser == nil {
-            Auth.auth().signInAnonymously { data, error in
-                if error != nil{
-                    Alert.showFirebaseLoginError(on: self, with: Text.errorTitle, message: error!.localizedDescription)
-                }
-            }
-        }
-    }
+    private func createUser(){FirebaseUserCreateFunction().createUser(on: self)}
     
     func getStation(){
         

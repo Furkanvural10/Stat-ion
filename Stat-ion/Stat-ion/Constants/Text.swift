@@ -12,6 +12,7 @@ struct Text {
     static let soket2 = "Soket-2"
     static let notExist = "Mevcut Değil"
     static let errorTitle = "Hata"
+    static let errorMessageLogIn = "Beklenmedik bir hata olustu."
 }
 
 
