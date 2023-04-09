@@ -10,7 +10,6 @@ import CoreLocation
 import MapKit
 
 struct StationFilter {
-    
      // MARK: Filter stations around userLocation 5km
      static func getFilteredStation(annotationList: [MKPointAnnotation], userLocation: CLLocation?, stationList: [Station], nearStation: inout [Station], distanceKM: inout [Double]) -> ([Station], [Double]){
          
@@ -34,8 +33,6 @@ struct StationFilter {
             let distance            = annotationLocation.distance(from: userLocation!) / 1000.0
             distanceKM.append((distance * 10).rounded() / 10)
         }
-        
          return (nearStation, distanceKM)
     }
-    
 }

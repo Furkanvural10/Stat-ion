@@ -4,8 +4,6 @@ import MapKit
 import FirebaseAuth
 import FirebaseFirestore
 
-
-
 class MapVC: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var stationMapView: MKMapView!
@@ -74,16 +72,13 @@ class MapVC: UIViewController, MKMapViewDelegate {
             self.stationMapView.alpha = Alpha.alpha
         }
     }
-    @IBAction func showCurrentLocation(_ sender: Any) {
-        locationManager.startUpdatingLocation()
-        
-    }
+    @IBAction func showCurrentLocation(_ sender: Any) {locationManager.startUpdatingLocation()}
     
     @objc private func showStationDetail(){
         SheetPresent.sheetPresentView(vc: self, identifier: "stationDetailVC", selectedStation: selectedStation!, distance: oneDistanceKM!)}
     
     @IBAction func showStations(_ sender: Any) {
-        var result = StationFilter.getFilteredStation(annotationList: annotations, userLocation: userLocation!, stationList: stationList, nearStation: &nearStation, distanceKM: &distanceKM)
+        let result = StationFilter.getFilteredStation(annotationList: annotations, userLocation: userLocation!, stationList: stationList, nearStation: &nearStation, distanceKM: &distanceKM)
         
         SheetPresent.sheetPresentNearestView(vc: self, identifier: "nearestStationVC", choosedStations: result.0, distanceKM: result.1)
     }
@@ -105,7 +100,6 @@ extension MapVC: CLLocationManagerDelegate{
         
         annotationView?.image = Images.stationAnotation
         annotationView?.contentMode = .scaleAspectFit
-        
         return annotationView
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -138,6 +132,3 @@ extension MapVC: CLLocationManagerDelegate{
         self.oneDistanceKM = distance
     }
 }
-
-
-

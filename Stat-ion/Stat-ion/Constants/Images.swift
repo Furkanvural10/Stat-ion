@@ -7,4 +7,5 @@ struct Images {
     static let stationAssetImage = UIImage(named: "Station")
     static let locationFill      = UIImage(systemName: "location.fill")
     static let stationAnotation  = UIImage(named: "StationAnotation")
+    static let onboarding        = UIImage(named: "Onboarding")
 }

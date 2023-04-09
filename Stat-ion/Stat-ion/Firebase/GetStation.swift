@@ -16,8 +16,8 @@ struct FirebaseGetStation {
         var station : Station?
         var stationList = [Station]()
         
-            let database = Firestore.firestore()
-            let _ = database.collection(FirebaseText.collectionStationDetail).getDocuments{ querySnapshot, error in
+        let database = Firestore.firestore()
+        let _ = database.collection(FirebaseText.collectionStationDetail).getDocuments{ querySnapshot, error in
             if error == nil {
                 for document in querySnapshot!.documents{
                     let geopoint    = document.get(FirebaseText.coordinate) as! GeoPoint
@@ -28,11 +28,9 @@ struct FirebaseGetStation {
                     
                     station    = Station(stationName: stationName, stationType: stationType, soket1: soket1, soket2: soket2, geopoint: geopoint)
                     stationList.append(station!)
-                    
                 }
                 completion(stationList)
             }
         }
-        
     }
 }

@@ -20,4 +20,10 @@ struct Radius {
     static let cornerRadius13 : CGFloat  = 13
     static let cornerRadius14 : CGFloat  = 14
     static let cornerRadius15 : CGFloat  = 15
+    static let cornerRadius16 : CGFloat  = 16
+    static let cornerRadius17 : CGFloat  = 17
+    static let cornerRadius18 : CGFloat  = 18
+    static let cornerRadius19 : CGFloat  = 19
+    static let cornerRadius20 : CGFloat  = 20
+    static let cornerRadius25 : CGFloat  = 25
 }

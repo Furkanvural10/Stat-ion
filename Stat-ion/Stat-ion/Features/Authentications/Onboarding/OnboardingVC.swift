@@ -17,8 +17,8 @@ class OnboardingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startAnimation()
-        checkOnboardingPageSeen()
+//        startAnimation()
+//        checkOnboardingPageSeen()
         configureOnboardingView()
         configureMapView()
     }
@@ -34,25 +34,28 @@ class OnboardingVC: UIViewController {
 
     }
     
-     func checkOnboardingPageSeen(){
-        
-         let result = UserDefaults.standard.object(forKey: "onboardingSeen")
-         if (result as? Bool) != nil {
-             self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
-         }
-    }
+//     func checkOnboardingPageSeen(){
+//
+//         let result = UserDefaults.standard.object(forKey: "onboardingSeen")
+//         if (result as? Bool) != nil {
+//             self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
+//         }
+//    }
     
-    fileprivate func labelConfig(_ labelColor: UIColor, _ fontSize: CGFloat, _ temporaryText: String) {
+    fileprivate func labelConfig(_ labelColor: UIColor, _ fontSize: CGFloat) {
         //MARK: - Labels Config
         self.firstLabel.textColor = labelColor
         self.firstLabel.font = .boldSystemFont(ofSize: fontSize)
-        self.firstLabel.text = temporaryText
+        self.firstLabel.text = Text.onboardingFirstLabel
+        self.firstLabel.adjustsFontSizeToFitWidth = true
         self.secondLabel.textColor = labelColor
         self.secondLabel.font = .boldSystemFont(ofSize: fontSize)
-        self.secondLabel.text = temporaryText
+        self.secondLabel.text = Text.onboardingSecondLabel
+        self.secondLabel.adjustsFontSizeToFitWidth = true
         self.thirdLabel.textColor = labelColor
         self.thirdLabel.font = .boldSystemFont(ofSize: fontSize)
-        self.thirdLabel.text = temporaryText
+        self.thirdLabel.adjustsFontSizeToFitWidth = true
+        self.thirdLabel.text = Text.onbardingThirdLabel
     }
     fileprivate func mapViewConfig(_ cornerRadius: CGFloat) {
         //MARK: - MapView Config
@@ -64,28 +67,27 @@ class OnboardingVC: UIViewController {
     }
     fileprivate func imageViewConfig() {
         //MARK: - ImageView Config
-        self.onboardingImageView.image = UIImage(named: "Onboarding")
+        self.onboardingImageView.image = Images.onboarding
         self.onboardingImageView.contentMode = .scaleToFill
         let overlay = UIView(frame: onboardingImageView.bounds)
         overlay.backgroundColor = UIColor.black
-        overlay.alpha = 0.4
+        overlay.alpha = Alpha.alpha04
         onboardingImageView.addSubview(overlay)
     }
     fileprivate func startButtonConfig() {
         //MARK: - StartButton Config
         self.startButton.tintColor = .black
-        self.startButton.setTitle("Başla", for: .normal)
+        self.startButton.setTitle(Text.startOnboardingTitle, for: .normal)
     }
     
     private func configureOnboardingView(){
-        let cornerRadius: CGFloat = 20
-        let fontSize: CGFloat = 25
+        let cornerRadius: CGFloat = Radius.cornerRadius20
+        let fontSize: CGFloat = Radius.cornerRadius25
         let labelColor: UIColor = .white
-        let temporaryText = "Lorem Ipsum Der Ao"
         
         imageViewConfig()
         mapViewConfig(cornerRadius)
-        labelConfig(labelColor, fontSize, temporaryText)
+        labelConfig(labelColor, fontSize)
         startButtonConfig()
         
         
@@ -101,11 +103,11 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func upMovedLabelTransformLabel() {
-        self.firstLabel.alpha = 0
+        self.firstLabel.alpha = Alpha.alpha0
         self.firstLabel.transform = CGAffineTransform(translationX: 0, y: -100)
-        self.secondLabel.alpha = 0
+        self.secondLabel.alpha = Alpha.alpha0
         self.secondLabel.transform = CGAffineTransform(translationX: 0, y: -100)
-        self.thirdLabel.alpha = 0
+        self.thirdLabel.alpha = Alpha.alpha0
         self.thirdLabel.transform = CGAffineTransform(translationX: 0, y: -100)
     }
     fileprivate func leftMovedTransformLabel() {
@@ -114,8 +116,8 @@ class OnboardingVC: UIViewController {
         self.thirdLabel.transform = CGAffineTransform(translationX: -10, y: 0)
     }
     fileprivate func upMovedMapAndButton() {
-        self.mapView.alpha = 0
-        self.startButton.alpha = 0
+        self.mapView.alpha = Alpha.alpha0
+        self.startButton.alpha = Alpha.alpha0
         self.mapView.transform = CGAffineTransform(translationX: 0, y: 100)
         self.startButton.transform = CGAffineTransform(translationX: 0, y: 100)
     }
@@ -132,7 +134,7 @@ class OnboardingVC: UIViewController {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 6, initialSpringVelocity: 6, options: .curveEaseOut) {
                 self.upMovedLabelTransformLabel()
                 self.upMovedMapAndButton()
-                self.onboardingImageView.alpha = 0
+                self.onboardingImageView.alpha = Alpha.alpha0
             } completion: { _ in
                 self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
             }
@@ -140,7 +142,6 @@ class OnboardingVC: UIViewController {
     }
     
     @IBAction func startButton(_ sender: Any) {
-        
         animation()
         UserDefaults.standard.set(true, forKey: "onboardingSeen")
     }
@@ -150,8 +151,8 @@ extension OnboardingVC: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let latitude = locations[0].coordinate.latitude
         let longitude = locations[0].coordinate.longitude
-        let spanLatitudeDelta = 0.1
-        let spanLongitudeDelta = 0.1
+        let spanLatitudeDelta = ValueInteger.zoomLatitudeDelta
+        let spanLongitudeDelta = ValueInteger.zoomLongitudeDelta
         let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let span = MKCoordinateSpan(latitudeDelta: spanLatitudeDelta, longitudeDelta: spanLongitudeDelta)
         let region = MKCoordinateRegion(center: location, span: span)

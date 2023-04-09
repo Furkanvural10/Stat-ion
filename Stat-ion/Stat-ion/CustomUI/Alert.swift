@@ -30,5 +30,4 @@ struct Alert {
     static func showAlert(on vc: UIViewController, with title: String, message: String){
         showBasicAlert(on: vc, with: title, message: message)
     }
-    
 }
