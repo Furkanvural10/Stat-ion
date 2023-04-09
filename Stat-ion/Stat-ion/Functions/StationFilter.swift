@@ -12,7 +12,7 @@ import MapKit
 struct StationFilter {
     
      // MARK: Filter stations around userLocation 5km
-     func getFilteredStation(annotationList: [MKPointAnnotation], userLocation: CLLocation?, stationList: [Station], nearStation: inout [Station], distanceKM: inout [Double]) -> ([Station], [Double]){
+     static func getFilteredStation(annotationList: [MKPointAnnotation], userLocation: CLLocation?, stationList: [Station], nearStation: inout [Station], distanceKM: inout [Double]) -> ([Station], [Double]){
          
         let maxDistance: CLLocationDistance = ValueInteger.filteringDistance // in meters
         let filteredAnnotations = annotationList.filter { annotation in
