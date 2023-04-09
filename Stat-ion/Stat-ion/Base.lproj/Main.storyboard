@@ -198,7 +198,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pL8-bg-Pxw">
-                                <rect key="frame" x="61" y="105" width="109" height="216"/>
+                                <rect key="frame" x="61" y="100" width="109" height="216"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soket-1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9c-BK-LM0">
                                         <rect key="frame" x="15" y="9.9999999999999982" width="79" height="19.333333333333329"/>
@@ -207,9 +207,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargeStation" translatesAutoresizingMaskIntoConstraints="NO" id="Pav-qw-N8S">
-                                        <rect key="frame" x="20" y="5" width="69" height="280"/>
+                                        <rect key="frame" x="20" y="5" width="69" height="275"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="280" id="lIc-Tl-oOw"/>
+                                            <constraint firstAttribute="height" constant="275" id="lIc-Tl-oOw"/>
                                             <constraint firstAttribute="width" constant="69" id="qlQ-uU-zJd"/>
                                         </constraints>
                                     </imageView>
@@ -234,7 +234,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="380 VC AC FZ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y64-Yi-Wrt">
-                                <rect key="frame" x="223" y="376" width="109" height="20.333333333333314"/>
+                                <rect key="frame" x="223" y="366" width="109" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -258,7 +258,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wi-wd-Jzv">
-                                <rect key="frame" x="223" y="105" width="109" height="216"/>
+                                <rect key="frame" x="223" y="100" width="109" height="216"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soket-2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3L-Ut-Ezg">
                                         <rect key="frame" x="15" y="9.9999999999999982" width="79" height="19.333333333333329"/>
@@ -267,9 +267,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargeStation" translatesAutoresizingMaskIntoConstraints="NO" id="n7n-WS-kaL">
-                                        <rect key="frame" x="20" y="5" width="69" height="280"/>
+                                        <rect key="frame" x="20" y="5" width="69" height="275"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="280" id="2ea-dy-ly5"/>
+                                            <constraint firstAttribute="height" constant="275" id="2ea-dy-ly5"/>
                                             <constraint firstAttribute="width" constant="69" id="3sV-Z2-FJB"/>
                                         </constraints>
                                     </imageView>
@@ -289,7 +289,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="380 VC AC FZ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h78-Rs-a1c">
-                                <rect key="frame" x="61" y="376" width="109" height="20.333333333333314"/>
+                                <rect key="frame" x="61" y="366" width="109" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -299,7 +299,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FCs-N2-Ays" firstAttribute="leading" secondItem="6U2-La-cLq" secondAttribute="leading" id="3Yw-4M-CDM"/>
-                            <constraint firstItem="h78-Rs-a1c" firstAttribute="top" secondItem="pL8-bg-Pxw" secondAttribute="bottom" constant="55" id="7Hx-jz-97K"/>
+                            <constraint firstItem="h78-Rs-a1c" firstAttribute="top" secondItem="pL8-bg-Pxw" secondAttribute="bottom" constant="50" id="7Hx-jz-97K"/>
                             <constraint firstItem="BCf-mL-Ms2" firstAttribute="top" secondItem="FCs-N2-Ays" secondAttribute="bottom" constant="10" id="A85-wj-X0P"/>
                             <constraint firstItem="dg7-nt-bau" firstAttribute="trailing" secondItem="7wi-wd-Jzv" secondAttribute="trailing" constant="61" id="OUu-cI-RzS"/>
                             <constraint firstItem="dg7-nt-bau" firstAttribute="trailing" secondItem="y64-Yi-Wrt" secondAttribute="trailing" constant="61" id="OeX-DE-1Tu"/>
@@ -307,12 +307,12 @@
                             <constraint firstItem="FCs-N2-Ays" firstAttribute="top" secondItem="6U2-La-cLq" secondAttribute="top" id="dmN-G5-6kp"/>
                             <constraint firstItem="pL8-bg-Pxw" firstAttribute="leading" secondItem="dg7-nt-bau" secondAttribute="leading" constant="61" id="lY0-3v-hxV"/>
                             <constraint firstItem="h78-Rs-a1c" firstAttribute="leading" secondItem="dg7-nt-bau" secondAttribute="leading" constant="61" id="m3U-EQ-hYd"/>
-                            <constraint firstItem="7wi-wd-Jzv" firstAttribute="top" secondItem="BCf-mL-Ms2" secondAttribute="bottom" constant="30" id="naL-C4-bGi"/>
+                            <constraint firstItem="7wi-wd-Jzv" firstAttribute="top" secondItem="BCf-mL-Ms2" secondAttribute="bottom" constant="25" id="naL-C4-bGi"/>
                             <constraint firstItem="zxZ-TG-stl" firstAttribute="leading" secondItem="dg7-nt-bau" secondAttribute="leading" constant="15" id="qVb-KO-pSw"/>
                             <constraint firstAttribute="trailing" secondItem="FCs-N2-Ays" secondAttribute="trailing" id="quj-0u-JLb"/>
                             <constraint firstItem="zxZ-TG-stl" firstAttribute="top" secondItem="FCs-N2-Ays" secondAttribute="bottom" constant="10" id="ruV-Ln-TGh"/>
-                            <constraint firstItem="y64-Yi-Wrt" firstAttribute="top" secondItem="7wi-wd-Jzv" secondAttribute="bottom" constant="55" id="tB1-1c-htH"/>
-                            <constraint firstItem="pL8-bg-Pxw" firstAttribute="top" secondItem="zxZ-TG-stl" secondAttribute="bottom" constant="30" id="vDy-vd-hGw"/>
+                            <constraint firstItem="y64-Yi-Wrt" firstAttribute="top" secondItem="7wi-wd-Jzv" secondAttribute="bottom" constant="50" id="tB1-1c-htH"/>
+                            <constraint firstItem="pL8-bg-Pxw" firstAttribute="top" secondItem="zxZ-TG-stl" secondAttribute="bottom" constant="25" id="vDy-vd-hGw"/>
                         </constraints>
                     </view>
                     <connections>

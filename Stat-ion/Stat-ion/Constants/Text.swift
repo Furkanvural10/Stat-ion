@@ -14,9 +14,9 @@ struct Text {
     static let errorTitle            = "Hata"
     static let errorMessageLogIn     = "Beklenmedik bir hata olustu."
     static let startOnboardingTitle  = "Başla"
-    static let onboardingFirstLabel  = "En Yakın Şarj İstasyonunu Bulun"
-    static let onboardingSecondLabel = "İstasyonun Özelliklerini Öğren"
-    static let onbardingThirdLabel   = "Hemen Rota Oluştur"
+    static let onboardingFirstLabel  = "• En Yakın Şarj İstasyonunu Bul"
+    static let onboardingSecondLabel = "• İstasyonun Özelliklerini Öğren"
+    static let onbardingThirdLabel   = "• Hemen Rota Oluştur"
 }
 
 
