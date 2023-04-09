@@ -22,6 +22,8 @@
 		041576A329E1F3A100CBA586 /* FirebaseText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041576A229E1F3A100CBA586 /* FirebaseText.swift */; };
 		041576A529E1F9D000CBA586 /* ValueInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041576A429E1F9D000CBA586 /* ValueInteger.swift */; };
 		041576A729E1FE6100CBA586 /* CreatingUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041576A629E1FE6100CBA586 /* CreatingUser.swift */; };
+		041576A929E2044200CBA586 /* GetStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041576A829E2044200CBA586 /* GetStation.swift */; };
+		041576AB29E23A0800CBA586 /* SheetPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041576AA29E23A0800CBA586 /* SheetPresent.swift */; };
 		0425B92929D795140057E31C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92829D795140057E31C /* AppDelegate.swift */; };
 		0425B92B29D795140057E31C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92A29D795140057E31C /* SceneDelegate.swift */; };
 		0425B92D29D795140057E31C /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92C29D795140057E31C /* OnboardingVC.swift */; };
@@ -49,6 +51,8 @@
 		041576A229E1F3A100CBA586 /* FirebaseText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseText.swift; sourceTree = "<group>"; };
 		041576A429E1F9D000CBA586 /* ValueInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueInteger.swift; sourceTree = "<group>"; };
 		041576A629E1FE6100CBA586 /* CreatingUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingUser.swift; sourceTree = "<group>"; };
+		041576A829E2044200CBA586 /* GetStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStation.swift; sourceTree = "<group>"; };
+		041576AA29E23A0800CBA586 /* SheetPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresent.swift; sourceTree = "<group>"; };
 		0425B92529D795140057E31C /* Stat-ion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stat-ion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0425B92829D795140057E31C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0425B92A29D795140057E31C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				041576A629E1FE6100CBA586 /* CreatingUser.swift */,
+				041576A829E2044200CBA586 /* GetStation.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			children = (
 				0415769329E1B6CD00CBA586 /* Alert.swift */,
 				0415769529E1C3D500CBA586 /* Maps.swift */,
+				041576AA29E23A0800CBA586 /* SheetPresent.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 				0415769029E1ACD000CBA586 /* Station.swift in Sources */,
 				0425B92D29D795140057E31C /* OnboardingVC.swift in Sources */,
 				0425B92929D795140057E31C /* AppDelegate.swift in Sources */,
+				041576A929E2044200CBA586 /* GetStation.swift in Sources */,
 				041576A729E1FE6100CBA586 /* CreatingUser.swift in Sources */,
 				0425B93329D795140057E31C /* Stat_ion.xcdatamodeld in Sources */,
 				0415768429DCDDE300CBA586 /* NearestStationVC.swift in Sources */,
@@ -361,6 +368,7 @@
 				0415769229E1ACE900CBA586 /* NearestStation.swift in Sources */,
 				0415769629E1C3D500CBA586 /* Maps.swift in Sources */,
 				0415769F29E1EE2E00CBA586 /* Alpha.swift in Sources */,
+				041576AB29E23A0800CBA586 /* SheetPresent.swift in Sources */,
 				0415769429E1B6CD00CBA586 /* Alert.swift in Sources */,
 				0425B92B29D795140057E31C /* SceneDelegate.swift in Sources */,
 				0415769929E1E1A000CBA586 /* Text.swift in Sources */,

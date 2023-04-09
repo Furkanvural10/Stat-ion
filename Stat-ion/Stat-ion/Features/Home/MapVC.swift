@@ -4,6 +4,8 @@ import MapKit
 import FirebaseAuth
 import FirebaseFirestore
 
+
+
 class MapVC: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var stationMapView: MKMapView!
@@ -30,41 +32,58 @@ class MapVC: UIViewController, MKMapViewDelegate {
         configurationView()
         animation()
         createUser()
+//        getStation()
+
+     
+        
+    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        getStation()
+//    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         getStation()
     }
     
     private func createUser(){FirebaseUserCreateFunction().createUser(on: self)}
     
+    
+    
     func getStation(){
-        
-        let database = Firestore.firestore()
-        let _ = database.collection(FirebaseText.collectionStationDetail).getDocuments{ querySnapshot, error in
-            if error == nil {
-                for document in querySnapshot!.documents{
-                    let geopoint    = document.get(FirebaseText.coordinate) as! GeoPoint
-                    let stationName = document.get(FirebaseText.stationName) as! String
-                    let stationType = document.get(FirebaseText.stationType) as! String
-                    let soket1      = document.get(FirebaseText.soket1) as! String
-                    let soket2      = document.get(FirebaseText.soket2) as! String
-                    
-                    self.station    = Station(stationName: stationName, stationType: stationType, soket1: soket1, soket2: soket2, geopoint: geopoint)
-                    self.stationList.append(self.station!)
-                    
-                    let coordinate        = CLLocationCoordinate2D(latitude: geopoint.latitude, longitude: geopoint.longitude)
-                    let annotation        = MKPointAnnotation()
-                    annotation.coordinate = coordinate
-                    self.annotations.append(annotation)
-                    annotation.title      = stationName
-                    
-                    if let image = Images.stationAssetImage {
-                        let annotationView    = self.stationMapView.view(for: annotation)
-                        annotationView?.image = image
+     
+
+                let database = Firestore.firestore()
+                let _ = database.collection(FirebaseText.collectionStationDetail).getDocuments{ querySnapshot, error in
+                    if error == nil {
+                        for document in querySnapshot!.documents{
+                            let geopoint    = document.get(FirebaseText.coordinate) as! GeoPoint
+                            let stationName = document.get(FirebaseText.stationName) as! String
+                            let stationType = document.get(FirebaseText.stationType) as! String
+                            let soket1      = document.get(FirebaseText.soket1) as! String
+                            let soket2      = document.get(FirebaseText.soket2) as! String
+
+                            self.station    = Station(stationName: stationName, stationType: stationType, soket1: soket1, soket2: soket2, geopoint: geopoint)
+                            self.stationList.append(self.station!)
+
+                            let coordinate        = CLLocationCoordinate2D(latitude: geopoint.latitude, longitude: geopoint.longitude)
+                            let annotation        = MKPointAnnotation()
+                            annotation.coordinate = coordinate
+                            self.annotations.append(annotation)
+                            annotation.title      = stationName
+
+                            if let image = Images.stationAssetImage {
+                                let annotationView    = self.stationMapView.view(for: annotation)
+                                annotationView?.image = image
+                            }
+                            self.stationMapView.addAnnotation(annotation)
+                        }
                     }
-                    self.stationMapView.addAnnotation(annotation)
                 }
-            }
-        }
     }
+    
+    
+
     
     private func configurationView(){
         navigationItem.hidesBackButton = true
@@ -98,15 +117,8 @@ class MapVC: UIViewController, MKMapViewDelegate {
     }
     
     @objc private func showStationDetail(){
-        if let stationDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "stationDetailVC") as? StationDetailVC{
-            if let sheet = stationDetailVC.sheetPresentationController{
-                sheet.detents = [.medium()]
-                sheet.preferredCornerRadius = Radius.cornerRadius15
-            }
-            stationDetailVC.stationDetail = selectedStation
-            stationDetailVC.distance = oneDistanceKM
-            self.navigationController?.present(stationDetailVC, animated: true)
-        }
+        
+        SheetPresent.sheetPresentView(vc: self, identifier: "stationDetailVC", selectedStation: selectedStation!, distance: oneDistanceKM!)
         
     }
     
@@ -144,15 +156,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
     }
     
     func openNearestStationCustomSheet(choosedStations: [Station], distanceKM: [Double]){
-        if let nearestStationVC = self.storyboard?.instantiateViewController(withIdentifier: "nearestStationVC") as? NearestStationVC{
-            if let sheet = nearestStationVC.sheetPresentationController{
-                sheet.detents = [.medium(),]
-                sheet.preferredCornerRadius = Radius.cornerRadius15
-            }
-            nearestStationVC.station = choosedStations
-            nearestStationVC.distanceKM = distanceKM
-            self.navigationController?.present(nearestStationVC, animated: true)
-        }
+        SheetPresent.sheetPresentNearestView(vc: self, identifier: "nearestStationVC", choosedStations: choosedStations, distanceKM: distanceKM)
     }
     
 }
