@@ -69,8 +69,8 @@ class StationDetailVC: UIViewController {
         let replaceTextSoket2                = soket2!.replacingOccurrences(of: ", ", with: "\n•")
         self.firstSoketType.text             = "•\(replaceTextSoket1)"
         self.secondSoketType.text            = "•\(replaceTextSoket2)"
-        self.firstSoketType.numberOfLines    = 0
-        self.secondSoketType.numberOfLines   = 0
+        self.firstSoketType.numberOfLines    = ValueInteger.zeroNumberOfLines
+        self.secondSoketType.numberOfLines   = ValueInteger.zeroNumberOfLines
  
         self.firstSoketType.alpha            = Alpha.alpha09
         self.secondSoketType.alpha           = Alpha.alpha09

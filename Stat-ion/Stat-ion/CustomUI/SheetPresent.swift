@@ -17,7 +17,7 @@ struct SheetPresent {
                 sheet.preferredCornerRadius = Radius.cornerRadius15
             }
             stationDetailVC.stationDetail = selectedStation
-            stationDetailVC.distance = distance
+            stationDetailVC.distance      = distance
             vc.navigationController?.present(stationDetailVC, animated: true)
         }
     }
@@ -25,13 +25,12 @@ struct SheetPresent {
     static func sheetPresentNearestView(vc: UIViewController, identifier: String, choosedStations: [Station], distanceKM: [Double]){
         if let nearestStationVC = vc.storyboard?.instantiateViewController(withIdentifier: identifier) as? NearestStationVC{
             if let sheet = nearestStationVC.sheetPresentationController{
-                sheet.detents = [.medium(),]
+                sheet.detents               = [.medium(),]
                 sheet.preferredCornerRadius = Radius.cornerRadius15
             }
-            nearestStationVC.station = choosedStations
+            nearestStationVC.station    = choosedStations
             nearestStationVC.distanceKM = distanceKM
             vc.navigationController?.present(nearestStationVC, animated: true)
         }
-        
     }
 }

@@ -10,22 +10,18 @@ import UIKit
 
 struct CustomFabButton {
     
-    
     static func createStationFAB(stationFABButton: inout UIButton)-> UIButton{
-        
-        stationFABButton.setImage(Images.stationAssetImage, for: .normal)
         stationFABButton.layer.cornerRadius = stationFABButton.frame.width / 2
-        stationFABButton.backgroundColor = .black
+        stationFABButton.backgroundColor    = .black
+        stationFABButton.setImage(Images.stationAssetImage, for: .normal)
         return stationFABButton
-        
     }
     
     static func createLocationFAB(currentLocationButton: inout UIButton) -> UIButton{
-        currentLocationButton.setImage(Images.locationFill, for: .normal)
         currentLocationButton.layer.cornerRadius = currentLocationButton.frame.width / 2
-        currentLocationButton.backgroundColor = .white
-        currentLocationButton.tintColor = .systemBlue
+        currentLocationButton.backgroundColor    = .white
+        currentLocationButton.tintColor          = .systemBlue
+        currentLocationButton.setImage(Images.locationFill, for: .normal)
         return currentLocationButton
     }
-    
 }

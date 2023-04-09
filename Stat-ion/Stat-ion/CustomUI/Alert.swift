@@ -11,7 +11,7 @@ import UIKit
 struct Alert {
     
     private static func showBasicAlert(on vc: UIViewController, with title: String, message: String ){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alert  = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let button = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(button)
         DispatchQueue.main.async {

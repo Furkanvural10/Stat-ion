@@ -13,17 +13,17 @@ class MapVC: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var stationFabIcon: UIButton!
     
     let locationManager = CLLocationManager()
-    let vc = UIViewController()
-    var latitude: Double?
-    var longitude: Double?
-    var annotations = [MKPointAnnotation]()
-    var userLocation: CLLocation?
-    var station: Station?
-    var stationList = [Station]()
-    var nearStation = [Station]()
-    var selectedStation: Station?
-    var distanceKM = [Double]()
-    var oneDistanceKM: Double?
+    let vc              = UIViewController()
+    var latitude        : Double?
+    var longitude       : Double?
+    var annotations     = [MKPointAnnotation]()
+    var userLocation    : CLLocation?
+    var station         : Station?
+    var stationList     = [Station]()
+    var nearStation     = [Station]()
+    var selectedStation : Station?
+    var distanceKM      = [Double]()
+    var oneDistanceKM   : Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,33 +35,20 @@ class MapVC: UIViewController, MKMapViewDelegate {
     
     private func createUser(){FirebaseUserCreateFunction().createUser(on: self)}
     
-    #warning("TO MODEL FUNCTION***!!!")
     func getStation(){
-        let database = Firestore.firestore()
-        let _ = database.collection(FirebaseText.collectionStationDetail).getDocuments{ querySnapshot, error in
-            if error == nil {
-                for document in querySnapshot!.documents{
-                    let geopoint    = document.get(FirebaseText.coordinate) as! GeoPoint
-                    let stationName = document.get(FirebaseText.stationName) as! String
-                    let stationType = document.get(FirebaseText.stationType) as! String
-                    let soket1      = document.get(FirebaseText.soket1) as! String
-                    let soket2      = document.get(FirebaseText.soket2) as! String
-                    
-                    self.station    = Station(stationName: stationName, stationType: stationType, soket1: soket1, soket2: soket2, geopoint: geopoint)
-                    self.stationList.append(self.station!)
-                    
-                    let coordinate        = CLLocationCoordinate2D(latitude: geopoint.latitude, longitude: geopoint.longitude)
-                    let annotation        = MKPointAnnotation()
-                    annotation.coordinate = coordinate
-                    self.annotations.append(annotation)
-                    annotation.title      = stationName
-                    
-                    if let image = Images.stationAssetImage {
-                        let annotationView    = self.stationMapView.view(for: annotation)
-                        annotationView?.image = image
-                    }
-                    self.stationMapView.addAnnotation(annotation)
+            FirebaseGetStation.getStation { stationList in
+            self.stationList = stationList
+            for i in self.stationList {
+                let coordinate        = CLLocationCoordinate2D(latitude: i.geopoint.latitude, longitude: i.geopoint.longitude)
+                let annotation        = MKPointAnnotation()
+                annotation.coordinate = coordinate
+                self.annotations.append(annotation)
+                annotation.title      = i.stationName
+                if let image = Images.stationAssetImage {
+                    let annotationView    = self.stationMapView.view(for: annotation)
+                    annotationView?.image = image
                 }
+                self.stationMapView.addAnnotation(annotation)
             }
         }
     }
@@ -74,11 +61,11 @@ class MapVC: UIViewController, MKMapViewDelegate {
         self.stationFabIcon = CustomFabButton.createStationFAB(stationFABButton: &self.stationFabIcon)
 
         //MARK: Map
-        self.stationMapView.delegate = self
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.startUpdatingLocation()
         self.stationMapView.showsUserLocation = true
+        self.stationMapView.delegate          = self
+        self.locationManager.delegate         = self
+        self.locationManager.desiredAccuracy  = kCLLocationAccuracyBest
+        self.locationManager.startUpdatingLocation()
     }
     
     private func animation(){
@@ -89,7 +76,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
     }
     @IBAction func showCurrentLocation(_ sender: Any) {
         locationManager.startUpdatingLocation()
-      
+        
     }
     
     @objc private func showStationDetail(){
@@ -111,7 +98,7 @@ extension MapVC: CLLocationManagerDelegate{
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
             annotationView?.canShowCallout = true
-            let detailDisclosurebutton = UIButton(type: .detailDisclosure)
+            let detailDisclosurebutton     = UIButton(type: .detailDisclosure)
             detailDisclosurebutton.addTarget(self, action: #selector(showStationDetail), for: .touchUpInside)
             annotationView?.rightCalloutAccessoryView = detailDisclosurebutton
         } else {annotationView?.annotation = annotation}
@@ -122,19 +109,19 @@ extension MapVC: CLLocationManagerDelegate{
         return annotationView
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            let latitude = locations[0].coordinate.latitude
-            let longitude = locations[0].coordinate.longitude
-            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let span = MKCoordinateSpan(latitudeDelta: ValueInteger.zoomLatitudeDelta, longitudeDelta: ValueInteger.zoomLongitudeDelta)
-            let region = MKCoordinateRegion(center: coordinate, span: span)
+            let latitude    = locations[0].coordinate.latitude
+            let longitude   = locations[0].coordinate.longitude
+            let coordinate  = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            let span        = MKCoordinateSpan(latitudeDelta: ValueInteger.zoomLatitudeDelta, longitudeDelta: ValueInteger.zoomLongitudeDelta)
+            let region      = MKCoordinateRegion(center: coordinate, span: span)
             self.stationMapView.setRegion(region, animated: true)
             self.userLocation = locations.last
             locationManager.stopUpdatingLocation()
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let annotation = view.annotation {
-               let latitude = annotation.coordinate.latitude
+        if let annotation    = view.annotation {
+               let latitude  = annotation.coordinate.latitude
                let longitude = annotation.coordinate.longitude
                
             for station in stationList{
