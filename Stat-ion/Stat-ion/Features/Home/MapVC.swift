@@ -25,34 +25,19 @@ class MapVC: UIViewController, MKMapViewDelegate {
     var distanceKM = [Double]()
     var oneDistanceKM: Double?
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configurationView()
         animation()
         createUser()
-//        getStation()
-
-     
-        
-    }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        getStation()
-//    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         getStation()
+  
     }
     
     private func createUser(){FirebaseUserCreateFunction().createUser(on: self)}
     
-    
-    
+    #warning("TO MODEL FUNCTION***!!!")
     func getStation(){
-     
-
                 let database = Firestore.firestore()
                 let _ = database.collection(FirebaseText.collectionStationDetail).getDocuments{ querySnapshot, error in
                     if error == nil {
@@ -81,10 +66,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
                     }
                 }
     }
-    
-    
 
-    
     private func configurationView(){
         navigationItem.hidesBackButton = true
         self.showCurrentLocationButton.setImage(Images.locationFill, for: .normal)
@@ -102,7 +84,6 @@ class MapVC: UIViewController, MKMapViewDelegate {
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.startUpdatingLocation()
         self.stationMapView.showsUserLocation = true
-        
     }
     
     private func animation(){
@@ -116,56 +97,18 @@ class MapVC: UIViewController, MKMapViewDelegate {
       
     }
     
-    @objc private func showStationDetail(){
-        
-        SheetPresent.sheetPresentView(vc: self, identifier: "stationDetailVC", selectedStation: selectedStation!, distance: oneDistanceKM!)
-        
-    }
+    @objc private func showStationDetail(){SheetPresent.sheetPresentView(vc: self, identifier: "stationDetailVC", selectedStation: selectedStation!, distance: oneDistanceKM!)}
     
     @IBAction func showStations(_ sender: Any) {
-        // MARK: Filter stations around userLocation 5km
-        let maxDistance: CLLocationDistance = ValueInteger.filteringDistance // in meters
+        var result = StationFilter().getFilteredStation(annotationList: annotations, userLocation: userLocation!, stationList: stationList, nearStation: &nearStation, distanceKM: &distanceKM)
         
-        let filteredAnnotations = annotations.filter { annotation in
-            let annotationLocation = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
-            let distance = annotationLocation.distance(from: userLocation!)
-            
-            return distance <= maxDistance
-        }
-        
-        
-        
-        //MARK: - Finding Near Station from filteredAnnotationsList and Add nearStation
-        
-        for anotation in filteredAnnotations{
-            for i in stationList{
-                if anotation.coordinate.longitude == i.geopoint.longitude{
-                    nearStation.append(i)
-                }
-            }
-        }
-        
-        // MARK: - Find nearestDistance
-        
-        for chargeStation in nearStation{
-            let annotationLocation = CLLocation(latitude: chargeStation.geopoint.latitude, longitude: chargeStation.geopoint.longitude)
-            let distance = annotationLocation.distance(from: userLocation!) / 1000.0
-            distanceKM.append((distance * 10).rounded() / 10)
-        }
-        openNearestStationCustomSheet(choosedStations: nearStation, distanceKM: distanceKM)
+        SheetPresent.sheetPresentNearestView(vc: self, identifier: "nearestStationVC", choosedStations: result.0, distanceKM: result.1)
     }
-    
-    func openNearestStationCustomSheet(choosedStations: [Station], distanceKM: [Double]){
-        SheetPresent.sheetPresentNearestView(vc: self, identifier: "nearestStationVC", choosedStations: choosedStations, distanceKM: distanceKM)
-    }
-    
 }
 
 extension MapVC: CLLocationManagerDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard !(annotation is MKUserLocation) else {
-            return nil
-        }
+        guard !(annotation is MKUserLocation) else {return nil}
         
         var annotationView = self.stationMapView.dequeueReusableAnnotationView(withIdentifier: "custom")
         if annotationView == nil {
@@ -174,10 +117,7 @@ extension MapVC: CLLocationManagerDelegate{
             let detailDisclosurebutton = UIButton(type: .detailDisclosure)
             detailDisclosurebutton.addTarget(self, action: #selector(showStationDetail), for: .touchUpInside)
             annotationView?.rightCalloutAccessoryView = detailDisclosurebutton
-                        
-        }else{
-            annotationView?.annotation = annotation
-        }
+        } else {annotationView?.annotation = annotation}
         
         annotationView?.image = Images.stationAnotation
         annotationView?.contentMode = .scaleAspectFit

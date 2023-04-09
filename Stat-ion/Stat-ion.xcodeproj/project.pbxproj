@@ -24,6 +24,7 @@
 		041576A729E1FE6100CBA586 /* CreatingUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041576A629E1FE6100CBA586 /* CreatingUser.swift */; };
 		041576A929E2044200CBA586 /* GetStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041576A829E2044200CBA586 /* GetStation.swift */; };
 		041576AB29E23A0800CBA586 /* SheetPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041576AA29E23A0800CBA586 /* SheetPresent.swift */; };
+		041576AE29E255FB00CBA586 /* StationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041576AD29E255FB00CBA586 /* StationFilter.swift */; };
 		0425B92929D795140057E31C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92829D795140057E31C /* AppDelegate.swift */; };
 		0425B92B29D795140057E31C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92A29D795140057E31C /* SceneDelegate.swift */; };
 		0425B92D29D795140057E31C /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B92C29D795140057E31C /* OnboardingVC.swift */; };
@@ -53,6 +54,7 @@
 		041576A629E1FE6100CBA586 /* CreatingUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingUser.swift; sourceTree = "<group>"; };
 		041576A829E2044200CBA586 /* GetStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStation.swift; sourceTree = "<group>"; };
 		041576AA29E23A0800CBA586 /* SheetPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresent.swift; sourceTree = "<group>"; };
+		041576AD29E255FB00CBA586 /* StationFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationFilter.swift; sourceTree = "<group>"; };
 		0425B92529D795140057E31C /* Stat-ion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stat-ion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0425B92829D795140057E31C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0425B92A29D795140057E31C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		041576AC29E255CF00CBA586 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				041576AD29E255FB00CBA586 /* StationFilter.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
 		0425B91C29D795140057E31C = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +211,7 @@
 		0425B92729D795140057E31C /* Stat-ion */ = {
 			isa = PBXGroup;
 			children = (
+				041576AC29E255CF00CBA586 /* Functions */,
 				0415769729E1E17200CBA586 /* Constants */,
 				0415768E29DF8AF500CBA586 /* Images */,
 				0415768D29DF8ADB00CBA586 /* Models */,
@@ -360,6 +371,7 @@
 				041576A929E2044200CBA586 /* GetStation.swift in Sources */,
 				041576A729E1FE6100CBA586 /* CreatingUser.swift in Sources */,
 				0425B93329D795140057E31C /* Stat_ion.xcdatamodeld in Sources */,
+				041576AE29E255FB00CBA586 /* StationFilter.swift in Sources */,
 				0415768429DCDDE300CBA586 /* NearestStationVC.swift in Sources */,
 				0415769D29E1E5FE00CBA586 /* Images.swift in Sources */,
 				0415769B29E1E5F200CBA586 /* Font.swift in Sources */,
