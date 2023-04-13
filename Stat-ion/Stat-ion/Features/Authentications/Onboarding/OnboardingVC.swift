@@ -2,7 +2,6 @@ import UIKit
 import MapKit
 import CoreLocation
 
-
 class OnboardingVC: UIViewController {
 
     @IBOutlet weak var onboardingImageView  : UIImageView!
