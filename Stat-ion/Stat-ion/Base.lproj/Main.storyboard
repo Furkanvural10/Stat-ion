@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Onboarding" translatesAutoresizingMaskIntoConstraints="NO" id="N3N-SN-fOl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboarding" translatesAutoresizingMaskIntoConstraints="NO" id="N3N-SN-fOl">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pci-wg-E8M">
                                 <rect key="frame" x="20" y="123" width="353" height="695"/>
@@ -44,7 +43,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSy-Sr-tLR">
-                                        <rect key="frame" x="20" y="604.33333333333337" width="313" height="40.666666666666629"/>
+                                        <rect key="frame" x="20" y="610.66666666666663" width="313" height="34.333333333333371"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                         <connections>
@@ -64,6 +63,7 @@
                                     <constraint firstItem="aO9-54-q98" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" id="1gP-qW-KGQ"/>
                                     <constraint firstItem="aO9-54-q98" firstAttribute="top" secondItem="KKf-z6-VF9" secondAttribute="bottom" constant="70" id="3ql-yW-JZh"/>
                                     <constraint firstItem="vSy-Sr-tLR" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" constant="20" id="9OT-05-4ze"/>
+                                    <constraint firstAttribute="width" constant="353" id="Bnc-wT-amn"/>
                                     <constraint firstAttribute="trailing" secondItem="5dD-qL-Y3q" secondAttribute="trailing" constant="20" id="CBX-Nw-hdc"/>
                                     <constraint firstItem="CXq-F2-fiA" firstAttribute="centerX" secondItem="Pci-wg-E8M" secondAttribute="centerX" id="D9o-eI-Qxs"/>
                                     <constraint firstAttribute="trailing" secondItem="vSy-Sr-tLR" secondAttribute="trailing" constant="20" id="K5P-rA-1nw"/>
@@ -71,6 +71,7 @@
                                     <constraint firstAttribute="trailing" secondItem="CXq-F2-fiA" secondAttribute="trailing" id="O1M-b7-Cwa"/>
                                     <constraint firstItem="KKf-z6-VF9" firstAttribute="centerX" secondItem="Pci-wg-E8M" secondAttribute="centerX" id="Rhi-FW-5Iv"/>
                                     <constraint firstAttribute="trailing" secondItem="KKf-z6-VF9" secondAttribute="trailing" id="dcs-bI-ome"/>
+                                    <constraint firstAttribute="height" constant="695" id="enh-UN-ATU"/>
                                     <constraint firstAttribute="trailing" secondItem="aO9-54-q98" secondAttribute="trailing" id="gpN-KP-tNZ"/>
                                     <constraint firstItem="5dD-qL-Y3q" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" constant="20" id="hYa-yT-6yC"/>
                                     <constraint firstItem="aO9-54-q98" firstAttribute="centerX" secondItem="Pci-wg-E8M" secondAttribute="centerX" id="j9X-Gz-6RW"/>
@@ -85,12 +86,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Pci-wg-E8M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="2Ic-uv-v1x"/>
-                            <constraint firstItem="Pci-wg-E8M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5B3-cL-HXI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pci-wg-E8M" secondAttribute="trailing" constant="20" id="PVI-YC-6WQ"/>
-                            <constraint firstItem="vSy-Sr-tLR" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.057" id="Tod-nh-hcG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pci-wg-E8M" secondAttribute="trailing" constant="20" id="0i6-QY-2cO"/>
+                            <constraint firstItem="Pci-wg-E8M" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CYy-Xc-dng"/>
+                            <constraint firstItem="Pci-wg-E8M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Mwt-lu-oYz"/>
                             <constraint firstItem="Pci-wg-E8M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VSk-YY-UhX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pci-wg-E8M" secondAttribute="trailing" constant="20" id="XqS-Lq-YeR"/>
+                            <constraint firstItem="N3N-SN-fOl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yp8-tE-Iwr"/>
+                            <constraint firstItem="Pci-wg-E8M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="b0Z-8F-KKh"/>
                             <constraint firstItem="Pci-wg-E8M" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cdK-iT-LO7"/>
+                            <constraint firstItem="Pci-wg-E8M" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gan-8Y-ntI"/>
+                            <constraint firstAttribute="bottom" secondItem="N3N-SN-fOl" secondAttribute="bottom" id="k3e-xK-Gui"/>
+                            <constraint firstItem="N3N-SN-fOl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mye-zI-gNK"/>
+                            <constraint firstItem="N3N-SN-fOl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zDt-sA-2au"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Ci-br-keW"/>

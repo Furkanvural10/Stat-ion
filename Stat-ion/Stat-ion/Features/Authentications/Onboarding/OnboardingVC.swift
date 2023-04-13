@@ -68,7 +68,7 @@ class OnboardingVC: UIViewController {
         self.onboardingImageView.contentMode = .scaleToFill
         let overlay                          = UIView(frame: onboardingImageView.bounds)
         overlay.backgroundColor              = UIColor.black
-        overlay.alpha                        = Alpha.alpha04
+        overlay.alpha                        = Alpha.alpha0
         
         onboardingImageView.addSubview(overlay)
     }

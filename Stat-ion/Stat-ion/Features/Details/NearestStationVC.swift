@@ -46,7 +46,7 @@ extension NearestStationVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell     = UITableViewCell()
         var content  = cell.defaultContentConfiguration()
-        content.text = "\(nearestStation![indexPath.row].stationName) (\(nearestStation![indexPath.row].distance) \(Text.km)"
+        content.text = "\(nearestStation![indexPath.row].stationName) (\(nearestStation![indexPath.row].distance) \(Text.km))"
         
         cell.contentConfiguration = content
         return cell
