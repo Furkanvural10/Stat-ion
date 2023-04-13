@@ -5,13 +5,13 @@ import CoreLocation
 
 class OnboardingVC: UIViewController {
 
-    @IBOutlet weak var onboardingImageView: UIImageView!
-    @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var firstLabel: UILabel!
-    @IBOutlet weak var secondLabel: UILabel!
-    @IBOutlet weak var thirdLabel: UILabel!
-    @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var onboardingImageView  : UIImageView!
+    @IBOutlet weak var mainView             : UIView!
+    @IBOutlet weak var firstLabel           : UILabel!
+    @IBOutlet weak var secondLabel          : UILabel!
+    @IBOutlet weak var thirdLabel           : UILabel!
+    @IBOutlet weak var mapView              : MKMapView!
+    @IBOutlet weak var startButton          : UIButton!
     
     var locationManager = CLLocationManager()
     
@@ -30,14 +30,12 @@ class OnboardingVC: UIViewController {
             self.onboardingImageView.alpha = Alpha.alpha
             self.mainView.alpha            = Alpha.alpha
         }
-
     }
     
      func checkOnboardingPageSeen(){
-
-         let result = UserDefaults.standard.object(forKey: "onboardingSeen")
+         let result = UserDefaults.standard.object(forKey: Text.onboardingSeen)
          if (result as? Bool) != nil {
-             self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
+             self.performSegue(withIdentifier: Text.toChargeStationMapVC, sender: nil)
          }
     }
     
@@ -90,7 +88,6 @@ class OnboardingVC: UIViewController {
         labelConfig(labelColor, fontSize)
         startButtonConfig()
         
-        
         //MARK: - View Config
         self.mainView.layer.cornerRadius = cornerRadius
     
@@ -136,14 +133,14 @@ class OnboardingVC: UIViewController {
                 self.upMovedMapAndButton()
                 self.onboardingImageView.alpha = Alpha.alpha0
             } completion: { _ in
-                self.performSegue(withIdentifier: "toChargeStationMapVC", sender: nil)
+                self.performSegue(withIdentifier: Text.toChargeStationMapVC, sender: nil)
             }
         }
     }
     
     @IBAction func startButton(_ sender: Any) {
         animation()
-        UserDefaults.standard.set(true, forKey: "onboardingSeen")
+        UserDefaults.standard.set(true, forKey: Text.onboardingSeen)
     }
 }
 

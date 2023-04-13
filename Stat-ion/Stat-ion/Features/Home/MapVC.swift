@@ -6,9 +6,9 @@ import FirebaseFirestore
 
 class MapVC: UIViewController, MKMapViewDelegate {
 
-    @IBOutlet weak var stationMapView: MKMapView!
-    @IBOutlet weak var showCurrentLocationButton: UIButton!
-    @IBOutlet weak var stationFabIcon: UIButton!
+    @IBOutlet weak var stationMapView            : MKMapView!
+    @IBOutlet weak var showCurrentLocationButton : UIButton!
+    @IBOutlet weak var stationFabIcon            : UIButton!
     
     let locationManager = CLLocationManager()
     let vc              = UIViewController()
@@ -75,12 +75,12 @@ class MapVC: UIViewController, MKMapViewDelegate {
     @IBAction func showCurrentLocation(_ sender: Any) {locationManager.startUpdatingLocation()}
     
     @objc private func showStationDetail(){
-        SheetPresent.sheetPresentView(vc: self, identifier: "stationDetailVC", selectedStation: selectedStation!, distance: oneDistanceKM!)}
+        SheetPresent.sheetPresentView(vc: self, identifier: Text.stationDetailVC, selectedStation: selectedStation!, distance: oneDistanceKM!)}
     
     @IBAction func showStations(_ sender: Any) {
         let result = StationFilter.getFilteredStation(annotationList: annotations, userLocation: userLocation!, stationList: stationList, nearStation: &nearStation, distanceKM: &distanceKM)
         
-        SheetPresent.sheetPresentNearestView(vc: self, identifier: "nearestStationVC", choosedStations: result.0, distanceKM: result.1)
+        SheetPresent.sheetPresentNearestView(vc: self, identifier: Text.nearestStationVC, choosedStations: result.0, distanceKM: result.1)
     }
 }
 
@@ -89,9 +89,9 @@ extension MapVC: CLLocationManagerDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {return nil}
         
-        var annotationView = self.stationMapView.dequeueReusableAnnotationView(withIdentifier: "custom")
+        var annotationView = self.stationMapView.dequeueReusableAnnotationView(withIdentifier: Text.custom)
         if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: Text.custom)
             annotationView?.canShowCallout = true
             let detailDisclosurebutton     = UIButton(type: .detailDisclosure)
             detailDisclosurebutton.addTarget(self, action: #selector(showStationDetail), for: .touchUpInside)

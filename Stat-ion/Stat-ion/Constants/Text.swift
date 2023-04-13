@@ -1,8 +1,5 @@
-
-
 import Foundation
 import UIKit
-
 
 struct Text {
     static let nearStationPageTitle  = "En Yakın İstasyonlar"
@@ -17,6 +14,17 @@ struct Text {
     static let onboardingFirstLabel  = "• En Yakın Şarj İstasyonunu Bul"
     static let onboardingSecondLabel = "• İstasyonun Özelliklerini Öğren"
     static let onbardingThirdLabel   = "• Hemen Rota Oluştur"
+    static let custom                = "custom"
+    
+    // MARK: - Segue Identifier
+    static let toChargeStationMapVC  = "toChargeStationMapVC"
+    
+    // MARK: - UserDefaults.object
+    static let onboardingSeen        = "onboardingSeen"
+    
+    // MARK: - Sheet identifier
+    static let stationDetailVC       = "stationDetailVC"
+    static let nearestStationVC      = "nearestStationVC"
 }
 
 
