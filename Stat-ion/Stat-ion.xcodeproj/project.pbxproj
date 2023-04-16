@@ -84,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0403C5D429EC8CB80038BF4E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0425B92829D795140057E31C /* AppDelegate.swift */,
+				0425B92A29D795140057E31C /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		0415768529DF882500CBA586 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +223,7 @@
 		0425B92729D795140057E31C /* Stat-ion */ = {
 			isa = PBXGroup;
 			children = (
+				0403C5D429EC8CB80038BF4E /* Delegates */,
 				041576AC29E255CF00CBA586 /* Functions */,
 				0415769729E1E17200CBA586 /* Constants */,
 				0415768E29DF8AF500CBA586 /* Images */,
@@ -222,8 +232,6 @@
 				0415768B29DF8A8C00CBA586 /* Extensions */,
 				0415768A29DF8A7700CBA586 /* Firebase */,
 				0415768529DF882500CBA586 /* Features */,
-				0425B92829D795140057E31C /* AppDelegate.swift */,
-				0425B92A29D795140057E31C /* SceneDelegate.swift */,
 				0425B92E29D795140057E31C /* Main.storyboard */,
 				0425B93629D795150057E31C /* LaunchScreen.storyboard */,
 				0425B93929D795150057E31C /* Info.plist */,
