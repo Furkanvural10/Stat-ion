@@ -37,6 +37,9 @@
 		0468952A2A90F36C009BC471 /* Stat_ionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046895292A90F36C009BC471 /* Stat_ionTests.swift */; };
 		046895372A90F391009BC471 /* Stat_ionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046895362A90F391009BC471 /* Stat_ionUITests.swift */; };
 		046895392A90F391009BC471 /* Stat_ionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046895382A90F391009BC471 /* Stat_ionUITestsLaunchTests.swift */; };
+		0492B1F52AB345B40076380C /* OnboardingVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1F42AB345B40076380C /* OnboardingVC+Extension.swift */; };
+		0492B1F72AB346170076380C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1F62AB346170076380C /* OnboardingViewModel.swift */; };
+		0492B1FA2AB35C320076380C /* SeguePerformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1F92AB35C320076380C /* SeguePerformable.swift */; };
 		9FAA82563C7DCC34B8A71E68 /* Pods_Stat_ion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9051DAA598AC62813792408 /* Pods_Stat_ion.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +95,9 @@
 		046895342A90F391009BC471 /* Stat-ionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stat-ionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		046895362A90F391009BC471 /* Stat_ionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat_ionUITests.swift; sourceTree = "<group>"; };
 		046895382A90F391009BC471 /* Stat_ionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat_ionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0492B1F42AB345B40076380C /* OnboardingVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingVC+Extension.swift"; sourceTree = "<group>"; };
+		0492B1F62AB346170076380C /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		0492B1F92AB35C320076380C /* SeguePerformable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguePerformable.swift; sourceTree = "<group>"; };
 		B089F7F94673F0D23B1C26F8 /* Pods-Stat-ion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stat-ion.debug.xcconfig"; path = "Target Support Files/Pods-Stat-ion/Pods-Stat-ion.debug.xcconfig"; sourceTree = "<group>"; };
 		E34550DDCBDC103389BD4326 /* Pods-Stat-ion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stat-ion.release.xcconfig"; path = "Target Support Files/Pods-Stat-ion/Pods-Stat-ion.release.xcconfig"; sourceTree = "<group>"; };
 		E9051DAA598AC62813792408 /* Pods_Stat_ion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stat_ion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				0425B92C29D795140057E31C /* OnboardingVC.swift */,
+				0492B1F62AB346170076380C /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -187,6 +194,7 @@
 		0415768B29DF8A8C00CBA586 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0492B1F42AB345B40076380C /* OnboardingVC+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -266,6 +274,7 @@
 		0425B92729D795140057E31C /* Stat-ion */ = {
 			isa = PBXGroup;
 			children = (
+				0492B1F82AB35C1B0076380C /* Protocols */,
 				0403C5D429EC8CB80038BF4E /* Delegates */,
 				041576AC29E255CF00CBA586 /* Functions */,
 				0415769729E1E17200CBA586 /* Constants */,
@@ -299,6 +308,14 @@
 				046895382A90F391009BC471 /* Stat_ionUITestsLaunchTests.swift */,
 			);
 			path = "Stat-ionUITests";
+			sourceTree = "<group>";
+		};
+		0492B1F82AB35C1B0076380C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0492B1F92AB35C320076380C /* SeguePerformable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		4DF8A7105842AE0E5CA5340D /* Frameworks */ = {
@@ -494,6 +511,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0492B1F72AB346170076380C /* OnboardingViewModel.swift in Sources */,
+				0492B1FA2AB35C320076380C /* SeguePerformable.swift in Sources */,
 				0415768229DB1B0600CBA586 /* StationDetailVC.swift in Sources */,
 				0425B94029D9B7640057E31C /* MapVC.swift in Sources */,
 				0415769029E1ACD000CBA586 /* Station.swift in Sources */,
@@ -513,6 +532,7 @@
 				0415769629E1C3D500CBA586 /* Maps.swift in Sources */,
 				0415769F29E1EE2E00CBA586 /* Alpha.swift in Sources */,
 				041576AB29E23A0800CBA586 /* SheetPresent.swift in Sources */,
+				0492B1F52AB345B40076380C /* OnboardingVC+Extension.swift in Sources */,
 				0415769429E1B6CD00CBA586 /* Alert.swift in Sources */,
 				0425B92B29D795140057E31C /* SceneDelegate.swift in Sources */,
 				0415769929E1E1A000CBA586 /* Text.swift in Sources */,

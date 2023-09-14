@@ -2,6 +2,11 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol OnboardingViewInterface: AnyObject, SeguePerformable {
+    func prepareOnboardingView()
+    func endingOnboardingPage()
+}
+
 class OnboardingVC: UIViewController {
 
     @IBOutlet weak var onboardingImageView  : UIImageView!
@@ -12,14 +17,13 @@ class OnboardingVC: UIViewController {
     @IBOutlet weak var mapView              : MKMapView!
     @IBOutlet weak var startButton          : UIButton!
     
+    private lazy var onboardingViewModel = OnboardingViewModel()
     var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startAnimation()
-        checkOnboardingPageSeen()
-        configureOnboardingView()
-        configureMapView()
+        onboardingViewModel.onboardingView = self
+        onboardingViewModel.viewDidLoad()
     }
     
     func startAnimation(){
@@ -31,15 +35,12 @@ class OnboardingVC: UIViewController {
         }
     }
     
-     func checkOnboardingPageSeen(){
-         let result = UserDefaults.standard.object(forKey: Text.onboardingSeen)
-         if (result as? Bool) != nil {
-             self.performSegue(withIdentifier: Text.toChargeStationMapVC, sender: nil)
-         }
+    func checkOnboardingPageSeen(){
+        onboardingViewModel.checkOnboardingPageSeen()
     }
     
     fileprivate func labelConfig(_ labelColor: UIColor, _ fontSize: CGFloat) {
-        //MARK: - Labels Config
+        // MARK: - Labels Config
         self.firstLabel.textColor                       = labelColor
         self.firstLabel.font                            = .boldSystemFont(ofSize: fontSize)
         self.firstLabel.text                            = Text.onboardingFirstLabel
@@ -54,7 +55,7 @@ class OnboardingVC: UIViewController {
         self.thirdLabel.text                            = Text.onbardingThirdLabel
     }
     fileprivate func mapViewConfig(_ cornerRadius: CGFloat) {
-        //MARK: - MapView Config
+        // MARK: - MapView Config
         self.mapView.layer.cornerRadius = cornerRadius
         self.mapView.isRotateEnabled    = false
         self.mapView.isZoomEnabled      = false
@@ -62,7 +63,7 @@ class OnboardingVC: UIViewController {
         self.mapView.showsUserLocation  = true
     }
     fileprivate func imageViewConfig() {
-        //MARK: - ImageView Config
+        // MARK: - ImageView Config
         self.onboardingImageView.image       = Images.onboarding
         self.onboardingImageView.contentMode = .scaleToFill
         let overlay                          = UIView(frame: onboardingImageView.bounds)
@@ -72,12 +73,12 @@ class OnboardingVC: UIViewController {
         onboardingImageView.addSubview(overlay)
     }
     fileprivate func startButtonConfig() {
-        //MARK: - StartButton Config
+        // MARK: - StartButton Config
         self.startButton.tintColor = .black
         self.startButton.setTitle(Text.startOnboardingTitle, for: .normal)
     }
     
-    private func configureOnboardingView(){
+    private func configureOnboardingView() {
         let cornerRadius: CGFloat = Radius.cornerRadius20
         let fontSize: CGFloat     = Radius.cornerRadius25
         let labelColor: UIColor   = .white
@@ -87,11 +88,11 @@ class OnboardingVC: UIViewController {
         labelConfig(labelColor, fontSize)
         startButtonConfig()
         
-        //MARK: - View Config
+        // MARK: - View Config
         self.mainView.layer.cornerRadius = cornerRadius
     
     }
-    private func configureMapView(){
+    private func configureMapView() {
         self.locationManager.delegate   = self
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         locationManager.requestWhenInUseAuthorization()
@@ -138,12 +139,14 @@ class OnboardingVC: UIViewController {
     }
     
     @IBAction func startButton(_ sender: Any) {
-        animation()
-        UserDefaults.standard.set(true, forKey: Text.onboardingSeen)
+//        animation()
+        onboardingViewModel.endingOnboardingPage()
+        // Move mvvm
+        
     }
 }
 
-extension OnboardingVC: CLLocationManagerDelegate{
+extension OnboardingVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let latitude            = locations[0].coordinate.latitude
         let longitude           = locations[0].coordinate.longitude
@@ -153,6 +156,19 @@ extension OnboardingVC: CLLocationManagerDelegate{
         let span                = MKCoordinateSpan(latitudeDelta: spanLatitudeDelta, longitudeDelta: spanLongitudeDelta)
         let region              = MKCoordinateRegion(center: location, span: span)
         self.mapView.setRegion(region, animated: true)
+    }
+}
+
+extension OnboardingVC: OnboardingViewInterface {
+    func endingOnboardingPage() {
+        animation()
+    }
+    
+    func prepareOnboardingView() {
+        startAnimation()
+        checkOnboardingPageSeen()
+        configureOnboardingView()
+        configureMapView()
     }
 }
 
