@@ -67,6 +67,7 @@ class StationDetailVC: UIViewController {
     }
     
     @IBAction func openMaps(_ sender: Any) {
+        // Move mvvm
         Maps.openMapsFromStationDetailVC(station: stationDetail!)
     }
 }
