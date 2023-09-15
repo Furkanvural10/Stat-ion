@@ -3,7 +3,8 @@ import UIKit
 
 struct SheetPresent {
     
-    static func sheetPresentView(vc: UIViewController, identifier: String, selectedStation: Station, distance: Double){
+    static func sheetPresentView(vc: UIViewController, identifier: String, selectedStation: Station, distance: Double) {
+        
         if let stationDetailVC = vc.storyboard?.instantiateViewController(withIdentifier: identifier) as? StationDetailVC{
             if let sheet = stationDetailVC.sheetPresentationController{
                 sheet.detents = [.medium()]
