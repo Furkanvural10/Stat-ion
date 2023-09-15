@@ -25,6 +25,7 @@ extension OnboardingViewModel: OnboardingViewModelInterface {
     
     func viewDidLoad() {
         onboardingView?.prepareOnboardingView()
+        
     }
     
     func checkOnboardingPageSeen() {

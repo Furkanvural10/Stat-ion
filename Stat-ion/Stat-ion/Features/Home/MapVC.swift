@@ -4,51 +4,68 @@ import MapKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class MapVC: UIViewController, MKMapViewDelegate {
-
-    @IBOutlet weak var stationMapView            : MKMapView!
-    @IBOutlet weak var showCurrentLocationButton : UIButton!
-    @IBOutlet weak var stationFabIcon            : UIButton!
+protocol MapViewInterface: AnyObject {
     
-    let locationManager = CLLocationManager()
-    let vc              = UIViewController()
-    var latitude        : Double?
-    var longitude       : Double?
-    var annotations     = [MKPointAnnotation]()
-    var userLocation    : CLLocation?
-    var station         : Station?
-    var stationList     = [Station]()
-    var nearStation     = [Station]()
-    var selectedStation : Station?
-    var distanceKM      = [Double]()
-    var oneDistanceKM   : Double?
+    func prepareView()
+    func getStationFromDatabase()
+    func createAnonymousUser()
+    func didFetchStationData(_ stationList: [Station])
+}
+
+final class MapVC: UIViewController, MKMapViewDelegate {
+
+    @IBOutlet private weak var stationMapView            : MKMapView!
+    @IBOutlet private weak var showCurrentLocationButton : UIButton!
+    @IBOutlet private weak var stationFabIcon            : UIButton!
+    
+    private let locationManager = CLLocationManager()
+    private let vc              = UIViewController()
+    private var latitude        : Double?
+    private var longitude       : Double?
+    private var annotations     = [MKPointAnnotation]()
+    private var userLocation    : CLLocation?
+    private var station         : Station?
+    private var stationList     = [Station]()
+    private var nearStation     = [Station]()
+    private var selectedStation : Station?
+    private var distanceKM      = [Double]()
+    private var oneDistanceKM   : Double?
+    
+    private lazy var mapViewModel = MapViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getStation()
-        configurationView()
-        animation()
-        createUser()
+        mapViewModel.mapView = self
+        mapViewModel.viewDidLoad()
     }
     
-    private func createUser(){FirebaseUserCreateFunction().createUser(on: self)}
+    private func createUser(){
+        mapViewModel.createUser(on: self)
+//        FirebaseUserCreateFunction().createUser(on: self)
+    }
     
-    func getStation(){
-            FirebaseGetStation.getStation { stationList in
-            self.stationList = stationList
-            for i in self.stationList {
-                let coordinate        = CLLocationCoordinate2D(latitude: i.geopoint.latitude, longitude: i.geopoint.longitude)
-                let annotation        = MKPointAnnotation()
-                annotation.coordinate = coordinate
-                self.annotations.append(annotation)
-                annotation.title      = i.stationName
-                if let image = Images.stationAssetImage {
-                    let annotationView    = self.stationMapView.view(for: annotation)
-                    annotationView?.image = image
-                }
-                self.stationMapView.addAnnotation(annotation)
+    func getStation() {
+        mapViewModel.getStation(on: self)
+        
+        FirebaseGetStation.getStation {  stationList in
+        
+        self.stationList = stationList
+        for i in self.stationList {
+            let coordinate        = CLLocationCoordinate2D(latitude: i.geopoint.latitude, longitude: i.geopoint.longitude)
+            let annotation        = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            
+            self.annotations.append(annotation)
+            annotation.title      = i.stationName
+            if let image = Images.stationAssetImage {
+                let annotationView    = self.stationMapView.view(for: annotation)
+                annotationView?.image = image
             }
+            self.stationMapView.addAnnotation(annotation)
         }
+}
+        
+        
     }
 
     private func configurationView(){
@@ -72,7 +89,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
             self.stationMapView.alpha = Alpha.alpha
         }
     }
-    @IBAction func showCurrentLocation(_ sender: Any) {locationManager.startUpdatingLocation()}
+    @IBAction func showCurrentLocation(_ sender: Any) { locationManager.startUpdatingLocation() }
     
     @objc private func showStationDetail(){
         SheetPresent.sheetPresentView(vc: self, identifier: Text.stationDetailVC, selectedStation: selectedStation!, distance: oneDistanceKM!)}
@@ -131,4 +148,39 @@ extension MapVC: CLLocationManagerDelegate{
         distance = (distance * 10).rounded() / 10
         self.oneDistanceKM = distance
     }
+}
+
+extension MapVC: MapViewInterface {
+    func didFetchStationData(_ stationList: [Station]) {
+        self.stationList = stationList
+        for i in self.stationList {
+            let coordinate        = CLLocationCoordinate2D(latitude: i.geopoint.latitude, longitude: i.geopoint.longitude)
+            let annotation        = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            
+            self.annotations.append(annotation)
+            annotation.title      = i.stationName
+            if let image = Images.stationAssetImage {
+                let annotationView    = self.stationMapView.view(for: annotation)
+                annotationView?.image = image
+            }
+            self.stationMapView.addAnnotation(annotation)
+        }
+        
+    }
+    
+    
+    func createAnonymousUser() {
+        createUser()
+    }
+    
+    func prepareView() {
+        configurationView()
+        animation()
+    }
+    
+    func getStationFromDatabase() {
+        getStation()
+    }
+    
 }

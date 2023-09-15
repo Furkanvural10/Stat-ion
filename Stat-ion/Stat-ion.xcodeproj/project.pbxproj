@@ -40,6 +40,7 @@
 		0492B1F52AB345B40076380C /* OnboardingVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1F42AB345B40076380C /* OnboardingVC+Extension.swift */; };
 		0492B1F72AB346170076380C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1F62AB346170076380C /* OnboardingViewModel.swift */; };
 		0492B1FA2AB35C320076380C /* SeguePerformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1F92AB35C320076380C /* SeguePerformable.swift */; };
+		0492B1FC2AB38D1D0076380C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1FB2AB38D1D0076380C /* MapViewModel.swift */; };
 		9FAA82563C7DCC34B8A71E68 /* Pods_Stat_ion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9051DAA598AC62813792408 /* Pods_Stat_ion.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		0492B1F42AB345B40076380C /* OnboardingVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingVC+Extension.swift"; sourceTree = "<group>"; };
 		0492B1F62AB346170076380C /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		0492B1F92AB35C320076380C /* SeguePerformable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguePerformable.swift; sourceTree = "<group>"; };
+		0492B1FB2AB38D1D0076380C /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		B089F7F94673F0D23B1C26F8 /* Pods-Stat-ion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stat-ion.debug.xcconfig"; path = "Target Support Files/Pods-Stat-ion/Pods-Stat-ion.debug.xcconfig"; sourceTree = "<group>"; };
 		E34550DDCBDC103389BD4326 /* Pods-Stat-ion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stat-ion.release.xcconfig"; path = "Target Support Files/Pods-Stat-ion/Pods-Stat-ion.release.xcconfig"; sourceTree = "<group>"; };
 		E9051DAA598AC62813792408 /* Pods_Stat_ion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stat_ion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				0425B93F29D9B7640057E31C /* MapVC.swift */,
+				0492B1FB2AB38D1D0076380C /* MapViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				0425B92B29D795140057E31C /* SceneDelegate.swift in Sources */,
 				0415769929E1E1A000CBA586 /* Text.swift in Sources */,
 				041576A129E1EE4300CBA586 /* Radius.swift in Sources */,
+				0492B1FC2AB38D1D0076380C /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

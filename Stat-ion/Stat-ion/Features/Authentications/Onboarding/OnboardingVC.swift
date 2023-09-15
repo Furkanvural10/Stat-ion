@@ -139,10 +139,7 @@ class OnboardingVC: UIViewController {
     }
     
     @IBAction func startButton(_ sender: Any) {
-//        animation()
         onboardingViewModel.endingOnboardingPage()
-        // Move mvvm
-        
     }
 }
 
