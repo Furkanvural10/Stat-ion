@@ -34,8 +34,34 @@
 		0425B93529D795150057E31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0425B93429D795150057E31C /* Assets.xcassets */; };
 		0425B93829D795150057E31C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0425B93629D795150057E31C /* LaunchScreen.storyboard */; };
 		0425B94029D9B7640057E31C /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425B93F29D9B7640057E31C /* MapVC.swift */; };
-		7F4DF205E538B1FEB847320E /* Pods_Stat_ion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE782404287AF781A19422CA /* Pods_Stat_ion.framework */; };
+		0468952A2A90F36C009BC471 /* Stat_ionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046895292A90F36C009BC471 /* Stat_ionTests.swift */; };
+		046895372A90F391009BC471 /* Stat_ionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046895362A90F391009BC471 /* Stat_ionUITests.swift */; };
+		046895392A90F391009BC471 /* Stat_ionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046895382A90F391009BC471 /* Stat_ionUITestsLaunchTests.swift */; };
+		0492B1F52AB345B40076380C /* OnboardingVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1F42AB345B40076380C /* OnboardingVC+Extension.swift */; };
+		0492B1F72AB346170076380C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1F62AB346170076380C /* OnboardingViewModel.swift */; };
+		0492B1FA2AB35C320076380C /* SeguePerformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1F92AB35C320076380C /* SeguePerformable.swift */; };
+		0492B1FC2AB38D1D0076380C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1FB2AB38D1D0076380C /* MapViewModel.swift */; };
+		0492B1FE2AB48D6A0076380C /* StationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1FD2AB48D6A0076380C /* StationDetailViewModel.swift */; };
+		0492B2002AB48DA70076380C /* NearestStationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1FF2AB48DA70076380C /* NearestStationViewModel.swift */; };
+		9FAA82563C7DCC34B8A71E68 /* Pods_Stat_ion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9051DAA598AC62813792408 /* Pods_Stat_ion.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0468952B2A90F36C009BC471 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0425B91D29D795140057E31C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0425B92429D795140057E31C;
+			remoteInfo = "Stat-ion";
+		};
+		0468953A2A90F391009BC471 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0425B91D29D795140057E31C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0425B92429D795140057E31C;
+			remoteInfo = "Stat-ion";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0415767F29DA368700CBA586 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -67,9 +93,20 @@
 		0425B93729D795150057E31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0425B93929D795150057E31C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0425B93F29D9B7640057E31C /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
-		0B54D349E5E89057F3BCA12B /* Pods-Stat-ion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stat-ion.debug.xcconfig"; path = "Target Support Files/Pods-Stat-ion/Pods-Stat-ion.debug.xcconfig"; sourceTree = "<group>"; };
-		556A10B54D1EFF691C9E406D /* Pods-Stat-ion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stat-ion.release.xcconfig"; path = "Target Support Files/Pods-Stat-ion/Pods-Stat-ion.release.xcconfig"; sourceTree = "<group>"; };
-		DE782404287AF781A19422CA /* Pods_Stat_ion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stat_ion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		046895272A90F36C009BC471 /* Stat-ionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stat-ionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		046895292A90F36C009BC471 /* Stat_ionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat_ionTests.swift; sourceTree = "<group>"; };
+		046895342A90F391009BC471 /* Stat-ionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stat-ionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		046895362A90F391009BC471 /* Stat_ionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat_ionUITests.swift; sourceTree = "<group>"; };
+		046895382A90F391009BC471 /* Stat_ionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat_ionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0492B1F42AB345B40076380C /* OnboardingVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingVC+Extension.swift"; sourceTree = "<group>"; };
+		0492B1F62AB346170076380C /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		0492B1F92AB35C320076380C /* SeguePerformable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguePerformable.swift; sourceTree = "<group>"; };
+		0492B1FB2AB38D1D0076380C /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		0492B1FD2AB48D6A0076380C /* StationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailViewModel.swift; sourceTree = "<group>"; };
+		0492B1FF2AB48DA70076380C /* NearestStationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStationViewModel.swift; sourceTree = "<group>"; };
+		B089F7F94673F0D23B1C26F8 /* Pods-Stat-ion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stat-ion.debug.xcconfig"; path = "Target Support Files/Pods-Stat-ion/Pods-Stat-ion.debug.xcconfig"; sourceTree = "<group>"; };
+		E34550DDCBDC103389BD4326 /* Pods-Stat-ion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stat-ion.release.xcconfig"; path = "Target Support Files/Pods-Stat-ion/Pods-Stat-ion.release.xcconfig"; sourceTree = "<group>"; };
+		E9051DAA598AC62813792408 /* Pods_Stat_ion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stat_ion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,13 +114,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F4DF205E538B1FEB847320E /* Pods_Stat_ion.framework in Frameworks */,
+				9FAA82563C7DCC34B8A71E68 /* Pods_Stat_ion.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046895242A90F36C009BC471 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046895312A90F391009BC471 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0403C5D429EC8CB80038BF4E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0425B92829D795140057E31C /* AppDelegate.swift */,
+				0425B92A29D795140057E31C /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		0415768529DF882500CBA586 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				0425B92C29D795140057E31C /* OnboardingVC.swift */,
+				0492B1F62AB346170076380C /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -114,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				0425B93F29D9B7640057E31C /* MapVC.swift */,
+				0492B1FB2AB38D1D0076380C /* MapViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -123,6 +185,8 @@
 			children = (
 				0415768129DB1B0600CBA586 /* StationDetailVC.swift */,
 				0415768329DCDDE300CBA586 /* NearestStationVC.swift */,
+				0492B1FD2AB48D6A0076380C /* StationDetailViewModel.swift */,
+				0492B1FF2AB48DA70076380C /* NearestStationViewModel.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -139,6 +203,7 @@
 		0415768B29DF8A8C00CBA586 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0492B1F42AB345B40076380C /* OnboardingVC+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -197,9 +262,11 @@
 			isa = PBXGroup;
 			children = (
 				0425B92729D795140057E31C /* Stat-ion */,
+				046895282A90F36C009BC471 /* Stat-ionTests */,
+				046895352A90F391009BC471 /* Stat-ionUITests */,
 				0425B92629D795140057E31C /* Products */,
 				92E8C01349E05D3694931F5E /* Pods */,
-				CC1C858314F9C15CF0A0B528 /* Frameworks */,
+				4DF8A7105842AE0E5CA5340D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				0425B92529D795140057E31C /* Stat-ion.app */,
+				046895272A90F36C009BC471 /* Stat-ionTests.xctest */,
+				046895342A90F391009BC471 /* Stat-ionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,6 +283,8 @@
 		0425B92729D795140057E31C /* Stat-ion */ = {
 			isa = PBXGroup;
 			children = (
+				0492B1F82AB35C1B0076380C /* Protocols */,
+				0403C5D429EC8CB80038BF4E /* Delegates */,
 				041576AC29E255CF00CBA586 /* Functions */,
 				0415769729E1E17200CBA586 /* Constants */,
 				0415768E29DF8AF500CBA586 /* Images */,
@@ -222,8 +293,6 @@
 				0415768B29DF8A8C00CBA586 /* Extensions */,
 				0415768A29DF8A7700CBA586 /* Firebase */,
 				0415768529DF882500CBA586 /* Features */,
-				0425B92829D795140057E31C /* AppDelegate.swift */,
-				0425B92A29D795140057E31C /* SceneDelegate.swift */,
 				0425B92E29D795140057E31C /* Main.storyboard */,
 				0425B93629D795150057E31C /* LaunchScreen.storyboard */,
 				0425B93929D795150057E31C /* Info.plist */,
@@ -233,21 +302,46 @@
 			path = "Stat-ion";
 			sourceTree = "<group>";
 		};
+		046895282A90F36C009BC471 /* Stat-ionTests */ = {
+			isa = PBXGroup;
+			children = (
+				046895292A90F36C009BC471 /* Stat_ionTests.swift */,
+			);
+			path = "Stat-ionTests";
+			sourceTree = "<group>";
+		};
+		046895352A90F391009BC471 /* Stat-ionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				046895362A90F391009BC471 /* Stat_ionUITests.swift */,
+				046895382A90F391009BC471 /* Stat_ionUITestsLaunchTests.swift */,
+			);
+			path = "Stat-ionUITests";
+			sourceTree = "<group>";
+		};
+		0492B1F82AB35C1B0076380C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0492B1F92AB35C320076380C /* SeguePerformable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4DF8A7105842AE0E5CA5340D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9051DAA598AC62813792408 /* Pods_Stat_ion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		92E8C01349E05D3694931F5E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0B54D349E5E89057F3BCA12B /* Pods-Stat-ion.debug.xcconfig */,
-				556A10B54D1EFF691C9E406D /* Pods-Stat-ion.release.xcconfig */,
+				B089F7F94673F0D23B1C26F8 /* Pods-Stat-ion.debug.xcconfig */,
+				E34550DDCBDC103389BD4326 /* Pods-Stat-ion.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		CC1C858314F9C15CF0A0B528 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DE782404287AF781A19422CA /* Pods_Stat_ion.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,11 +351,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0425B93C29D795150057E31C /* Build configuration list for PBXNativeTarget "Stat-ion" */;
 			buildPhases = (
-				B536ECD7B3AFCE52FC831DA3 /* [CP] Check Pods Manifest.lock */,
+				E987D76D329DDB0475223FEC /* [CP] Check Pods Manifest.lock */,
 				0425B92129D795140057E31C /* Sources */,
 				0425B92229D795140057E31C /* Frameworks */,
 				0425B92329D795140057E31C /* Resources */,
-				139C8F7D0C09A58E86F89369 /* [CP] Embed Pods Frameworks */,
+				1F157310427EACE19AFEBD50 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -271,6 +365,42 @@
 			productName = "Stat-ion";
 			productReference = 0425B92529D795140057E31C /* Stat-ion.app */;
 			productType = "com.apple.product-type.application";
+		};
+		046895262A90F36C009BC471 /* Stat-ionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0468952F2A90F36C009BC471 /* Build configuration list for PBXNativeTarget "Stat-ionTests" */;
+			buildPhases = (
+				046895232A90F36C009BC471 /* Sources */,
+				046895242A90F36C009BC471 /* Frameworks */,
+				046895252A90F36C009BC471 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0468952C2A90F36C009BC471 /* PBXTargetDependency */,
+			);
+			name = "Stat-ionTests";
+			productName = "Stat-ionTests";
+			productReference = 046895272A90F36C009BC471 /* Stat-ionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		046895332A90F391009BC471 /* Stat-ionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0468953C2A90F391009BC471 /* Build configuration list for PBXNativeTarget "Stat-ionUITests" */;
+			buildPhases = (
+				046895302A90F391009BC471 /* Sources */,
+				046895312A90F391009BC471 /* Frameworks */,
+				046895322A90F391009BC471 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0468953B2A90F391009BC471 /* PBXTargetDependency */,
+			);
+			name = "Stat-ionUITests";
+			productName = "Stat-ionUITests";
+			productReference = 046895342A90F391009BC471 /* Stat-ionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -284,6 +414,14 @@
 				TargetAttributes = {
 					0425B92429D795140057E31C = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					046895262A90F36C009BC471 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 0425B92429D795140057E31C;
+					};
+					046895332A90F391009BC471 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 0425B92429D795140057E31C;
 					};
 				};
 			};
@@ -301,6 +439,8 @@
 			projectRoot = "";
 			targets = (
 				0425B92429D795140057E31C /* Stat-ion */,
+				046895262A90F36C009BC471 /* Stat-ionTests */,
+				046895332A90F391009BC471 /* Stat-ionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -317,10 +457,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		046895252A90F36C009BC471 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046895322A90F391009BC471 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		139C8F7D0C09A58E86F89369 /* [CP] Embed Pods Frameworks */ = {
+		1F157310427EACE19AFEBD50 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -337,7 +491,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Stat-ion/Pods-Stat-ion-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B536ECD7B3AFCE52FC831DA3 /* [CP] Check Pods Manifest.lock */ = {
+		E987D76D329DDB0475223FEC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -366,12 +520,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0492B1F72AB346170076380C /* OnboardingViewModel.swift in Sources */,
+				0492B1FA2AB35C320076380C /* SeguePerformable.swift in Sources */,
 				0415768229DB1B0600CBA586 /* StationDetailVC.swift in Sources */,
 				0425B94029D9B7640057E31C /* MapVC.swift in Sources */,
 				0415769029E1ACD000CBA586 /* Station.swift in Sources */,
 				0425B92D29D795140057E31C /* OnboardingVC.swift in Sources */,
 				0425B92929D795140057E31C /* AppDelegate.swift in Sources */,
 				041576A929E2044200CBA586 /* GetStation.swift in Sources */,
+				0492B2002AB48DA70076380C /* NearestStationViewModel.swift in Sources */,
 				041576A729E1FE6100CBA586 /* CreatingUser.swift in Sources */,
 				0425B93329D795140057E31C /* Stat_ion.xcdatamodeld in Sources */,
 				041576B029E2F39100CBA586 /* FABButton.swift in Sources */,
@@ -385,14 +542,47 @@
 				0415769629E1C3D500CBA586 /* Maps.swift in Sources */,
 				0415769F29E1EE2E00CBA586 /* Alpha.swift in Sources */,
 				041576AB29E23A0800CBA586 /* SheetPresent.swift in Sources */,
+				0492B1F52AB345B40076380C /* OnboardingVC+Extension.swift in Sources */,
 				0415769429E1B6CD00CBA586 /* Alert.swift in Sources */,
 				0425B92B29D795140057E31C /* SceneDelegate.swift in Sources */,
+				0492B1FE2AB48D6A0076380C /* StationDetailViewModel.swift in Sources */,
 				0415769929E1E1A000CBA586 /* Text.swift in Sources */,
 				041576A129E1EE4300CBA586 /* Radius.swift in Sources */,
+				0492B1FC2AB38D1D0076380C /* MapViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046895232A90F36C009BC471 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0468952A2A90F36C009BC471 /* Stat_ionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046895302A90F391009BC471 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046895392A90F391009BC471 /* Stat_ionUITestsLaunchTests.swift in Sources */,
+				046895372A90F391009BC471 /* Stat_ionUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0468952C2A90F36C009BC471 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0425B92429D795140057E31C /* Stat-ion */;
+			targetProxy = 0468952B2A90F36C009BC471 /* PBXContainerItemProxy */;
+		};
+		0468953B2A90F391009BC471 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0425B92429D795140057E31C /* Stat-ion */;
+			targetProxy = 0468953A2A90F391009BC471 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0425B92E29D795140057E31C /* Main.storyboard */ = {
@@ -530,7 +720,7 @@
 		};
 		0425B93D29D795150057E31C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B54D349E5E89057F3BCA12B /* Pods-Stat-ion.debug.xcconfig */;
+			baseConfigurationReference = B089F7F94673F0D23B1C26F8 /* Pods-Stat-ion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -566,7 +756,7 @@
 		};
 		0425B93E29D795150057E31C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 556A10B54D1EFF691C9E406D /* Pods-Stat-ion.release.xcconfig */;
+			baseConfigurationReference = E34550DDCBDC103389BD4326 /* Pods-Stat-ion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -600,6 +790,76 @@
 			};
 			name = Release;
 		};
+		0468952D2A90F36C009BC471 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PM64LP239P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "furkanvural.Stat-ionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stat-ion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Stat-ion";
+			};
+			name = Debug;
+		};
+		0468952E2A90F36C009BC471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PM64LP239P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "furkanvural.Stat-ionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stat-ion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Stat-ion";
+			};
+			name = Release;
+		};
+		0468953D2A90F391009BC471 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PM64LP239P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "furkanvural.Stat-ionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Stat-ion";
+			};
+			name = Debug;
+		};
+		0468953E2A90F391009BC471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PM64LP239P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "furkanvural.Stat-ionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Stat-ion";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -617,6 +877,24 @@
 			buildConfigurations = (
 				0425B93D29D795150057E31C /* Debug */,
 				0425B93E29D795150057E31C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0468952F2A90F36C009BC471 /* Build configuration list for PBXNativeTarget "Stat-ionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0468952D2A90F36C009BC471 /* Debug */,
+				0468952E2A90F36C009BC471 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0468953C2A90F391009BC471 /* Build configuration list for PBXNativeTarget "Stat-ionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0468953D2A90F391009BC471 /* Debug */,
+				0468953E2A90F391009BC471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -28,6 +28,28 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "046895262A90F36C009BC471"
+               BuildableName = "Stat-ionTests.xctest"
+               BlueprintName = "Stat-ionTests"
+               ReferencedContainer = "container:Stat-ion.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "046895332A90F391009BC471"
+               BuildableName = "Stat-ionUITests.xctest"
+               BlueprintName = "Stat-ionUITests"
+               ReferencedContainer = "container:Stat-ion.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
