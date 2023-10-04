@@ -1,6 +1,10 @@
 import UIKit
 
-class StationDetailVC: UIViewController {
+protocol StationDetailViewInterface: AnyObject {
+    func configurationView()
+}
+
+final class StationDetailVC: UIViewController {
     
     @IBOutlet weak var navigationBar    : UINavigationBar!
     @IBOutlet weak var distanceView     : UIView!
@@ -18,13 +22,23 @@ class StationDetailVC: UIViewController {
     
     var stationDetail : Station?
     var distance      : Double?
+    private lazy var viewModel = StationDetailViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurationView()
+        viewModel.view = self
+        viewModel.viewDidLoad()
     }
     
-    private func configurationView(){
+    
+    
+    @IBAction func openMaps(_ sender: Any) {
+        viewModel.openMaps(station: stationDetail!)
+    }
+}
+
+extension StationDetailVC: StationDetailViewInterface {
+    func configurationView() {
         
         let isSocket1Exist = stationDetail?.soket1 == "-" ? false : true
         let isSocket2Exist = stationDetail?.soket2 == "-" ? false : true
@@ -64,10 +78,5 @@ class StationDetailVC: UIViewController {
  
         self.firstSoketType.alpha            = Alpha.alpha09
         self.secondSoketType.alpha           = Alpha.alpha09
-    }
-    
-    @IBAction func openMaps(_ sender: Any) {
-        // Move mvvm
-        Maps.openMapsFromStationDetailVC(station: stationDetail!)
     }
 }
