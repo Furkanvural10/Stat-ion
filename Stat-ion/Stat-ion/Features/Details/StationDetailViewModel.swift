@@ -8,13 +8,23 @@
 import Foundation
 
 protocol StationDetailViewModelInterface {
+    var view: StationDetailViewInterface? { get set }
     
+    func viewDidLoad()
+    func openMaps(station: Station)
 }
 
-final class StationDetailViewModel {
-    
+class StationDetailViewModel {
+    weak var view: StationDetailViewInterface?
 }
 
-extension StationDetailViewModel {
+extension StationDetailViewModel: StationDetailViewModelInterface {
     
+    func viewDidLoad() {
+        view?.configurationView()
+    }
+    
+    func openMaps(station: Station) {
+        Maps.openMapsFromStationDetailVC(station: station)
+    }
 }
