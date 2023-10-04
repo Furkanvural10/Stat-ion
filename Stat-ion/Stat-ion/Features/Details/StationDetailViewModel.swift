@@ -8,11 +8,13 @@
 import Foundation
 
 protocol StationDetailViewModelInterface {
+    var view: StationDetailViewInterface? { get set }
+    
     func viewDidLoad()
     func openMaps(station: Station)
 }
 
-final class StationDetailViewModel {
+class StationDetailViewModel {
     weak var view: StationDetailViewInterface?
 }
 

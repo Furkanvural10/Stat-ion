@@ -8,6 +8,7 @@
 import Foundation
 
 protocol NearestStationViewModelInterface {
+    var view: NearestStationViewInterface? { get set }
     func viewDidLoad()
 }
 
