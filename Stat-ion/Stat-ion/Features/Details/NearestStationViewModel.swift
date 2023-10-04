@@ -8,13 +8,17 @@
 import Foundation
 
 protocol NearestStationViewModelInterface {
-    
+    func viewDidLoad()
 }
 
 final class NearestStationViewModel {
-    
+    weak var view: NearestStationViewInterface?
 }
 
-extension NearestStationViewModel {
+extension NearestStationViewModel: NearestStationViewModelInterface {
     
+    func viewDidLoad() {
+        view?.configurationView()
+        view?.zipTwoArray()
+    }
 }
