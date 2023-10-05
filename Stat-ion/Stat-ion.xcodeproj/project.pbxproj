@@ -43,6 +43,7 @@
 		0492B1FC2AB38D1D0076380C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1FB2AB38D1D0076380C /* MapViewModel.swift */; };
 		0492B1FE2AB48D6A0076380C /* StationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1FD2AB48D6A0076380C /* StationDetailViewModel.swift */; };
 		0492B2002AB48DA70076380C /* NearestStationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492B1FF2AB48DA70076380C /* NearestStationViewModel.swift */; };
+		049921472ACEF74600E10537 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049921462ACEF74600E10537 /* OnboardingViewController.swift */; };
 		9FAA82563C7DCC34B8A71E68 /* Pods_Stat_ion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9051DAA598AC62813792408 /* Pods_Stat_ion.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		0492B1FB2AB38D1D0076380C /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		0492B1FD2AB48D6A0076380C /* StationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailViewModel.swift; sourceTree = "<group>"; };
 		0492B1FF2AB48DA70076380C /* NearestStationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStationViewModel.swift; sourceTree = "<group>"; };
+		049921462ACEF74600E10537 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		B089F7F94673F0D23B1C26F8 /* Pods-Stat-ion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stat-ion.debug.xcconfig"; path = "Target Support Files/Pods-Stat-ion/Pods-Stat-ion.debug.xcconfig"; sourceTree = "<group>"; };
 		E34550DDCBDC103389BD4326 /* Pods-Stat-ion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stat-ion.release.xcconfig"; path = "Target Support Files/Pods-Stat-ion/Pods-Stat-ion.release.xcconfig"; sourceTree = "<group>"; };
 		E9051DAA598AC62813792408 /* Pods_Stat_ion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stat_ion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 			children = (
 				0425B92C29D795140057E31C /* OnboardingVC.swift */,
 				0492B1F62AB346170076380C /* OnboardingViewModel.swift */,
+				049921462ACEF74600E10537 /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 		0425B92729D795140057E31C /* Stat-ion */ = {
 			isa = PBXGroup;
 			children = (
+				0415768A29DF8A7700CBA586 /* Firebase */,
 				0492B1F82AB35C1B0076380C /* Protocols */,
 				0403C5D429EC8CB80038BF4E /* Delegates */,
 				041576AC29E255CF00CBA586 /* Functions */,
@@ -291,7 +295,6 @@
 				0415768D29DF8ADB00CBA586 /* Models */,
 				0415768C29DF8AA400CBA586 /* CustomUI */,
 				0415768B29DF8A8C00CBA586 /* Extensions */,
-				0415768A29DF8A7700CBA586 /* Firebase */,
 				0415768529DF882500CBA586 /* Features */,
 				0425B92E29D795140057E31C /* Main.storyboard */,
 				0425B93629D795150057E31C /* LaunchScreen.storyboard */,
@@ -545,6 +548,7 @@
 				0492B1F52AB345B40076380C /* OnboardingVC+Extension.swift in Sources */,
 				0415769429E1B6CD00CBA586 /* Alert.swift in Sources */,
 				0425B92B29D795140057E31C /* SceneDelegate.swift in Sources */,
+				049921472ACEF74600E10537 /* OnboardingViewController.swift in Sources */,
 				0492B1FE2AB48D6A0076380C /* StationDetailViewModel.swift in Sources */,
 				0415769929E1E1A000CBA586 /* Text.swift in Sources */,
 				041576A129E1EE4300CBA586 /* Radius.swift in Sources */,
