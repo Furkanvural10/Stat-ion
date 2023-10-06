@@ -15,6 +15,10 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var getStartedButton: UIButton!
     
+    
+    
+    var actionButtonDidTapped: (() -> Void)?
+    
     func configure(with slide: Slide) {
         titleLabel.text = slide.title
         getStartedButton.backgroundColor = slide.buttonColor
@@ -27,9 +31,11 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         if !animationView.isAnimationPlaying {
             animationView.play()
         }
+        
+        
     }
     
     @IBAction func getStartedButtonClicked(_ sender: Any) {
-        
+        actionButtonDidTapped?()
     }
 }

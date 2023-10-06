@@ -14,12 +14,21 @@ protocol OnboardingViewInterface2 {
 final class OnboardingViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var pageController: UIPageControl!
+    
+    
     private lazy var viewModel = OnboardingViewModel()
     private let slides: [Slide] = Slide.collection
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        setupPageControl()
+    }
+    
+    private func setupPageControl() {
+        pageController.numberOfPages = slides.count
+        
     }
     
     private func setupCollectionView() {
@@ -28,7 +37,7 @@ final class OnboardingViewController: UIViewController {
         collectionView.dataSource = self
         
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
+        layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.isPagingEnabled = true
@@ -36,9 +45,25 @@ final class OnboardingViewController: UIViewController {
         
         
     }
+    
+    private func handleActionButtonTapped(at indexPath: IndexPath) {
+        if indexPath.item == slides.count - 1 {
+            // In the last items
+        } else {
+            let nextItem = indexPath.item + 1
+            let nextIndexPath = IndexPath(item: nextItem, section: 0)
+            collectionView.scrollToItem(at: nextIndexPath, at: .top, animated: true)
+            pageController.currentPage = nextItem
+        }
+        
+        
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = Int(collectionView.contentOffset.x / scrollView.frame.size.width)
+        pageController.currentPage = index
+    }
 
-//    HARİTADAN SANA EN YAKIN İSTASYONU SEÇ
-//    HIZLICA ŞARJ
 }
 
 extension OnboardingViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -54,6 +79,9 @@ extension OnboardingViewController: UICollectionViewDataSource, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellIdentifier", for: indexPath) as! OnboardingCollectionViewCell
         let slide = slides[indexPath.item]
         cell.configure(with: slide)
+        cell.actionButtonDidTapped = { [weak self] in
+            self?.handleActionButtonTapped(at: indexPath)
+        }
         cell.backgroundColor = UIColor.white
         return cell
     }
