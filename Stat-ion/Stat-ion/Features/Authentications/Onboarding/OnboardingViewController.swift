@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import Lottie
 
 protocol OnboardingViewInterface2 {
     func prepareView()
@@ -12,30 +13,63 @@ protocol OnboardingViewInterface2 {
 
 final class OnboardingViewController: UIViewController {
     
-    
-    @IBOutlet weak var continueButtonOutler: UIButton!
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     private lazy var viewModel = OnboardingViewModel()
+    private let slides: [Slide] = Slide.collection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareView()
+        setupCollectionView()
     }
-
-    @IBAction func continueButton(_ sender: Any) {
+    
+    private func setupCollectionView() {
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        collectionView.collectionViewLayout = layout
+        collectionView.contentInsetAdjustmentBehavior = .never
+        collectionView.isPagingEnabled = true
+        
         
     }
+
+//    HARİTADAN SANA EN YAKIN İSTASYONU SEÇ
+//    HIZLICA ŞARJ
+}
+
+extension OnboardingViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return slides.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+//        var color = indexPath.item % 2 == 1 ? UIColor.red : UIColor.blue
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellIdentifier", for: indexPath) as! OnboardingCollectionViewCell
+        let slide = slides[indexPath.item]
+        cell.configure(with: slide)
+        cell.backgroundColor = UIColor.white
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let itemWidth = collectionView.bounds.width
+        let itemHeight = collectionView.bounds.height
+        
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
     
 }
 
-extension OnboardingViewController: OnboardingViewInterface2 {
-    
-    func prepareView() {
-        titleLabel.text = "Quick Find Station"
-        titleLabel.numberOfLines = 2
-        titleLabel.textAlignment = .center
-        
-        continueButtonOutler.setTitle("Continue-1", for: .normal)
-        
-    }
-}
+
