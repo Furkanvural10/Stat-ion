@@ -28,10 +28,11 @@ final class OnboardingViewController: UIViewController {
         collectionView.dataSource = self
         
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         collectionView.collectionViewLayout = layout
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.isPagingEnabled = true
+        collectionView.showsVerticalScrollIndicator = false
         
         
     }

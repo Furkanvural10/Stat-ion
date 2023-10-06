@@ -20,7 +20,7 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         getStartedButton.backgroundColor = slide.buttonColor
         getStartedButton.setTitle(slide.buttonTitle, for: .normal)
         
-        let animation = LottieAnimation.named("first")
+        let animation = LottieAnimation.named(slide.animationName)
         animationView.animation = animation
         animationView.loopMode = .loop
         
