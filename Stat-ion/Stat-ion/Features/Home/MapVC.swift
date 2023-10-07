@@ -75,8 +75,6 @@ final class MapVC: UIViewController, MKMapViewDelegate {
     
     @objc private func showStationDetail() {
         
-        print(selectedStation!)
-        print(oneDistanceKM!)
         mapViewModel.showStationDetail(vc: self, identifier: Text.stationDetailVC, selectedStation: selectedStation!, distance: oneDistanceKM!)
     }
     
@@ -89,7 +87,6 @@ final class MapVC: UIViewController, MKMapViewDelegate {
             nearStation: &nearStation,
             distanceKM: &distanceKM
         )
-//        print("Result :\(result.0) \(result.1)")
         mapViewModel.showNearestView(vc: self, result: result)
     }
 }

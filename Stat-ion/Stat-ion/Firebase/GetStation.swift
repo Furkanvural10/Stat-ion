@@ -21,7 +21,7 @@ struct FirebaseGetStation {
                     
                     station    = Station(stationName: stationName, stationType: stationType, soket1: soket1, soket2: soket2, geopoint: geopoint)
                     stationList.append(station!)
-                    print(stationList.count)
+                    
                 }
                 completion(stationList)
             }

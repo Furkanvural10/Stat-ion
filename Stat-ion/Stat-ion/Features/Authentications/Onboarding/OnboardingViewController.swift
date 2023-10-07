@@ -7,7 +7,7 @@
 import UIKit
 import Lottie
 
-protocol OnboardingViewInterface2: AnyObject, SeguePerformable {
+protocol OnboardingViewInterface: AnyObject, SeguePerformable {
     
     var slides: [Slide] { get }
     
@@ -57,17 +57,7 @@ final class OnboardingViewController: UIViewController {
         
         
     }
-    
-//     func handleActionButtonTapped(at indexPath: IndexPath, nextIndexPath: IndexPath?, nextItem: Int? ) {
-//        // Move VM
-////        viewModel.handleActionButtonTapped(at: indexPath)
-////         self.collectionView.scrollToItem(at: nextIndexPath!, at: .top, animated: true)
-////         self.pageController.currentPage = nextItem!
-//
-//
-//
-//    }
-    
+        
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let index = Int(collectionView.contentOffset.x / scrollView.frame.size.width)
         pageController.currentPage = index
@@ -88,8 +78,6 @@ extension OnboardingViewController: UICollectionViewDataSource, UICollectionView
         cell.configure(with: slide)
         cell.actionButtonDidTapped = { [weak self] in
             self?.viewModel.handleActionButtonTapped(at: indexPath)
-//            self?.handleActionButtonTapped(at: indexPath)
-            print("Clicked next")
         }
         cell.backgroundColor = UIColor.white
         return cell
@@ -110,9 +98,8 @@ extension OnboardingViewController: UICollectionViewDataSource, UICollectionView
     
 }
 
-extension OnboardingViewController: OnboardingViewInterface2 {
+extension OnboardingViewController: OnboardingViewInterface {
     func handleActionButtonTapped(at indexPath: IndexPath, nextIndexPath: IndexPath, nextItem: Int) {
-        print("Collection view'dasın ileri gideceksin")
         self.collectionView.scrollToItem(at: nextIndexPath, at: .top, animated: true)
         self.pageController.currentPage = nextItem
         

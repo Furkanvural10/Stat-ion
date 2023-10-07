@@ -8,7 +8,7 @@
 import Foundation
 
 protocol OnboardingViewModelInterface {
-    var view: OnboardingViewInterface2? { get set }
+    var view: OnboardingViewInterface? { get set }
     
     func viewDidLoad()
     func checkOnboardingPageSeen()
@@ -17,10 +17,8 @@ protocol OnboardingViewModelInterface {
 }
 
 final class OnboardingViewModel {
-    weak var view: OnboardingViewInterface2?
+    weak var view: OnboardingViewInterface?
     private let slides: [Slide] = Slide.collection
-    
-    
 }
 
 extension OnboardingViewModel: OnboardingViewModelInterface {
@@ -39,7 +37,6 @@ extension OnboardingViewModel: OnboardingViewModelInterface {
     }
     
     func endingOnboardingPage() {
-        print("Tıklıyorum ve view: \(view!)")
         UserDefaults.standard.set(true, forKey: Text.onboardingSeen)
         view?.performSegue(identifier: Text.toChargeStationMapVC)
         
