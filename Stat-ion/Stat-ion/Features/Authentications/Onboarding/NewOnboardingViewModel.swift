@@ -1,4 +1,12 @@
 //
+//  NewOnboardingViewModel.swift
+//  Stat-ion
+//
+//  Created by furkan vural on 7.10.2023.
+//
+
+import Foundation
+//
 //  OnboardingViewModel.swift
 //  Stat-ion
 //
@@ -8,7 +16,7 @@
 import Foundation
 
 protocol OnboardingViewModelInterface {
-    var view: OnboardingViewInterface2? { get set }
+    var view: OnboardingViewInterface? { get set }
     
     func viewDidLoad()
     func checkOnboardingPageSeen()

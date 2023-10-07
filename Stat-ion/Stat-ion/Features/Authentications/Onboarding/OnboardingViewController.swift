@@ -7,23 +7,35 @@
 import UIKit
 import Lottie
 
-protocol OnboardingViewInterface2 {
-    func prepareView()
+protocol OnboardingViewInterface2: AnyObject, SeguePerformable {
+    
+    var slides: [Slide] { get }
+    
+    func prepareOnboardingView()
+    func endingOnboardingPage()
+    func handleActionButtonTapped(at indexPath: IndexPath, nextIndexPath: IndexPath, nextItem: Int)
+    
 }
 
 final class OnboardingViewController: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var pageController: UIPageControl!
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var pageController: UIPageControl!
     
     
     private lazy var viewModel = OnboardingViewModel()
-    private let slides: [Slide] = Slide.collection
+    let slides: [Slide] = Slide.collection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
-        setupPageControl()
+        viewModel.view = self
+        viewModel.viewDidLoad()
+        
+        
+    }
+    
+    private func checkOnboardingPageSeen() {
+        viewModel.checkOnboardingPageSeen()
     }
     
     private func setupPageControl() {
@@ -46,18 +58,15 @@ final class OnboardingViewController: UIViewController {
         
     }
     
-    private func handleActionButtonTapped(at indexPath: IndexPath) {
-        if indexPath.item == slides.count - 1 {
-            // In the last items
-        } else {
-            let nextItem = indexPath.item + 1
-            let nextIndexPath = IndexPath(item: nextItem, section: 0)
-            collectionView.scrollToItem(at: nextIndexPath, at: .top, animated: true)
-            pageController.currentPage = nextItem
-        }
-        
-        
-    }
+//     func handleActionButtonTapped(at indexPath: IndexPath, nextIndexPath: IndexPath?, nextItem: Int? ) {
+//        // Move VM
+////        viewModel.handleActionButtonTapped(at: indexPath)
+////         self.collectionView.scrollToItem(at: nextIndexPath!, at: .top, animated: true)
+////         self.pageController.currentPage = nextItem!
+//
+//
+//
+//    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let index = Int(collectionView.contentOffset.x / scrollView.frame.size.width)
@@ -74,13 +83,13 @@ extension OnboardingViewController: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-//        var color = indexPath.item % 2 == 1 ? UIColor.red : UIColor.blue
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellIdentifier", for: indexPath) as! OnboardingCollectionViewCell
         let slide = slides[indexPath.item]
         cell.configure(with: slide)
         cell.actionButtonDidTapped = { [weak self] in
-            self?.handleActionButtonTapped(at: indexPath)
+            self?.viewModel.handleActionButtonTapped(at: indexPath)
+//            self?.handleActionButtonTapped(at: indexPath)
+            print("Clicked next")
         }
         cell.backgroundColor = UIColor.white
         return cell
@@ -99,6 +108,27 @@ extension OnboardingViewController: UICollectionViewDataSource, UICollectionView
     }
     
     
+}
+
+extension OnboardingViewController: OnboardingViewInterface2 {
+    func handleActionButtonTapped(at indexPath: IndexPath, nextIndexPath: IndexPath, nextItem: Int) {
+        print("Collection view'dasın ileri gideceksin")
+        self.collectionView.scrollToItem(at: nextIndexPath, at: .top, animated: true)
+        self.pageController.currentPage = nextItem
+        
+    }
+    
+    func endingOnboardingPage() {
+        viewModel.endingOnboardingPage()
+    }
+    
+    func prepareOnboardingView() {
+        checkOnboardingPageSeen()
+        setupCollectionView()
+        setupPageControl()
+    }
+    
+
 }
 
 

@@ -4,6 +4,8 @@ import UIKit
 struct SheetPresent {
     
     static func sheetPresentView(vc: UIViewController, identifier: String, selectedStation: Station, distance: Double) {
+        print("SheetPresentView calıstı")
+        print(identifier)
         
         if let stationDetailVC = vc.storyboard?.instantiateViewController(withIdentifier: identifier) as? StationDetailVC{
             if let sheet = stationDetailVC.sheetPresentationController{
@@ -16,9 +18,13 @@ struct SheetPresent {
         }
     }
     
-    static func sheetPresentNearestView(vc: UIViewController, identifier: String, choosedStations: [Station], distanceKM: [Double]){
-        if let nearestStationVC = vc.storyboard?.instantiateViewController(withIdentifier: identifier) as? NearestStationVC{
-            if let sheet = nearestStationVC.sheetPresentationController{
+    static func sheetPresentNearestView(vc: UIViewController, identifier: String, choosedStations: [Station], distanceKM: [Double]) {
+        print("sheetPresentNearestView calıstı")
+        
+        if let nearestStationVC = vc.storyboard?.instantiateViewController(withIdentifier: identifier) as? NearestStationVC {
+            print("Optional check \(nearestStationVC)")
+            if let sheet = nearestStationVC.sheetPresentationController {
+                print("sheet \(sheet) vc: \(vc)")
                 sheet.detents               = [.medium(),]
                 sheet.preferredCornerRadius = Radius.cornerRadius15
             }

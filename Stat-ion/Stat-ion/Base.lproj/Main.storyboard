@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lsN-MT-JkC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l10-tZ-PrR">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,112 +12,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--OnboardingVC-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="OnboardingVC" customModule="Stat_ion" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboarding" translatesAutoresizingMaskIntoConstraints="NO" id="N3N-SN-fOl">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pci-wg-E8M">
-                                <rect key="frame" x="20" y="123" width="353" height="695"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKf-z6-VF9">
-                                        <rect key="frame" x="0.0" y="60" width="353" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO9-54-q98">
-                                        <rect key="frame" x="0.0" y="151" width="353" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXq-F2-fiA">
-                                        <rect key="frame" x="0.0" y="242" width="353" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSy-Sr-tLR">
-                                        <rect key="frame" x="20" y="610.66666666666663" width="313" height="34.333333333333371"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                        <connections>
-                                            <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iMb-xw-W0t"/>
-                                        </connections>
-                                    </button>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dD-qL-Y3q">
-                                        <rect key="frame" x="20" y="363" width="313" height="176"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="176" id="jZg-Hf-3ui"/>
-                                        </constraints>
-                                        <standardMapConfiguration key="preferredConfiguration"/>
-                                    </mapView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="KKf-z6-VF9" firstAttribute="top" secondItem="Pci-wg-E8M" secondAttribute="top" constant="60" id="1TZ-nY-yO1"/>
-                                    <constraint firstItem="aO9-54-q98" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" id="1gP-qW-KGQ"/>
-                                    <constraint firstItem="aO9-54-q98" firstAttribute="top" secondItem="KKf-z6-VF9" secondAttribute="bottom" constant="70" id="3ql-yW-JZh"/>
-                                    <constraint firstItem="vSy-Sr-tLR" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" constant="20" id="9OT-05-4ze"/>
-                                    <constraint firstAttribute="width" constant="353" id="Bnc-wT-amn"/>
-                                    <constraint firstAttribute="trailing" secondItem="5dD-qL-Y3q" secondAttribute="trailing" constant="20" id="CBX-Nw-hdc"/>
-                                    <constraint firstItem="CXq-F2-fiA" firstAttribute="centerX" secondItem="Pci-wg-E8M" secondAttribute="centerX" id="D9o-eI-Qxs"/>
-                                    <constraint firstAttribute="trailing" secondItem="vSy-Sr-tLR" secondAttribute="trailing" constant="20" id="K5P-rA-1nw"/>
-                                    <constraint firstItem="5dD-qL-Y3q" firstAttribute="centerX" secondItem="Pci-wg-E8M" secondAttribute="centerX" id="Msi-sY-of8"/>
-                                    <constraint firstAttribute="trailing" secondItem="CXq-F2-fiA" secondAttribute="trailing" id="O1M-b7-Cwa"/>
-                                    <constraint firstItem="KKf-z6-VF9" firstAttribute="centerX" secondItem="Pci-wg-E8M" secondAttribute="centerX" id="Rhi-FW-5Iv"/>
-                                    <constraint firstAttribute="trailing" secondItem="KKf-z6-VF9" secondAttribute="trailing" id="dcs-bI-ome"/>
-                                    <constraint firstAttribute="height" constant="695" id="enh-UN-ATU"/>
-                                    <constraint firstAttribute="trailing" secondItem="aO9-54-q98" secondAttribute="trailing" id="gpN-KP-tNZ"/>
-                                    <constraint firstItem="5dD-qL-Y3q" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" constant="20" id="hYa-yT-6yC"/>
-                                    <constraint firstItem="aO9-54-q98" firstAttribute="centerX" secondItem="Pci-wg-E8M" secondAttribute="centerX" id="j9X-Gz-6RW"/>
-                                    <constraint firstAttribute="bottom" secondItem="vSy-Sr-tLR" secondAttribute="bottom" constant="50" id="lqf-uu-dPe"/>
-                                    <constraint firstItem="KKf-z6-VF9" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" id="mLg-fg-2Ja"/>
-                                    <constraint firstItem="CXq-F2-fiA" firstAttribute="top" secondItem="aO9-54-q98" secondAttribute="bottom" constant="70" id="nEt-Cv-3Sf"/>
-                                    <constraint firstItem="5dD-qL-Y3q" firstAttribute="top" secondItem="CXq-F2-fiA" secondAttribute="bottom" constant="100" id="u33-XB-Nkp"/>
-                                    <constraint firstItem="CXq-F2-fiA" firstAttribute="leading" secondItem="Pci-wg-E8M" secondAttribute="leading" id="xUQ-GE-eVT"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pci-wg-E8M" secondAttribute="trailing" constant="20" id="0i6-QY-2cO"/>
-                            <constraint firstItem="Pci-wg-E8M" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CYy-Xc-dng"/>
-                            <constraint firstItem="Pci-wg-E8M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Mwt-lu-oYz"/>
-                            <constraint firstItem="Pci-wg-E8M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VSk-YY-UhX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pci-wg-E8M" secondAttribute="trailing" constant="20" id="XqS-Lq-YeR"/>
-                            <constraint firstItem="N3N-SN-fOl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yp8-tE-Iwr"/>
-                            <constraint firstItem="Pci-wg-E8M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="b0Z-8F-KKh"/>
-                            <constraint firstItem="Pci-wg-E8M" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cdK-iT-LO7"/>
-                            <constraint firstItem="Pci-wg-E8M" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gan-8Y-ntI"/>
-                            <constraint firstAttribute="bottom" secondItem="N3N-SN-fOl" secondAttribute="bottom" id="k3e-xK-Gui"/>
-                            <constraint firstItem="N3N-SN-fOl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mye-zI-gNK"/>
-                            <constraint firstItem="N3N-SN-fOl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zDt-sA-2au"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="5Ci-br-keW"/>
-                    <connections>
-                        <outlet property="firstLabel" destination="KKf-z6-VF9" id="NjV-pd-IX8"/>
-                        <outlet property="mainView" destination="Pci-wg-E8M" id="j7y-Lg-SVf"/>
-                        <outlet property="mapView" destination="5dD-qL-Y3q" id="NAJ-fp-zvJ"/>
-                        <outlet property="onboardingImageView" destination="N3N-SN-fOl" id="GLU-1N-QNw"/>
-                        <outlet property="secondLabel" destination="aO9-54-q98" id="5yb-cz-8mq"/>
-                        <outlet property="startButton" destination="vSy-Sr-tLR" id="Oxm-dq-gBi"/>
-                        <outlet property="thirdLabel" destination="CXq-F2-fiA" id="XIW-7s-scg"/>
-                        <segue destination="qKW-uJ-WaF" kind="show" identifier="toChargeStationMapVC" id="cdT-lw-ciS"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1028.2442748091603" y="3.5211267605633805"/>
-        </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="O55-Gf-FfU">
             <objects>
@@ -231,7 +125,7 @@
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="MLK-VM-ziR">
-                                <rect key="frame" x="138.66666666666666" y="802" width="115.66666666666666" height="26"/>
+                                <rect key="frame" x="120" y="802" width="153" height="26"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
@@ -240,22 +134,24 @@
                         <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1Ca-EW-sbK" firstAttribute="leading" secondItem="v1I-Ao-cE2" secondAttribute="leading" id="4Uh-cJ-aRV"/>
-                            <constraint firstItem="MLK-VM-ziR" firstAttribute="bottom" secondItem="oHx-pX-jgW" secondAttribute="bottom" constant="10" id="5yc-Kg-vOA"/>
                             <constraint firstItem="1Ca-EW-sbK" firstAttribute="top" secondItem="v1I-Ao-cE2" secondAttribute="top" id="AMb-8R-RUX"/>
-                            <constraint firstItem="MLK-VM-ziR" firstAttribute="leading" secondItem="oHx-pX-jgW" secondAttribute="leading" constant="138.66999999999999" id="MXs-Kz-rg9"/>
+                            <constraint firstItem="oHx-pX-jgW" firstAttribute="trailing" secondItem="MLK-VM-ziR" secondAttribute="trailing" constant="120" id="J8N-Qd-ISU"/>
+                            <constraint firstItem="MLK-VM-ziR" firstAttribute="leading" secondItem="oHx-pX-jgW" secondAttribute="leading" constant="120" id="YZK-Vv-dxW"/>
                             <constraint firstAttribute="trailing" secondItem="1Ca-EW-sbK" secondAttribute="trailing" id="pWj-Sb-upu"/>
+                            <constraint firstAttribute="bottom" secondItem="MLK-VM-ziR" secondAttribute="bottom" constant="24" id="rht-5F-jPi"/>
                             <constraint firstAttribute="bottom" secondItem="1Ca-EW-sbK" secondAttribute="bottom" id="rvo-Mn-MRg"/>
-                            <constraint firstItem="MLK-VM-ziR" firstAttribute="centerX" secondItem="v1I-Ao-cE2" secondAttribute="centerX" id="xhP-D3-Lav"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="MZZ-gU-dqB"/>
                     <connections>
                         <outlet property="collectionView" destination="1Ca-EW-sbK" id="rPX-GT-yur"/>
                         <outlet property="pageController" destination="MLK-VM-ziR" id="Rve-AE-nEB"/>
+                        <segue destination="qKW-uJ-WaF" kind="show" identifier="toChargeStationMapVC" id="Bkg-zj-LNe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ext-ef-78K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="701.52671755725191" y="716.90140845070425"/>
+            <point key="canvasLocation" x="1013" y="4"/>
         </scene>
         <!--MapVC-->
         <scene sceneID="7Jz-dA-V3j">
@@ -528,30 +424,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSE-dR-sIx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2635.8778625954196" y="666.90140845070425"/>
+            <point key="canvasLocation" x="3562.5954198473282" y="666.90140845070425"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="EO1-it-5GR">
+        <scene sceneID="WrJ-Lt-7OL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aag-sV-bYG" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l10-tZ-PrR" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wqe-0b-Bbg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9nc-Dg-f1V">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4xy-Dx-XQ7"/>
+                        <segue destination="lsN-MT-JkC" kind="relationship" relationship="rootViewController" id="pzj-fK-4KL"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CQc-oh-sge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iGl-kh-0M3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="86" y="4"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="dEd-Pr-ugt"/>
+    </designables>
     <resources>
         <image name="ChargeStation" width="426.66665649414062" height="240"/>
-        <image name="Onboarding" width="1120" height="1680"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

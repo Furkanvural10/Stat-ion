@@ -22,7 +22,7 @@ class OnboardingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        onboardingViewModel.onboardingView = self
+//        onboardingViewModel.onboardingView = self
         onboardingViewModel.viewDidLoad()
     }
     

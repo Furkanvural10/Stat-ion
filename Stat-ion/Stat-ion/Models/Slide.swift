@@ -16,8 +16,8 @@ struct Slide {
     let buttonTitle: String
     
     static let collection: [Slide] = [
-        .init(title: "Elektirikli aracın için şarj istasyonu bulmak artık çok kolay.", animationName: "first", buttonColor: .darkGray, buttonTitle: "Next"),
-        .init(title: "Sana en yakın şarj istasyonunu haritadan seç ve rota oluştur.", animationName: "second", buttonColor: .darkGray, buttonTitle: "Next"),
-        .init(title: "Hızlıca şarj et ve yolculuğa keyifle devam et.", animationName: "last", buttonColor: .darkGray, buttonTitle: "Get Started")
+        .init(title: "Finding a charging station for an electric vehicle is now very easy.", animationName: "first", buttonColor: .black, buttonTitle: "Next"),
+        .init(title: "Select the nearest charging station from the map and create a route.", animationName: "second", buttonColor: .black, buttonTitle: "Next"),
+        .init(title: "Charge quickly and continue your journey with pleasure.", animationName: "last", buttonColor: .black, buttonTitle: "Get Started")
     ]
 }

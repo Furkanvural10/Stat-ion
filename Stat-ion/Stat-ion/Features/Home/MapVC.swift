@@ -60,6 +60,7 @@ final class MapVC: UIViewController, MKMapViewDelegate {
         self.stationMapView.delegate          = self
         self.locationManager.delegate         = self
         self.locationManager.desiredAccuracy  = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
     }
     
@@ -73,11 +74,14 @@ final class MapVC: UIViewController, MKMapViewDelegate {
     @IBAction func showCurrentLocation(_ sender: Any) { locationManager.startUpdatingLocation() }
     
     @objc private func showStationDetail() {
+        
+        print(selectedStation!)
+        print(oneDistanceKM!)
         mapViewModel.showStationDetail(vc: self, identifier: Text.stationDetailVC, selectedStation: selectedStation!, distance: oneDistanceKM!)
     }
     
     @IBAction func showStations(_ sender: Any) {
-    
+        
         let result = mapViewModel.showStations(
             annotationList: annotations,
             userLocation: userLocation,
@@ -85,6 +89,7 @@ final class MapVC: UIViewController, MKMapViewDelegate {
             nearStation: &nearStation,
             distanceKM: &distanceKM
         )
+//        print("Result :\(result.0) \(result.1)")
         mapViewModel.showNearestView(vc: self, result: result)
     }
 }

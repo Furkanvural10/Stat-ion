@@ -73,5 +73,6 @@ extension MapViewModel: MapViewModelInterface {
             choosedStations: result.0,
             distanceKM: result.1
         )
+        print("SheetPresent göster")
     }
 }
